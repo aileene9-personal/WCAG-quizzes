@@ -1,5 +1,3 @@
-import { config } from './env';
-
 interface ValidationError {
   variable: string;
   message: string;
@@ -96,7 +94,7 @@ function isValidUrl(url: string): boolean {
 }
 
 // Validate environment variables on startup
-if (config.isProduction) {
+if (import.meta.env.VITE_APP_ENV === 'production') {
   const errors = validateEnvironment();
   if (errors.length > 0) {
     console.error('Environment validation failed:', errors);

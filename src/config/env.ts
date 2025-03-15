@@ -10,11 +10,11 @@ if (import.meta.env.VITE_APP_ENV === 'production') {
 
 export const config = {
   app: {
-    title: import.meta.env.VITE_APP_TITLE,
-    description: import.meta.env.VITE_APP_DESCRIPTION,
-    baseUrl: import.meta.env.VITE_APP_BASE_URL,
-    env: import.meta.env.VITE_APP_ENV,
-    apiUrl: import.meta.env.VITE_API_URL,
+    title: import.meta.env.VITE_APP_TITLE || 'WCAG 2.2 Quiz',
+    description: import.meta.env.VITE_APP_DESCRIPTION || 'Test your knowledge of WCAG 2.2 guidelines',
+    baseUrl: import.meta.env.VITE_APP_BASE_URL || '/',
+    env: import.meta.env.VITE_APP_ENV || 'development',
+    apiUrl: import.meta.env.VITE_API_URL || 'http://localhost:3000',
   },
   features: {
     debug: import.meta.env.VITE_ENABLE_DEBUG === 'true',
@@ -22,8 +22,8 @@ export const config = {
     darkMode: import.meta.env.VITE_ENABLE_DARK_MODE === 'true',
   },
   quiz: {
-    defaultQuestionCount: parseInt(import.meta.env.VITE_DEFAULT_QUESTIONS_COUNT, 10),
-    defaultTimePerQuestion: parseInt(import.meta.env.VITE_DEFAULT_TIME_PER_QUESTION, 10),
+    defaultQuestionCount: parseInt(import.meta.env.VITE_DEFAULT_QUESTIONS_COUNT || '10', 10),
+    defaultTimePerQuestion: parseInt(import.meta.env.VITE_DEFAULT_TIME_PER_QUESTION || '60', 10),
   },
   performance: {
     enableSourceMaps: import.meta.env.VITE_ENABLE_SOURCE_MAPS === 'true',
