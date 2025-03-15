@@ -32,8 +32,8 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        entryFileNames: 'assets/[name].[hash].mjs',
-        chunkFileNames: 'assets/[name].[hash].mjs'
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        chunkFileNames: 'assets/js/[name]-[hash].js'
       }
     },
     minify: true,
