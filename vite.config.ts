@@ -6,20 +6,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  plugins: [
-    react(),
-    {
-      name: 'configure-response-headers',
-      configureServer: (server) => {
-        server.middlewares.use((_req, res, next) => {
-          if (_req.url?.endsWith('.js')) {
-            res.setHeader('Content-Type', 'application/javascript');
-          }
-          next();
-        });
-      }
-    }
-  ],
+  plugins: [react()],
   optimizeDeps: {
     include: ['@chakra-ui/react', '@chakra-ui/radio', '@emotion/react', '@emotion/styled', 'framer-motion']
   },
@@ -33,9 +20,7 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: mode === 'development',
-    modulePreload: {
-      polyfill: true
-    },
+    modulePreload: false,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html')

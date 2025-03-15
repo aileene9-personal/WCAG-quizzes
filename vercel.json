@@ -1,11 +1,11 @@
 {
   "headers": [
     {
-      "source": "/(.*).mjs",
+      "source": "/(.*).js",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript"
+          "value": "application/javascript; charset=utf-8"
         }
       ]
     }
