@@ -53,8 +53,8 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        entryFileNames: 'assets/js/[name]-[hash].js',
-        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name].[hash].js',
+        chunkFileNames: 'assets/js/[name].[hash].js',
         format: 'es'
       }
     },
@@ -72,7 +72,10 @@ export default defineConfig(({ mode }) => ({
   preview: {
     port: 8080,
     strictPort: false,
-    host: true
+    host: true,
+    headers: {
+      'Content-Type': 'application/javascript; charset=utf-8'
+    }
   },
   test: {
     globals: true,
