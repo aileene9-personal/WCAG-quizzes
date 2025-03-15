@@ -1,6 +1,8 @@
 /// <reference types="vitest" />
+/// <reference types="node" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -11,14 +13,18 @@ export default defineConfig(({ mode }) => ({
   server: {
     port: 3000,
     host: true,
-    open: true
+    open: true,
+    base: mode === 'development' ? '/' : '/WCAG-quizzes/'
   },
-  base: '/WCAG-quizzes/',
+  base: mode === 'development' ? '/' : '/WCAG-quizzes/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: mode === 'development',
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      },
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', '@chakra-ui/react', '@emotion/react', '@emotion/styled', 'framer-motion'],
@@ -41,6 +47,17 @@ export default defineConfig(({ mode }) => ({
     modulePreload: {
       polyfill: true
     }
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  },
+  preview: {
+    port: 8080,
+    strictPort: true,
+    host: true,
+    origin: 'http://localhost:8080'
   },
   test: {
     globals: true,

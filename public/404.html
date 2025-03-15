@@ -2,23 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>WCAG 2.2 Quiz</title>
+    <title>WCAG Quiz</title>
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
+      var segmentCount = 1; // Adjust this value based on your repo name (e.g., 1 for /WCAG-quizzes/)
 
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        '/WCAG-quizzes/' + // Add your repo name here
+        l.pathname.split('/').slice(segmentCount + 1).join('/') +
+        (l.search ? '?' + l.search.slice(1) : '') +
         l.hash
       );
     </script>
   </head>
   <body>
+    Redirecting...
   </body>
 </html> 

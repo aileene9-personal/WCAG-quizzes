@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/WCAG-quizzes/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self' https://*.github.io;
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://*.github.io;
-      style-src 'self' 'unsafe-inline' https://*.github.io;
+      script-src 'self' https://*.github.io 'unsafe-inline' 'unsafe-eval';
+      style-src 'self' https://*.github.io 'unsafe-inline';
       img-src 'self' data: https: https://*.github.io;
       font-src 'self' data: https://*.github.io;
-      connect-src 'self' https: https://*.github.io;
+      connect-src 'self' https://*.github.io;
       manifest-src 'self' https://*.github.io;
       base-uri 'self';
       form-action 'self'">
