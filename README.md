@@ -1,54 +1,89 @@
-# React + TypeScript + Vite
+# WCAG 2.2 Quiz Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive quiz application focused on testing knowledge of the Web Content Accessibility Guidelines (WCAG) 2.2. This educational tool helps web developers, designers, and accessibility professionals learn and test their understanding of web accessibility standards.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Comprehensive question bank covering WCAG 2.2 guidelines
+- Interactive quiz interface with immediate feedback
+- Progress tracking and score calculation
+- Mobile-responsive design
+- Accessible interface following WCAG 2.2 guidelines
+- Built with modern web technologies
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Visit the quiz at: [https://aileene9-personal.github.io/WCAG-quizzes/](https://aileene9-personal.github.io/WCAG-quizzes/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Technology Stack
+
+- React 18.2.0
+- TypeScript
+- Vite
+- Chakra UI
+- Emotion
+- Framer Motion
+
+## 📋 Prerequisites
+
+- Node.js (v18 or higher)
+- npm (latest version recommended)
+
+## 🔧 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/aileene9-personal/WCAG-quizzes.git
+cd wcag-quiz
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Build for production:
+```bash
+npm run build
+```
+
+## 📖 Usage
+
+1. Open the application in your browser
+2. Start the quiz
+3. Answer questions about WCAG 2.2 guidelines
+4. Get immediate feedback on your answers
+5. Review your final score and correct answers
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- Aileene Arellano - Initial work
+
+## 🙏 Acknowledgments
+
+- Web Accessibility Specialist Body of Knowledge (WASBoK)
+- W3C Web Accessibility Initiative (WAI)
+- WCAG 2.2 Working Group
+
+## 📞 Contact
+
+For questions and feedback, please open an issue in the GitHub repository.
