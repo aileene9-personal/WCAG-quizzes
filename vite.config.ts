@@ -12,7 +12,9 @@ export default defineConfig(({ mode }) => ({
       name: 'configure-response-headers',
       configureServer: (server) => {
         server.middlewares.use((_req, res, next) => {
-          res.setHeader('Content-Type', 'application/javascript');
+          if (_req.url?.endsWith('.js') || _req.url?.endsWith('.mjs')) {
+            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+          }
           next();
         });
       }
@@ -24,7 +26,10 @@ export default defineConfig(({ mode }) => ({
   server: {
     port: 3000,
     host: true,
-    open: true
+    open: true,
+    headers: {
+      'Content-Type': 'application/javascript; charset=utf-8'
+    }
   },
   base: '/WCAG-quizzes/',
   build: {
@@ -48,8 +53,8 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        entryFileNames: 'assets/js/[name]-[hash].mjs',
-        chunkFileNames: 'assets/js/[name]-[hash].mjs',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        chunkFileNames: 'assets/js/[name]-[hash].js',
         format: 'es'
       }
     },
