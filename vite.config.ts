@@ -46,7 +46,13 @@ export default defineConfig(({ mode }) => ({
     },
     target: 'esnext',
     minify: 'esbuild',
-    cssMinify: true
+    cssMinify: true,
+    esbuild: {
+      jsxInject: `import React from 'react'`,
+      jsxDev: mode === 'development',
+      jsxRuntime: 'automatic',
+      jsxImportSource: 'react'
+    }
   },
   resolve: {
     alias: {

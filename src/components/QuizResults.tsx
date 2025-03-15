@@ -131,6 +131,7 @@ const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, o
                 <Th>Question</Th>
                 <Th>Your Answer</Th>
                 <Th>Correct Answer</Th>
+                <Th>Explanation</Th>
                 <Th>Result</Th>
                 <Th>Learn More</Th>
               </Tr>
@@ -152,6 +153,11 @@ const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, o
                   </Td>
                   <Td>{formatAnswer(answers[question.id])}</Td>
                   <Td>{formatAnswer(question.correctAnswer)}</Td>
+                  <Td maxW={{ base: "200px", md: "300px" }}>
+                    <Text fontSize="sm" color={mutedTextColor}>
+                      {question.explanation}
+                    </Text>
+                  </Td>
                   <Td>
                     <Badge
                       colorScheme={

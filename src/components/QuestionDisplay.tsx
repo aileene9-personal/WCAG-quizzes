@@ -8,6 +8,7 @@ import {
   Checkbox,
   CheckboxGroup,
   Stack,
+  HStack,
 } from '@chakra-ui/react';
 import { quizQuestions } from '../data/quizQuestions';
 
@@ -58,13 +59,24 @@ const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
           >
             <Stack spacing={2}>
               {question.options.map((option: string) => (
-                <Radio
+                <Box
                   key={option}
-                  value={option}
-                  isDisabled={isSkipped}
+                  as="label"
+                  cursor={isSkipped ? "not-allowed" : "pointer"}
+                  p={2}
+                  borderRadius="md"
+                  _hover={!isSkipped ? { bg: "gray.100", _dark: { bg: "gray.700" } } : undefined}
+                  transition="background-color 0.2s"
                 >
-                  {option}
-                </Radio>
+                  <HStack spacing={3}>
+                    <Radio
+                      value={option}
+                      isDisabled={isSkipped}
+                      size="lg"
+                    />
+                    <Text fontSize="md">{option}</Text>
+                  </HStack>
+                </Box>
               ))}
             </Stack>
           </RadioGroup>
