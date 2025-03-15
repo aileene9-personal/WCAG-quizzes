@@ -244,7 +244,7 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
         <QuestionDisplay
           question={currentQuestion}
           onAnswer={handleAnswer}
-          selectedAnswer={state.answers[state.currentQuestion]}
+          selectedAnswer={state.answers[currentQuestion.id]}
           isSkipped={state.skippedQuestions.has(state.currentQuestion)}
         />
       </Box>
