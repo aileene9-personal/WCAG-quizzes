@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useCallback, useEffect } from 'react';
 import { Box, Container, VStack, useColorMode } from '@chakra-ui/react';
 import Quiz from './components/Quiz';

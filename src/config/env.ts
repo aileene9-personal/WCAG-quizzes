@@ -1,3 +1,13 @@
+import { validateEnvironment } from './envValidation';
+
+// Validate environment variables before creating the config
+if (import.meta.env.VITE_APP_ENV === 'production') {
+  const errors = validateEnvironment();
+  if (errors.length > 0) {
+    throw new Error(`Environment validation failed: ${JSON.stringify(errors, null, 2)}`);
+  }
+}
+
 export const config = {
   app: {
     title: import.meta.env.VITE_APP_TITLE,
@@ -14,6 +24,18 @@ export const config = {
   quiz: {
     defaultQuestionCount: parseInt(import.meta.env.VITE_DEFAULT_QUESTIONS_COUNT, 10),
     defaultTimePerQuestion: parseInt(import.meta.env.VITE_DEFAULT_TIME_PER_QUESTION, 10),
+  },
+  performance: {
+    enableSourceMaps: import.meta.env.VITE_ENABLE_SOURCE_MAPS === 'true',
+    enableCompression: import.meta.env.VITE_ENABLE_COMPRESSION === 'true',
+  },
+  security: {
+    enableHttps: import.meta.env.VITE_ENABLE_HTTPS === 'true',
+    enableCsp: import.meta.env.VITE_ENABLE_CSP === 'true',
+  },
+  cache: {
+    duration: parseInt(import.meta.env.VITE_CACHE_DURATION || '3600', 10),
+    enableServiceWorker: import.meta.env.VITE_ENABLE_SERVICE_WORKER === 'true',
   },
   isDevelopment: import.meta.env.VITE_APP_ENV === 'development',
   isProduction: import.meta.env.VITE_APP_ENV === 'production',

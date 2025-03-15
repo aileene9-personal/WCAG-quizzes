@@ -20,6 +20,7 @@ import QuizProgress from './QuizProgress';
 import QuizResults from './QuizResults';
 import QuizControls from './QuizControls';
 import { config } from '../config/env';
+import ErrorBoundary from './ErrorBoundary';
 
 interface TimeRemaining {
   total: number;
@@ -57,65 +58,91 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
   useEffect(() => {
     if (!settings.enableTimer) return;
 
-    const timer = setInterval(() => {
+    let timer: NodeJS.Timeout;
+    let lastTime = Date.now();
+    let isVisible = document.visibilityState === 'visible';
+
+    const handleVisibilityChange = () => {
+      isVisible = document.visibilityState === 'visible';
+      if (isVisible) {
+        lastTime = Date.now();
+      }
+    };
+
+    const updateTimer = () => {
+      if (!isVisible) return;
+      
+      const now = Date.now();
+      const delta = Math.floor((now - lastTime) / 1000);
+      lastTime = now;
+
       setState((prev: QuizState) => ({
         ...prev,
         timeRemaining: {
-          total: prev.timeRemaining.total - 1,
-          question: prev.timeRemaining.question,
+          total: Math.max(0, prev.timeRemaining.total - delta),
+          question: Math.max(0, prev.timeRemaining.question - delta),
         },
       }));
-    }, 1000);
+    };
 
-    return () => clearInterval(timer);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    timer = setInterval(updateTimer, 1000);
+
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, [state.currentQuestion, settings.enableTimer]);
 
   const handleAnswer = useCallback((answer: string | string[]) => {
-    const isCorrect = Array.isArray(currentQuestion.correctAnswer)
-      ? Array.isArray(answer) &&
-        answer.length === currentQuestion.correctAnswer.length &&
-        answer.every(a => currentQuestion.correctAnswer.includes(a))
-      : answer === currentQuestion.correctAnswer;
+    try {
+      const isCorrect = Array.isArray(currentQuestion.correctAnswer)
+        ? Array.isArray(answer) &&
+          answer.length === currentQuestion.correctAnswer.length &&
+          answer.every(a => currentQuestion.correctAnswer.includes(a))
+        : answer === currentQuestion.correctAnswer;
 
-    setState((prev: QuizState) => {
-      const newState = {
-        ...prev,
-        answers: {
+      setState((prev: QuizState) => {
+        const newAnswers = {
           ...prev.answers,
           [currentQuestion.id]: answer,
-        },
-        score: isCorrect ? prev.score + 1 : prev.score,
-      };
-      
-      // Only move to next question after state is updated
-      if (prev.currentQuestion < questions.length - 1) {
-        setTimeout(() => {
-          setState(current => ({
-            ...current,
-            currentQuestion: Math.min(current.currentQuestion + 1, current.questions.length - 1),
-            timeRemaining: {
-              total: current.timeRemaining.total - current.timeRemaining.question,
-              question: current.timeRemaining.question,
-            },
-          }));
-        }, 0);
-      } else {
-        const result: QuizResult = {
-          questions: questions,
-          answers: newState.answers,
-          skippedQuestions: newState.skippedQuestions,
-          score: newState.score,
-          timeTaken: settings.totalTime - newState.timeRemaining.total,
-          completedAt: new Date(),
         };
-        setTimeout(() => {
-          setState(current => ({ ...current, isComplete: true }));
+        
+        const newScore = isCorrect ? prev.score + 1 : prev.score;
+        
+        if (prev.currentQuestion < questions.length - 1) {
+          return {
+            ...prev,
+            answers: newAnswers,
+            score: newScore,
+            currentQuestion: prev.currentQuestion + 1,
+            timeRemaining: {
+              total: prev.timeRemaining.total - prev.timeRemaining.question,
+              question: prev.timeRemaining.question,
+            },
+          };
+        } else {
+          const result: QuizResult = {
+            questions: questions,
+            answers: newAnswers,
+            skippedQuestions: prev.skippedQuestions,
+            score: newScore,
+            timeTaken: settings.totalTime - prev.timeRemaining.total,
+            completedAt: new Date(),
+          };
           onComplete(result);
-        }, 0);
-      }
-      
-      return newState;
-    });
+          return {
+            ...prev,
+            answers: newAnswers,
+            score: newScore,
+            isComplete: true,
+          };
+        }
+      });
+    } catch (error) {
+      console.error('Error handling answer:', error);
+      // Optionally show an error message to the user
+    }
   }, [currentQuestion, questions.length, settings.totalTime, onComplete]);
 
   const handleNext = useCallback(() => {
@@ -267,4 +294,10 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
   );
 };
 
-export default Quiz; 
+const QuizWithErrorBoundary = (props: QuizProps): ReactElement => (
+  <ErrorBoundary>
+    <Quiz {...props} />
+  </ErrorBoundary>
+);
+
+export default QuizWithErrorBoundary; 
