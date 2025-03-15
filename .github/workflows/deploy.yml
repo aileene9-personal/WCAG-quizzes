@@ -29,22 +29,34 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
-          
-      - name: Install dependencies
-        run: npm ci
-        
+      
+      - name: Setup npm cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      - name: Clean install dependencies
+        run: |
+          npm cache clean --force
+          rm -rf node_modules
+          npm install
+      
       - name: Build
         run: npm run build
-        
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
-          
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 
