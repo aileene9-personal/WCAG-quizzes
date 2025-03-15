@@ -12,8 +12,8 @@ export default defineConfig(({ mode }) => ({
       name: 'configure-response-headers',
       configureServer: (server) => {
         server.middlewares.use((_req, res, next) => {
-          if (_req.url?.endsWith('.js') || _req.url?.endsWith('.mjs')) {
-            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+          if (_req.url?.endsWith('.js')) {
+            res.setHeader('Content-Type', 'application/javascript');
           }
           next();
         });
@@ -26,10 +26,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     port: 3000,
     host: true,
-    open: true,
-    headers: {
-      'Content-Type': 'application/javascript; charset=utf-8'
-    }
+    open: true
   },
   base: mode === 'production' ? '/WCAG-quizzes/' : '/',
   build: {
@@ -37,13 +34,7 @@ export default defineConfig(({ mode }) => ({
     assetsDir: 'assets',
     sourcemap: mode === 'development',
     modulePreload: {
-      polyfill: true,
-      resolveDependencies: (filename, deps) => {
-        if (filename.includes('main')) {
-          return [...deps];
-        }
-        return deps;
-      }
+      polyfill: true
     },
     rollupOptions: {
       input: {
@@ -62,8 +53,8 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        entryFileNames: 'assets/js/[name]-[hash].mjs',
-        chunkFileNames: 'assets/js/[name]-[hash].mjs',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        chunkFileNames: 'assets/js/[name]-[hash].js',
         format: 'es'
       }
     },
@@ -78,10 +69,7 @@ export default defineConfig(({ mode }) => ({
   preview: {
     port: 8080,
     strictPort: false,
-    host: true,
-    headers: {
-      'Content-Type': 'application/javascript; charset=utf-8'
-    }
+    host: true
   },
   test: {
     globals: true,
