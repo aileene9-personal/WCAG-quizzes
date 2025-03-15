@@ -36,6 +36,15 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: mode === 'development',
+    modulePreload: {
+      polyfill: true,
+      resolveDependencies: (filename, deps) => {
+        if (filename.includes('main')) {
+          return [...deps];
+        }
+        return deps;
+      }
+    },
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html')
@@ -53,16 +62,13 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        entryFileNames: 'assets/js/[name]-[hash].js',
-        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].mjs',
+        chunkFileNames: 'assets/js/[name]-[hash].mjs',
         format: 'es'
       }
     },
     minify: true,
-    cssMinify: true,
-    modulePreload: {
-      polyfill: true
-    }
+    cssMinify: true
   },
   resolve: {
     alias: {
