@@ -100,89 +100,104 @@ const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, o
   };
 
   return (
-    <VStack spacing={8} width="100%" maxW="1200px" mx="auto" p={4}>
-      <Box textAlign="center" mb={8}>
-        <Heading size="xl" mb={4} color={textColor}>
+    <Box p={{ base: 2, md: 4 }} width="100%">
+      <VStack spacing={{ base: 4, md: 6 }} align="stretch">
+        <Heading size={{ base: "lg", md: "xl" }} textAlign="center">
           Quiz Results
         </Heading>
-        <Text fontSize="2xl" fontWeight="bold" color={scoreColor}>
-          {score}/{questions.length} ({percentage.toFixed(1)}%)
-        </Text>
-        <Text color={mutedTextColor}>
-          Time taken: {formatTime(timeTaken)}
-        </Text>
-      </Box>
+        <Box
+          p={{ base: 3, md: 4 }}
+          borderRadius="lg"
+          bg={useColorModeValue('white', 'gray.700')}
+          boxShadow="md"
+        >
+          <VStack spacing={{ base: 3, md: 4 }} align="center">
+            <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" color={scoreColor}>
+              {percentage.toFixed(1)}%
+            </Text>
+            <Text color={mutedTextColor}>
+              {score} out of {questions.length} questions correct
+            </Text>
+            <Text color={mutedTextColor}>
+              Time taken: {formatTime(timeTaken)}
+            </Text>
+          </VStack>
+        </Box>
 
-      <Box overflowX="auto" width="100%">
-        <Table variant="simple">
-          <Thead>
-            <Tr>
-              <Th width="40%" color={textColor}>Question</Th>
-              <Th width="20%" color={textColor}>Your Answer</Th>
-              <Th width="20%" color={textColor}>Correct Answer</Th>
-              <Th width="20%" color={textColor}>Explanation</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {questions.map((question, index) => {
-              const userAnswer = answers[index];
-              const isSkipped = skippedQuestions.has(index);
-              const isCorrect = Array.isArray(question.correctAnswer)
-                ? Array.isArray(userAnswer) &&
-                  userAnswer.length === question.correctAnswer.length &&
-                  userAnswer.every(a => question.correctAnswer.includes(a))
-                : userAnswer === question.correctAnswer;
-
-              const rowBg = isSkipped 
-                ? tableBgColors.skipped 
-                : isCorrect 
-                  ? tableBgColors.correct 
-                  : tableBgColors.incorrect;
-              
-              const rowTextColor = isSkipped 
-                ? tableTextColors.skipped 
-                : isCorrect 
-                  ? tableTextColors.correct 
-                  : tableTextColors.incorrect;
-
-              return (
-                <Tr key={index} bg={rowBg}>
-                  <Td>
-                    <Text fontWeight="medium" color={rowTextColor}>{question.question}</Text>
-                    {renderQuestionMetadata(question)}
+        <Box overflowX="auto">
+          <Table variant="simple" size={{ base: "sm", md: "md" }}>
+            <Thead>
+              <Tr>
+                <Th>Question</Th>
+                <Th>Your Answer</Th>
+                <Th>Correct Answer</Th>
+                <Th>Result</Th>
+                <Th>Learn More</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {questions.map((question, index) => (
+                <Tr
+                  key={question.id}
+                  bg={
+                    skippedQuestions.has(index)
+                      ? tableBgColors.skipped
+                      : answers[question.id] === question.correctAnswer
+                      ? tableBgColors.correct
+                      : tableBgColors.incorrect
+                  }
+                >
+                  <Td maxW={{ base: "150px", md: "200px" }} isTruncated>
+                    {question.question}
                   </Td>
-                  <Td color={rowTextColor}>{formatAnswer(userAnswer)}</Td>
-                  <Td color={rowTextColor}>{formatAnswer(question.correctAnswer)}</Td>
+                  <Td>{formatAnswer(answers[question.id])}</Td>
+                  <Td>{formatAnswer(question.correctAnswer)}</Td>
                   <Td>
-                    <Text fontSize="sm" color={rowTextColor}>{question.explanation}</Text>
-                    {renderLearnMore(question)}
+                    <Badge
+                      colorScheme={
+                        skippedQuestions.has(index)
+                          ? 'yellow'
+                          : answers[question.id] === question.correctAnswer
+                          ? 'green'
+                          : 'red'
+                      }
+                    >
+                      {skippedQuestions.has(index)
+                        ? 'Skipped'
+                        : answers[question.id] === question.correctAnswer
+                        ? 'Correct'
+                        : 'Incorrect'}
+                    </Badge>
                   </Td>
+                  <Td>{renderLearnMore(question)}</Td>
                 </Tr>
-              );
-            })}
-          </Tbody>
-        </Table>
-      </Box>
+              ))}
+            </Tbody>
+          </Table>
+        </Box>
 
-      <HStack spacing={4} mt={8}>
-        <Button
-          leftIcon={<RepeatIcon />}
-          onClick={() => onRetry?.('same')}
-          colorScheme="blue"
-          size="lg"
-        >
-          Retake This Quiz
-        </Button>
-        <Button
-          leftIcon={<RepeatIcon />}
-          onClick={() => onRetry?.('new')}
-          colorScheme="green"
-          size="lg"
-        >
-          Take New Quiz
-        </Button>
-      </HStack>
-    </VStack>
+        {onRetry && (
+          <HStack spacing={{ base: 2, md: 4 }} justify="center" mt={{ base: 2, md: 4 }}>
+            <Button
+              leftIcon={<RepeatIcon />}
+              onClick={() => onRetry('same')}
+              colorScheme="blue"
+              size={{ base: "sm", md: "md" }}
+            >
+              Retry Same Questions
+            </Button>
+            <Button
+              leftIcon={<RepeatIcon />}
+              onClick={() => onRetry('new')}
+              colorScheme="green"
+              size={{ base: "sm", md: "md" }}
+            >
+              Try New Questions
+            </Button>
+          </HStack>
+        )}
+      </VStack>
+    </Box>
   );
 };
 
