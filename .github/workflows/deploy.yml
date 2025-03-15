@@ -16,10 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,6 +26,46 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run tests
+        run: npm run test:ci
+      
+      - name: Upload coverage reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          
+  deploy:
+    needs: test
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    env:
+      VITE_APP_ENV: production
+      VITE_APP_TITLE: "WCAG 2.2 Quiz"
+      VITE_APP_DESCRIPTION: "Test your knowledge of WCAG 2.2 guidelines"
+      VITE_APP_BASE_URL: "/WCAG-quizzes/"
+      VITE_ENABLE_DEBUG: "false"
+      VITE_ENABLE_ANALYTICS: "false"
+      VITE_ENABLE_DARK_MODE: "true"
+      VITE_API_URL: "https://aileene9-personal.github.io/WCAG-quizzes"
+      VITE_DEFAULT_QUESTIONS_COUNT: "20"
+      VITE_DEFAULT_TIME_PER_QUESTION: "300"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
       
       - name: Setup npm cache
         uses: actions/cache@v4
@@ -45,6 +82,19 @@ jobs:
           npm cache clean --force
           rm -rf node_modules
           npm install
+      
+      - name: Create env file
+        run: |
+          echo "VITE_APP_ENV=${{ env.VITE_APP_ENV }}" >> .env
+          echo "VITE_APP_TITLE=${{ env.VITE_APP_TITLE }}" >> .env
+          echo "VITE_APP_DESCRIPTION=${{ env.VITE_APP_DESCRIPTION }}" >> .env
+          echo "VITE_APP_BASE_URL=${{ env.VITE_APP_BASE_URL }}" >> .env
+          echo "VITE_ENABLE_DEBUG=${{ env.VITE_ENABLE_DEBUG }}" >> .env
+          echo "VITE_ENABLE_ANALYTICS=${{ env.VITE_ENABLE_ANALYTICS }}" >> .env
+          echo "VITE_ENABLE_DARK_MODE=${{ env.VITE_ENABLE_DARK_MODE }}" >> .env
+          echo "VITE_API_URL=${{ env.VITE_API_URL }}" >> .env
+          echo "VITE_DEFAULT_QUESTIONS_COUNT=${{ env.VITE_DEFAULT_QUESTIONS_COUNT }}" >> .env
+          echo "VITE_DEFAULT_TIME_PER_QUESTION=${{ env.VITE_DEFAULT_TIME_PER_QUESTION }}" >> .env
       
       - name: Build
         run: npm run build

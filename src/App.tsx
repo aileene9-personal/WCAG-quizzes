@@ -1,13 +1,14 @@
-import { useState, useCallback } from 'react';
-import { Box, Container, VStack } from '@chakra-ui/react';
+import { useState, useCallback, useEffect } from 'react';
+import { Box, Container, VStack, useColorMode } from '@chakra-ui/react';
 import Quiz from './components/Quiz';
 import { QuizSettings, QuizResult, WCAGLevel, Difficulty } from './types/quiz';
 import { quizQuestions } from './data/quizQuestions';
+import { config, isFeatureEnabled } from './config/env';
 
 const defaultSettings: QuizSettings = {
-  questionCount: 20,
-  timePerQuestion: 300,
-  totalTime: 6000,
+  questionCount: config.quiz.defaultQuestionCount,
+  timePerQuestion: config.quiz.defaultTimePerQuestion,
+  totalTime: config.quiz.defaultQuestionCount * config.quiz.defaultTimePerQuestion,
   enableTimer: true,
   enableAudioNotifications: true,
   filters: {
@@ -19,8 +20,16 @@ const defaultSettings: QuizSettings = {
 
 function App() {
   const [settings] = useState<QuizSettings>(defaultSettings);
-  const [quizKey, setQuizKey] = useState(0); // Add key to force Quiz remount
+  const [quizKey, setQuizKey] = useState(0);
   const [questions, setQuestions] = useState(() => getRandomQuestions());
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  // Initialize dark mode based on configuration
+  useEffect(() => {
+    if (isFeatureEnabled('darkMode') && colorMode === 'light') {
+      toggleColorMode();
+    }
+  }, []); // Run only once on mount
 
   function getRandomQuestions() {
     const allQuestions = [...quizQuestions];
@@ -29,13 +38,15 @@ function App() {
   }
 
   const handleQuizComplete = useCallback((result: QuizResult) => {
-    console.log('Quiz completed:', result);
+    if (config.features.debug) {
+      console.log('Quiz completed:', result);
+    }
     // Handle quiz completion (save results, show summary, etc.)
   }, []);
 
   const handleNewQuiz = useCallback(() => {
     setQuestions(getRandomQuestions());
-    setQuizKey(prev => prev + 1); // Force Quiz component to remount
+    setQuizKey(prev => prev + 1);
   }, []);
 
   return (

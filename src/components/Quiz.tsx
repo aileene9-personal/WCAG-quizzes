@@ -12,14 +12,14 @@ import {
   Progress,
 } from '@chakra-ui/react';
 import { Radio, RadioGroup } from '@chakra-ui/radio';
-import { QuizQuestion, getRandomQuestions } from '../data/quizQuestions';
+import { quizQuestions } from '../data/quizQuestions';
 import { QuizState, QuizSettings, QuizResult } from '../types/quiz';
-import { QuizQuestion as QuizQuestionType } from '../data/types';
 import QuestionDisplay from './QuestionDisplay';
 import QuizTimer from './QuizTimer';
 import QuizProgress from './QuizProgress';
 import QuizResults from './QuizResults';
 import QuizControls from './QuizControls';
+import { config } from '../config/env';
 
 interface TimeRemaining {
   total: number;
@@ -28,14 +28,14 @@ interface TimeRemaining {
 
 interface QuizProps {
   settings: QuizSettings;
-  questions: QuizQuestion[];
+  questions: typeof quizQuestions;
   onComplete: (result: QuizResult) => void;
   onNewQuiz: () => void;
 }
 
 const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }) => {
   const toast = useToast();
-  const [questions, setQuestions] = useState(initialQuestions);
+  const [questions] = useState(initialQuestions);
   const [state, setState] = useState<QuizState>(() => ({
     currentQuestion: 0,
     questions: initialQuestions,
@@ -52,27 +52,88 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
     mode: settings.enableTimer ? 'timed' : 'practice',
   }));
 
+  const currentQuestion = questions[state.currentQuestion];
+  const progress = ((state.currentQuestion + 1) / questions.length) * 100;
+
+  useEffect(() => {
+    if (!settings.enableTimer) return;
+
+    const timer = setInterval(() => {
+      setState(prev => ({
+        ...prev,
+        timeRemaining: {
+          total: prev.timeRemaining.total - 1,
+          question: prev.timeRemaining.question,
+        },
+      }));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [state.currentQuestion, settings.enableTimer]);
+
   const handleAnswer = useCallback((answer: string | string[]) => {
-    setState(prev => ({
-      ...prev,
-      answers: {
-        ...prev.answers,
-        [prev.currentQuestion]: answer,
-      },
-    }));
-  }, []);
+    const isCorrect = Array.isArray(currentQuestion.correctAnswer)
+      ? Array.isArray(answer) &&
+        answer.length === currentQuestion.correctAnswer.length &&
+        answer.every(a => currentQuestion.correctAnswer.includes(a))
+      : answer === currentQuestion.correctAnswer;
+
+    if (isCorrect) {
+      setState(prev => ({
+        ...prev,
+        answers: {
+          ...prev.answers,
+          [prev.currentQuestion]: answer,
+        },
+        score: prev.score + 1,
+      }));
+      toast({
+        title: 'Correct!',
+        description: currentQuestion.explanation,
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: 'Incorrect',
+        description: currentQuestion.explanation,
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+    handleNextQuestion();
+  }, [currentQuestion, toast]);
+
+  const handleNextQuestion = useCallback(() => {
+    if (state.currentQuestion < questions.length - 1) {
+      setState(prev => ({
+        ...prev,
+        currentQuestion: Math.min(prev.currentQuestion + 1, prev.questions.length - 1),
+        timeRemaining: {
+          total: prev.timeRemaining.total - prev.timeRemaining.question,
+          question: prev.timeRemaining.question,
+        },
+      }));
+    } else {
+      const result: QuizResult = {
+        questions: questions,
+        answers: state.answers,
+        skippedQuestions: state.skippedQuestions,
+        score: state.score,
+        timeTaken: settings.totalTime - state.timeRemaining.total,
+        completedAt: new Date(),
+      };
+      setState(prev => ({ ...prev, isComplete: true }));
+      onComplete(result);
+    }
+  }, [state.currentQuestion, questions.length, state.answers, state.skippedQuestions, state.score, settings.totalTime, onComplete]);
 
   const handleSkip = useCallback(() => {
     setState(prev => ({
       ...prev,
       skippedQuestions: new Set([...prev.skippedQuestions, prev.currentQuestion]),
-      currentQuestion: Math.min(prev.currentQuestion + 1, prev.questions.length - 1),
-    }));
-  }, []);
-
-  const handleNext = useCallback(() => {
-    setState(prev => ({
-      ...prev,
       currentQuestion: Math.min(prev.currentQuestion + 1, prev.questions.length - 1),
     }));
   }, []);
@@ -102,34 +163,6 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
     });
   }, [toast]);
 
-  const calculateScore = useCallback(() => {
-    let score = 0;
-    Object.entries(state.answers).forEach(([index, answer]) => {
-      const question = questions[Number(index)];
-      const isCorrect = Array.isArray(question.correctAnswer)
-        ? Array.isArray(answer) &&
-          answer.length === question.correctAnswer.length &&
-          answer.every(a => question.correctAnswer.includes(a))
-        : answer === question.correctAnswer;
-      if (isCorrect) score++;
-    });
-    return score;
-  }, [questions, state.answers]);
-
-  const handleSubmit = useCallback(() => {
-    const score = calculateScore();
-    const result: QuizResult = {
-      questions: state.questions,
-      answers: state.answers,
-      skippedQuestions: state.skippedQuestions,
-      score,
-      timeTaken: settings.totalTime - state.timeRemaining.total,
-      completedAt: new Date(),
-    };
-    setState(prev => ({ ...prev, isComplete: true, score }));
-    onComplete(result);
-  }, [calculateScore, onComplete, settings.totalTime, state]);
-
   const handleRetry = useCallback((mode: 'same' | 'new') => {
     if (mode === 'same') {
       setState({
@@ -151,12 +184,6 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
       onNewQuiz();
     }
   }, [questions, settings, onNewQuiz]);
-
-  useEffect(() => {
-    if (state.timeRemaining.total <= 0 && !state.isComplete) {
-      handleSubmit();
-    }
-  }, [state.timeRemaining.total, state.isComplete, handleSubmit]);
 
   if (state.isComplete) {
     return (
@@ -192,7 +219,7 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
       />
 
       <QuestionDisplay
-        question={questions[state.currentQuestion]}
+        question={currentQuestion}
         onAnswer={handleAnswer}
         selectedAnswer={state.answers[state.currentQuestion]}
         isSkipped={state.skippedQuestions.has(state.currentQuestion)}
@@ -200,9 +227,9 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
 
       <QuizControls
         onPrevious={handlePrevious}
-        onNext={handleNext}
+        onNext={handleNextQuestion}
         onSkip={handleSkip}
-        onSubmit={handleSubmit}
+        onSubmit={handleNextQuestion}
         onPauseResume={handlePauseResume}
         isPaused={state.isPaused}
         pausesRemaining={state.pausesRemaining}
