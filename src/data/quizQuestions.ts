@@ -1274,7 +1274,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Showing focus only on keyboard interaction'
     ],
     correctAnswer: 'Making the entire focus indicator visible',
-    explanation: 'SC 2.4.11 requires that when a user interface component receives keyboard focus, the entire focus indicator remains visible and is not obscured by author-created content. This ensures users can always track their current focus position.',
+    explanation: 'SC 2.4.11 requires that when a user interface component receives keyboard focus, the entire focus indicator remains visible and is not obscured by author-created content. This ensures users can always see the focused element.',
     wcagCriterion: '2.4.11 Focus Not Obscured (Minimum)',
     wcagLevel: 'AA',
     category: 'Navigation',
@@ -1320,38 +1320,37 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: '75',
-    question: 'Which implementation best supports WCAG 2.2 Success Criterion 2.4.13 Focus Appearance (Enhanced)?',
+    question: 'What is the minimum target size requirement according to WCAG 2.2 SC 2.5.8?',
     options: [
-      'A 2px outline with minimum contrast ratio of 3:1',
-      'Multiple indicators with combined thickness of at least 8px',
-      'A background color change with 3:1 contrast',
-      'A dotted outline visible only on keyboard focus'
+      '16 x 16 CSS pixels',
+      '20 x 20 CSS pixels',
+      '24 x 24 CSS pixels',
+      '44 x 44 CSS pixels'
     ],
-    correctAnswer: 'Multiple indicators with combined thickness of at least 8px',
-    explanation: 'SC 2.4.13 requires that the focus indicator has a contrast ratio of at least 4.5:1, a thickness of at least 2 CSS pixels, and is at least as large as the area of an 8 CSS pixel thick border around the control. Multiple indicators can be combined to achieve this.',
-    wcagCriterion: '2.4.13 Focus Appearance (Enhanced)',
-    wcagLevel: 'AAA',
-    category: 'Navigation',
-    difficulty: 'advanced',
-    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced.html',
-    rating: 98
+    correctAnswer: '24 x 24 CSS pixels',
+    explanation: 'WCAG 2.2 Success Criterion 2.5.8 Target Size (Minimum) requires a target size of at least 24 x 24 CSS pixels for pointer inputs, unless an alternative means is provided, the target is inline, or the size is determined by the user agent and not modified.',
+    wcagCriterion: '2.5.8 Target Size (Minimum)',
+    wcagLevel: 'AA',
+    category: 'Mobile Accessibility',
+    difficulty: 'intermediate',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html',
+    rating: 96
   },
   {
     id: '76',
-    question: 'Which implementation best supports WCAG 2.2 Success Criterion 3.2.6 Consistent Help?',
+    question: 'According to WCAG-EM methodology, what is the first step in the evaluation process?',
     options: [
-      'Providing contextual help only when errors occur',
-      'Placing help mechanisms in consistent locations across pages',
-      'Using AI chatbots as the primary help mechanism',
-      'Showing help options only after user interaction'
+      'Select a representative sample',
+      'Explore the target website',
+      'Define the evaluation scope',
+      'Run automated tests'
     ],
-    correctAnswer: 'Placing help mechanisms in consistent locations across pages',
-    explanation: 'SC 3.2.6 requires that help mechanisms (including human contact methods, self-help options, and automated contact mechanisms) appear in the same relative order and location when repeated across pages. This ensures users can reliably find assistance when needed.',
-    wcagCriterion: '3.2.6 Consistent Help',
-    wcagLevel: 'A',
-    category: 'Navigation',
-    difficulty: 'advanced',
-    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/consistent-help.html',
+    correctAnswer: 'Explore the target website',
+    explanation: 'According to WCAG-EM methodology, exploring the target website is a crucial step that must be completed before selecting a representative sample. This exploration helps understand the functionality of the website, technologies used, and different types of web pages and web page states.',
+    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
+    wasBoKSection: 'Domain Two A: Testing process and test plan',
+    category: 'Testing',
+    difficulty: 'intermediate',
     rating: 97
   },
   {
@@ -1364,7 +1363,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Implementing drag operations without keyboard support'
     ],
     correctAnswer: 'Providing button alternatives for drag operations',
-    explanation: 'SC 2.5.7 requires that any functionality using a dragging movement can be achieved through a single pointer interface without dragging, unless dragging is essential. Button alternatives ensure accessibility for users who cannot perform drag operations.',
+    explanation: 'SC 2.5.7 requires that all functionality using dragging movements can be achieved through single pointer interactions without dragging, unless dragging is essential. This ensures users with mobility impairments can access all features.',
     wcagCriterion: '2.5.7 Dragging Movements',
     wcagLevel: 'AA',
     category: 'Input Methods',
@@ -1382,7 +1381,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Implementing biometric-only authentication'
     ],
     correctAnswer: 'Providing authentication without memory tests',
-    explanation: 'SC 3.3.8 requires that an authentication process have at least one method that does not require users to memorize or transcribe information. This supports users with cognitive disabilities who may struggle with memory-based authentication methods.',
+    explanation: 'SC 3.3.8 requires that authentication processes have at least one method that does not require users to memorize or transcribe information, unless this is essential. This supports users with cognitive disabilities who may struggle with memory tasks.',
     wcagCriterion: '3.3.8 Accessible Authentication (Minimum)',
     wcagLevel: 'AA',
     category: 'Forms',
@@ -1400,7 +1399,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Showing focus indicators only on keyboard interaction'
     ],
     correctAnswer: 'Making the entire focused element visible without scrolling',
-    explanation: 'SC 2.4.12 requires that no part of the focused element is obscured by author-created content and the entire element is visible without requiring scrolling. This enhanced requirement ensures complete visibility of focused elements for all users.',
+    explanation: 'SC 2.4.11 requires that when a user interface component receives keyboard focus, no part of the focus indicator is hidden by author-created content. This ensures users can always see which element has focus.',
     wcagCriterion: '2.4.12 Focus Not Obscured (Enhanced)',
     wcagLevel: 'AAA',
     category: 'Navigation',
@@ -1418,7 +1417,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Using variable target sizes based on device type'
     ],
     correctAnswer: 'Implementing 48x48 pixel targets with adequate spacing',
-    explanation: 'SC 2.5.5 requires pointer targets to be at least 48x48 CSS pixels, except when the target is inline, an alternative is available, or the size is determined by the user agent. This enhanced requirement ensures targets are easily selectable for all users.',
+    explanation: 'SC 2.5.5 Target Size (Enhanced) requires pointer targets to be at least 48x48 CSS pixels, except when the target is inline, an alternative is available, the size is determined by the user agent, or the presentation cannot be changed.',
     wcagCriterion: '2.5.5 Target Size (Enhanced)',
     wcagLevel: 'AAA',
     category: 'Mobile Accessibility',
