@@ -77,19 +77,48 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
         answer.every(a => currentQuestion.correctAnswer.includes(a))
       : answer === currentQuestion.correctAnswer;
 
-    setState((prev: QuizState) => ({
-      ...prev,
-      answers: {
-        ...prev.answers,
-        [prev.currentQuestion]: answer,
-      },
-      score: isCorrect ? prev.score + 1 : prev.score,
-    }));
-    
-    handleNextQuestion();
-  }, [currentQuestion]);
+    setState((prev: QuizState) => {
+      const newState = {
+        ...prev,
+        answers: {
+          ...prev.answers,
+          [currentQuestion.id]: answer,
+        },
+        score: isCorrect ? prev.score + 1 : prev.score,
+      };
+      
+      // Only move to next question after state is updated
+      if (prev.currentQuestion < questions.length - 1) {
+        setTimeout(() => {
+          setState(current => ({
+            ...current,
+            currentQuestion: Math.min(current.currentQuestion + 1, current.questions.length - 1),
+            timeRemaining: {
+              total: current.timeRemaining.total - current.timeRemaining.question,
+              question: current.timeRemaining.question,
+            },
+          }));
+        }, 0);
+      } else {
+        const result: QuizResult = {
+          questions: questions,
+          answers: newState.answers,
+          skippedQuestions: newState.skippedQuestions,
+          score: newState.score,
+          timeTaken: settings.totalTime - newState.timeRemaining.total,
+          completedAt: new Date(),
+        };
+        setTimeout(() => {
+          setState(current => ({ ...current, isComplete: true }));
+          onComplete(result);
+        }, 0);
+      }
+      
+      return newState;
+    });
+  }, [currentQuestion, questions.length, settings.totalTime, onComplete]);
 
-  const handleNextQuestion = useCallback(() => {
+  const handleNext = useCallback(() => {
     if (state.currentQuestion < questions.length - 1) {
       setState((prev: QuizState) => ({
         ...prev,
@@ -223,9 +252,9 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
       <Box width="100%" mt={{ base: 4, md: 6 }}>
         <QuizControls
           onPrevious={handlePrevious}
-          onNext={handleNextQuestion}
+          onNext={handleNext}
           onSkip={handleSkip}
-          onSubmit={handleNextQuestion}
+          onSubmit={handleNext}
           onPauseResume={handlePauseResume}
           isPaused={state.isPaused}
           pausesRemaining={state.pausesRemaining}

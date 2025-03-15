@@ -148,15 +148,24 @@ const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, o
                       : tableBgColors.incorrect
                   }
                 >
-                  <Td maxW={{ base: "150px", md: "200px" }} isTruncated>
-                    {question.question}
+                  <Td maxW={{ base: "200px", md: "300px" }}>
+                    <Text fontSize="sm" color={textColor}>
+                      {question.question}
+                    </Text>
                   </Td>
                   <Td>{formatAnswer(answers[question.id])}</Td>
                   <Td>{formatAnswer(question.correctAnswer)}</Td>
                   <Td maxW={{ base: "200px", md: "300px" }}>
-                    <Text fontSize="sm" color={mutedTextColor}>
-                      {question.explanation}
-                    </Text>
+                    <VStack align="start" spacing={1}>
+                      <Text fontSize="sm" color={mutedTextColor}>
+                        {question.explanation}
+                      </Text>
+                      {question.wasBoKDomain && (
+                        <Text fontSize="sm" color={mutedTextColor} fontStyle="italic">
+                          {question.wasBoKDomain} - {question.wasBoKSection}
+                        </Text>
+                      )}
+                    </VStack>
                   </Td>
                   <Td>
                     <Badge
