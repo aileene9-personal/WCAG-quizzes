@@ -6,17 +6,27 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'configure-response-headers',
+      configureServer: (server) => {
+        server.middlewares.use((_req, res, next) => {
+          res.setHeader('Content-Type', 'application/javascript');
+          next();
+        });
+      }
+    }
+  ],
   optimizeDeps: {
     include: ['@chakra-ui/react', '@chakra-ui/radio', '@emotion/react', '@emotion/styled', 'framer-motion']
   },
   server: {
     port: 3000,
     host: true,
-    open: true,
-    base: mode === 'development' ? '/' : '/WCAG-quizzes/'
+    open: true
   },
-  base: mode === 'development' ? '/' : '/WCAG-quizzes/',
+  base: '/WCAG-quizzes/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -38,8 +48,9 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        entryFileNames: 'assets/js/[name]-[hash].js',
-        chunkFileNames: 'assets/js/[name]-[hash].js'
+        entryFileNames: 'assets/js/[name]-[hash].mjs',
+        chunkFileNames: 'assets/js/[name]-[hash].mjs',
+        format: 'es'
       }
     },
     minify: true,
@@ -55,9 +66,8 @@ export default defineConfig(({ mode }) => ({
   },
   preview: {
     port: 8080,
-    strictPort: true,
-    host: true,
-    origin: 'http://localhost:8080'
+    strictPort: false,
+    host: true
   },
   test: {
     globals: true,
