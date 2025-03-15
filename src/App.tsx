@@ -50,8 +50,12 @@ function App() {
   }, []);
 
   return (
-    <Container maxW="container.xl" py={8}>
-      <VStack spacing={8}>
+    <Container 
+      maxW="container.xl" 
+      py={{ base: 4, md: 8 }}
+      px={{ base: 2, sm: 4, md: 6 }}
+    >
+      <VStack spacing={{ base: 4, md: 8 }}>
         <Box w="100%">
           <Quiz
             key={quizKey}

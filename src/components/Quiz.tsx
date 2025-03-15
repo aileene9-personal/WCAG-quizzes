@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import type { ReactElement } from 'react';
 import {
   Box,
   Button,
@@ -7,7 +8,6 @@ import {
   Text,
   VStack,
   HStack,
-  useToast,
   Checkbox,
   Progress,
 } from '@chakra-ui/react';
@@ -33,8 +33,7 @@ interface QuizProps {
   onNewQuiz: () => void;
 }
 
-const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }) => {
-  const toast = useToast();
+const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: QuizProps): ReactElement => {
   const [questions] = useState(initialQuestions);
   const [state, setState] = useState<QuizState>(() => ({
     currentQuestion: 0,
@@ -59,7 +58,7 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
     if (!settings.enableTimer) return;
 
     const timer = setInterval(() => {
-      setState(prev => ({
+      setState((prev: QuizState) => ({
         ...prev,
         timeRemaining: {
           total: prev.timeRemaining.total - 1,
@@ -78,37 +77,21 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
         answer.every(a => currentQuestion.correctAnswer.includes(a))
       : answer === currentQuestion.correctAnswer;
 
-    if (isCorrect) {
-      setState(prev => ({
-        ...prev,
-        answers: {
-          ...prev.answers,
-          [prev.currentQuestion]: answer,
-        },
-        score: prev.score + 1,
-      }));
-      toast({
-        title: 'Correct!',
-        description: currentQuestion.explanation,
-        status: 'success',
-        duration: 3000,
-        isClosable: true,
-      });
-    } else {
-      toast({
-        title: 'Incorrect',
-        description: currentQuestion.explanation,
-        status: 'error',
-        duration: 3000,
-        isClosable: true,
-      });
-    }
+    setState((prev: QuizState) => ({
+      ...prev,
+      answers: {
+        ...prev.answers,
+        [prev.currentQuestion]: answer,
+      },
+      score: isCorrect ? prev.score + 1 : prev.score,
+    }));
+    
     handleNextQuestion();
-  }, [currentQuestion, toast]);
+  }, [currentQuestion]);
 
   const handleNextQuestion = useCallback(() => {
     if (state.currentQuestion < questions.length - 1) {
-      setState(prev => ({
+      setState((prev: QuizState) => ({
         ...prev,
         currentQuestion: Math.min(prev.currentQuestion + 1, prev.questions.length - 1),
         timeRemaining: {
@@ -125,13 +108,13 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
         timeTaken: settings.totalTime - state.timeRemaining.total,
         completedAt: new Date(),
       };
-      setState(prev => ({ ...prev, isComplete: true }));
+      setState((prev: QuizState) => ({ ...prev, isComplete: true }));
       onComplete(result);
     }
   }, [state.currentQuestion, questions.length, state.answers, state.skippedQuestions, state.score, settings.totalTime, onComplete]);
 
   const handleSkip = useCallback(() => {
-    setState(prev => ({
+    setState((prev: QuizState) => ({
       ...prev,
       skippedQuestions: new Set([...prev.skippedQuestions, prev.currentQuestion]),
       currentQuestion: Math.min(prev.currentQuestion + 1, prev.questions.length - 1),
@@ -139,20 +122,15 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
   }, []);
 
   const handlePrevious = useCallback(() => {
-    setState(prev => ({
+    setState((prev: QuizState) => ({
       ...prev,
       currentQuestion: Math.max(prev.currentQuestion - 1, 0),
     }));
   }, []);
 
   const handlePauseResume = useCallback(() => {
-    setState(prev => {
+    setState((prev: QuizState) => {
       if (!prev.isPaused && prev.pausesRemaining === 0) {
-        toast({
-          title: 'No pauses remaining',
-          status: 'warning',
-          duration: 3000,
-        });
         return prev;
       }
       return {
@@ -161,7 +139,7 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
         pausesRemaining: prev.isPaused ? prev.pausesRemaining : prev.pausesRemaining - 1,
       };
     });
-  }, [toast]);
+  }, []);
 
   const handleRetry = useCallback((mode: 'same' | 'new') => {
     if (mode === 'same') {
@@ -199,7 +177,13 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
   }
 
   return (
-    <VStack spacing={6} width="100%" maxW="800px" mx="auto" p={4}>
+    <VStack 
+      spacing={{ base: 4, md: 6 }} 
+      width="100%" 
+      maxW="800px" 
+      mx="auto" 
+      p={{ base: 2, sm: 3, md: 4 }}
+    >
       <QuizProgress
         current={state.currentQuestion + 1}
         total={questions.length}
@@ -209,8 +193,8 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
       <QuizTimer
         timeRemaining={state.timeRemaining}
         isPaused={state.isPaused}
-        onTimeUpdate={(total, question) =>
-          setState(prev => ({
+        onTimeUpdate={(total: number, question: number) =>
+          setState((prev: QuizState) => ({
             ...prev,
             timeRemaining: { total, question },
           }))
@@ -218,25 +202,29 @@ const Quiz: React.FC<QuizProps> = ({ settings, questions: initialQuestions, onCo
         mode={state.mode}
       />
 
-      <QuestionDisplay
-        question={currentQuestion}
-        onAnswer={handleAnswer}
-        selectedAnswer={state.answers[state.currentQuestion]}
-        isSkipped={state.skippedQuestions.has(state.currentQuestion)}
-      />
+      <Box width="100%" px={{ base: 2, sm: 3, md: 4 }}>
+        <QuestionDisplay
+          question={currentQuestion}
+          onAnswer={handleAnswer}
+          selectedAnswer={state.answers[state.currentQuestion]}
+          isSkipped={state.skippedQuestions.has(state.currentQuestion)}
+        />
+      </Box>
 
-      <QuizControls
-        onPrevious={handlePrevious}
-        onNext={handleNextQuestion}
-        onSkip={handleSkip}
-        onSubmit={handleNextQuestion}
-        onPauseResume={handlePauseResume}
-        isPaused={state.isPaused}
-        pausesRemaining={state.pausesRemaining}
-        isFirstQuestion={state.currentQuestion === 0}
-        isLastQuestion={state.currentQuestion === questions.length - 1}
-        hasAnswer={Boolean(state.answers[state.currentQuestion])}
-      />
+      <Box width="100%" mt={{ base: 4, md: 6 }}>
+        <QuizControls
+          onPrevious={handlePrevious}
+          onNext={handleNextQuestion}
+          onSkip={handleSkip}
+          onSubmit={handleNextQuestion}
+          onPauseResume={handlePauseResume}
+          isPaused={state.isPaused}
+          pausesRemaining={state.pausesRemaining}
+          isFirstQuestion={state.currentQuestion === 0}
+          isLastQuestion={state.currentQuestion === questions.length - 1}
+          hasAnswer={Boolean(state.answers[state.currentQuestion])}
+        />
+      </Box>
     </VStack>
   );
 };
