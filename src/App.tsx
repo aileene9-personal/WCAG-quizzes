@@ -11,6 +11,7 @@ const defaultSettings: QuizSettings = {
   totalTime: config.quiz.defaultQuestionCount * config.quiz.defaultTimePerQuestion,
   enableTimer: true,
   enableAudioNotifications: true,
+  maxPauses: 3,
   filters: {
     level: ['A', 'AA', 'AAA'] as WCAGLevel[],
     categories: [],
@@ -33,9 +34,24 @@ function App() {
 
   function getRandomQuestions() {
     const allQuestions = [...quizQuestions];
+    if (allQuestions.length === 0) {
+      console.error('No quiz questions available');
+      return [];
+    }
     const shuffled = allQuestions.sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, settings.questionCount);
+    const count = Math.min(settings.questionCount, allQuestions.length);
+    return shuffled.slice(0, count);
   }
+
+  // Add a check for empty questions
+  useEffect(() => {
+    const randomQuestions = getRandomQuestions();
+    if (randomQuestions.length === 0) {
+      console.error('No questions available for the quiz');
+      return;
+    }
+    setQuestions(randomQuestions);
+  }, [settings.questionCount]);
 
   const handleQuizComplete = useCallback((result: QuizResult) => {
     if (config.features.debug) {

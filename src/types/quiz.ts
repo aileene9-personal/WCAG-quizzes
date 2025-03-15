@@ -33,6 +33,7 @@ export interface QuizSettings {
   totalTime: number;
   enableTimer: boolean;
   enableAudioNotifications: boolean;
+  maxPauses: number;
   filters: {
     level: WCAGLevel[];
     categories: string[];

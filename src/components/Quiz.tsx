@@ -38,17 +38,17 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
   const [state, setState] = useState<QuizState>(() => ({
     currentQuestion: 0,
     questions: initialQuestions,
-    answers: {},
+    answers: {} as Record<string, string | string[]>,
     skippedQuestions: new Set<number>(),
-    score: 0,
-    timeRemaining: {
-      total: settings.totalTime,
-      question: settings.timePerQuestion,
-    } as TimeRemaining,
-    pausesRemaining: 3,
     isComplete: false,
     isPaused: false,
     mode: settings.enableTimer ? 'timed' : 'practice',
+    timeRemaining: {
+      total: settings.totalTime,
+      question: settings.timePerQuestion,
+    },
+    pausesRemaining: settings.maxPauses || 0,
+    score: 0,
   }));
 
   const currentQuestion = questions[state.currentQuestion];
@@ -146,14 +146,14 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
       setState({
         currentQuestion: 0,
         questions: questions,
-        answers: {},
+        answers: {} as Record<string, string | string[]>,
         skippedQuestions: new Set(),
         score: 0,
         timeRemaining: {
           total: settings.totalTime,
           question: settings.timePerQuestion,
         },
-        pausesRemaining: 3,
+        pausesRemaining: settings.maxPauses || 0,
         isComplete: false,
         isPaused: false,
         mode: settings.enableTimer ? 'timed' : 'practice',
@@ -173,6 +173,15 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
         timeTaken={settings.totalTime - state.timeRemaining.total}
         onRetry={handleRetry}
       />
+    );
+  }
+
+  if (!questions || questions.length === 0 || !questions[state.currentQuestion]) {
+    return (
+      <VStack spacing={4} align="center" w="100%">
+        <Text>No questions available. Please try again later.</Text>
+        <Button onClick={onNewQuiz}>Start New Quiz</Button>
+      </VStack>
     );
   }
 
