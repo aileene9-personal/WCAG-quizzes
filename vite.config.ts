@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => ({
       'Content-Type': 'application/javascript; charset=utf-8'
     }
   },
-  base: '/WCAG-quizzes/',
+  base: mode === 'production' ? '/WCAG-quizzes/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -53,8 +53,8 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        entryFileNames: 'assets/js/[name].[hash].js',
-        chunkFileNames: 'assets/js/[name].[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        chunkFileNames: 'assets/js/[name]-[hash].js',
         format: 'es'
       }
     },
