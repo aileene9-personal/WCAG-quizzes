@@ -12,5 +12,9 @@ export default defineConfig({
     host: true,
     open: true
   },
-  base: '/WCAG-quizzes/'
+  base: '/WCAG-quizzes/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  }
 })
