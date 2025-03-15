@@ -5,19 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https: chrome-extension:;
-      style-src 'self' 'unsafe-inline';
-      img-src 'self' data: https:;
-      font-src 'self' data:;
-      connect-src 'self' https:;
-      manifest-src 'self';
+      default-src 'self' https://*.github.io;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://*.github.io;
+      style-src 'self' 'unsafe-inline' https://*.github.io;
+      img-src 'self' data: https: https://*.github.io;
+      font-src 'self' data: https://*.github.io;
+      connect-src 'self' https: https://*.github.io;
+      manifest-src 'self' https://*.github.io;
       base-uri 'self';
       form-action 'self'">
     <title>WCAG 2.2 Quiz</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
