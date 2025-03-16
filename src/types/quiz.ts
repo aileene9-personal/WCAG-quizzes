@@ -38,6 +38,7 @@ export interface QuizSettings {
     level: WCAGLevel[];
     categories: string[];
     difficulty: Difficulty[];
+    questionType: 'all' | 'wcag' | 'general';
   };
 }
 

@@ -24,6 +24,36 @@ Visit the quiz at: [https://aileene9-personal.github.io/WCAG-quizzes/](https://a
 - Emotion
 - Framer Motion
 
+## 📁 Directory Structure
+
+```
+wcag-quiz/
+├── src/                    # Source code
+│   ├── components/         # React components
+│   │   ├── Quiz.tsx       # Main quiz component
+│   │   ├── QuizControls.tsx
+│   │   ├── QuizProgress.tsx
+│   │   ├── QuizResults.tsx
+│   │   ├── QuizTimer.tsx
+│   │   ├── QuestionDisplay.tsx
+│   │   └── ErrorBoundary.tsx
+│   ├── data/              # Data files including quiz questions
+│   ├── types/             # TypeScript type definitions
+│   ├── config/            # Configuration files
+│   ├── requirements/      # Project requirements
+│   ├── test/             # Test utilities
+│   ├── App.tsx           # Root component
+│   ├── main.tsx          # Entry point
+│   └── theme.ts          # UI theme configuration
+├── public/               # Static assets
+├── test/                # Test files
+├── dist/                # Production build output
+├── index.html           # HTML entry point
+├── vite.config.ts       # Vite configuration
+├── tsconfig.json        # TypeScript configuration
+└── package.json         # Project dependencies and scripts
+```
+
 ## 📋 Prerequisites
 
 - Node.js (v18 or higher)

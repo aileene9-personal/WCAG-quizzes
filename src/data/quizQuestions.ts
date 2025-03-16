@@ -3176,7 +3176,23 @@ export const quizQuestions: QuizQuestion[] = [
   }
 ];
 
-export function getRandomQuestions(count: number): QuizQuestion[] {
-  const shuffled = [...quizQuestions].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
+export function getRandomQuestions(count: number = 10, type: 'all' | 'wcag' | 'general' = 'all'): QuizQuestion[] {
+  // Filter questions based on type
+  const filteredQuestions = type === 'all' 
+    ? quizQuestions // Return all questions for 'all' type
+    : type === 'wcag'
+      ? quizQuestions.filter(q => q.wcagCriterion) // Select questions with wcagCriterion field
+      : quizQuestions.filter(q => !q.wcagCriterion); // Select questions without wcagCriterion field
+
+  // Log filtering results
+  console.log(`Question type: ${type}`);
+  console.log(`Total questions: ${quizQuestions.length}`);
+  console.log(`Filtered questions: ${filteredQuestions.length}`);
+  
+  // Shuffle and return requested number of questions
+  const shuffled = [...filteredQuestions].sort(() => 0.5 - Math.random());
+  const selected = shuffled.slice(0, Math.min(count, filteredQuestions.length));
+  
+  console.log(`Selected ${selected.length} questions`);
+  return selected;
 } 

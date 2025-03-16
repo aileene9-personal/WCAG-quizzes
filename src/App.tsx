@@ -1,30 +1,22 @@
 import React from 'react';
 import { useState, useCallback, useEffect } from 'react';
-import { Box, Container, VStack, useColorMode } from '@chakra-ui/react';
+import { Box, Container, VStack, useColorMode, IconButton, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, Button } from '@chakra-ui/react';
+import { SettingsIcon } from '@chakra-ui/icons';
 import Quiz from './components/Quiz';
-import { QuizSettings, QuizResult, WCAGLevel, Difficulty } from './types/quiz';
-import { quizQuestions } from './data/quizQuestions';
+import { QuizSettings as QuizSettingsType, QuizResult } from './types/quiz';
+import { quizQuestions, getRandomQuestions } from './data/quizQuestions';
 import { config, isFeatureEnabled } from './config/env';
-
-const defaultSettings: QuizSettings = {
-  questionCount: config.quiz.defaultQuestionCount,
-  timePerQuestion: config.quiz.defaultTimePerQuestion,
-  totalTime: config.quiz.defaultQuestionCount * config.quiz.defaultTimePerQuestion,
-  enableTimer: true,
-  enableAudioNotifications: true,
-  maxPauses: 3,
-  filters: {
-    level: ['A', 'AA', 'AAA'] as WCAGLevel[],
-    categories: [],
-    difficulty: ['beginner', 'intermediate', 'advanced'] as Difficulty[],
-  },
-};
+import { QuizSettings } from './components/QuizSettings';
+import QuizResults from './components/QuizResults';
 
 function App() {
-  const [settings] = useState<QuizSettings>(defaultSettings);
+  const [settings, setSettings] = useState<QuizSettingsType | null>(null);
   const [quizKey, setQuizKey] = useState(0);
-  const [questions, setQuestions] = useState(() => getRandomQuestions());
+  const [questions, setQuestions] = useState<typeof quizQuestions>([]);
+  const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
+  const [showSettings, setShowSettings] = useState(true);
   const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   // Initialize dark mode based on configuration
   useEffect(() => {
@@ -33,38 +25,91 @@ function App() {
     }
   }, []); // Run only once on mount
 
-  function getRandomQuestions() {
-    const allQuestions = [...quizQuestions];
-    if (allQuestions.length === 0) {
-      console.error('No quiz questions available');
-      return [];
-    }
-    const shuffled = allQuestions.sort(() => Math.random() - 0.5);
-    const count = Math.min(settings.questionCount, allQuestions.length);
-    return shuffled.slice(0, count);
-  }
-
-  // Add a check for empty questions
-  useEffect(() => {
-    const randomQuestions = getRandomQuestions();
-    if (randomQuestions.length === 0) {
-      console.error('No questions available for the quiz');
-      return;
-    }
-    setQuestions(randomQuestions);
-  }, [settings.questionCount]);
+  const handleStartQuiz = useCallback((newSettings: QuizSettingsType) => {
+    setSettings(newSettings);
+    const selectedQuestions = getRandomQuestions(
+      newSettings.questionCount,
+      newSettings.filters.questionType
+    );
+    setQuestions(selectedQuestions);
+    setQuizResult(null);
+    setShowSettings(false);
+  }, []);
 
   const handleQuizComplete = useCallback((result: QuizResult) => {
     if (config.features.debug) {
       console.log('Quiz completed:', result);
     }
-    // Handle quiz completion (save results, show summary, etc.)
+    setQuizResult(result);
   }, []);
 
-  const handleNewQuiz = useCallback(() => {
-    setQuestions(getRandomQuestions());
-    setQuizKey(prev => prev + 1);
-  }, []);
+  const handleRetry = useCallback((mode: 'same' | 'new') => {
+    if (mode === 'same') {
+      setQuizResult(null);
+      setQuizKey(prev => prev + 1);
+    } else if (mode === 'new' && settings) {
+      const newQuestions = getRandomQuestions(
+        settings.questionCount,
+        settings.filters.questionType
+      );
+      setQuestions(newQuestions);
+      setQuizResult(null);
+      setQuizKey(prev => prev + 1);
+    }
+  }, [settings]);
+
+  const handleSettingsClick = useCallback(() => {
+    onOpen();
+  }, [onOpen]);
+
+  const handleSettingsConfirm = useCallback(() => {
+    onClose();
+    setShowSettings(true);
+    setSettings(null);
+    setQuizResult(null);
+  }, [onClose]);
+
+  const renderContent = () => {
+    if (showSettings) {
+      return <QuizSettings onStart={handleStartQuiz} initialSettings={settings} />;
+    }
+
+    if (quizResult) {
+      return (
+        <QuizResults
+          questions={questions}
+          answers={quizResult.answers}
+          skippedQuestions={quizResult.skippedQuestions}
+          score={quizResult.score}
+          timeTaken={quizResult.timeTaken}
+          onRetry={handleRetry}
+        />
+      );
+    }
+
+    return (
+      <Box position="relative" w="100%">
+        <Box position="absolute" top={4} right={4} zIndex={2}>
+          <IconButton
+            aria-label="Settings"
+            icon={<SettingsIcon />}
+            onClick={handleSettingsClick}
+            variant="ghost"
+            _hover={{ bg: 'gray.100' }}
+          />
+        </Box>
+        <Box pt={16}>
+          <Quiz
+            key={quizKey}
+            settings={settings!}
+            questions={questions}
+            onComplete={handleQuizComplete}
+            onNewQuiz={() => setShowSettings(true)}
+          />
+        </Box>
+      </Box>
+    );
+  };
 
   return (
     <Container 
@@ -74,15 +119,25 @@ function App() {
     >
       <VStack spacing={{ base: 4, md: 8 }}>
         <Box w="100%">
-          <Quiz
-            key={quizKey}
-            settings={settings}
-            questions={questions}
-            onComplete={handleQuizComplete}
-            onNewQuiz={handleNewQuiz}
-          />
+          {renderContent()}
         </Box>
       </VStack>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Warning</ModalHeader>
+          <ModalBody>
+            Going to settings will reset your current quiz progress. Do you want to continue?
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={handleSettingsConfirm}>
+              Continue
+            </Button>
+            <Button variant="ghost" onClick={onClose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Container>
   );
 }
