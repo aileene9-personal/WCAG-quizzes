@@ -287,7 +287,8 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
           pausesRemaining={state.pausesRemaining}
           isFirstQuestion={state.currentQuestion === 0}
           isLastQuestion={state.currentQuestion === questions.length - 1}
-          hasAnswer={Boolean(state.answers[state.currentQuestion])}
+          hasAnswer={Boolean(state.answers[currentQuestion.id])}
+          enableTimer={settings.enableTimer}
         />
       </Box>
     </VStack>

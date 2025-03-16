@@ -60,9 +60,24 @@ const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, o
 
   const renderQuestionMetadata = (question: QuizQuestion) => {
     if (question.wasBoKDomain) {
+      const isUrl = question.wasBoKDomain.startsWith('http');
       return (
         <VStack align="start" spacing={1}>
-          <Badge colorScheme="purple">{question.wasBoKDomain}</Badge>
+          {isUrl ? (
+            <Link
+              href={question.wasBoKDomain}
+              isExternal
+              color={useColorModeValue('blue.600', 'blue.300')}
+              fontSize="sm"
+              display="inline-flex"
+              alignItems="center"
+            >
+              {new URL(question.wasBoKDomain).hostname.replace('www.', '')}
+              <ExternalLinkIcon mx="2px" />
+            </Link>
+          ) : (
+            <Badge colorScheme="purple">{question.wasBoKDomain}</Badge>
+          )}
           <Text fontSize="sm" color={mutedTextColor}>
             {question.wasBoKSection}
           </Text>
@@ -162,7 +177,20 @@ const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, o
                       </Text>
                       {question.wasBoKDomain && (
                         <Text fontSize="sm" color={mutedTextColor} fontStyle="italic">
-                          {question.wasBoKDomain} - {question.wasBoKSection}
+                          {question.wasBoKDomain.startsWith('http') ? (
+                            <Link
+                              href={question.wasBoKDomain}
+                              isExternal
+                              color={useColorModeValue('blue.600', 'blue.300')}
+                              display="inline-flex"
+                              alignItems="center"
+                            >
+                              {new URL(question.wasBoKDomain).hostname.replace('www.', '')} - {question.wasBoKSection}
+                              <ExternalLinkIcon mx="2px" />
+                            </Link>
+                          ) : (
+                            `${question.wasBoKDomain} - ${question.wasBoKSection}`
+                          )}
                         </Text>
                       )}
                     </VStack>

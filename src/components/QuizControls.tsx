@@ -26,6 +26,7 @@ interface QuizControlsProps {
   isFirstQuestion: boolean;
   isLastQuestion: boolean;
   hasAnswer: boolean;
+  enableTimer: boolean;
 }
 
 const QuizControls: React.FC<QuizControlsProps> = ({
@@ -39,6 +40,7 @@ const QuizControls: React.FC<QuizControlsProps> = ({
   isFirstQuestion,
   isLastQuestion,
   hasAnswer,
+  enableTimer,
 }) => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -68,35 +70,39 @@ const QuizControls: React.FC<QuizControlsProps> = ({
         </Button>
       </Tooltip>
 
-      <Tooltip label="Skip this question">
-        <Button
-          onClick={onSkip}
-          variant="ghost"
-          colorScheme="yellow"
-          size={{ base: "sm", md: "md" }}
-        >
-          Skip
-        </Button>
-      </Tooltip>
+      {enableTimer && (
+        <Tooltip label="Skip this question">
+          <Button
+            onClick={onSkip}
+            variant="ghost"
+            colorScheme="yellow"
+            size={{ base: "sm", md: "md" }}
+          >
+            Skip
+          </Button>
+        </Tooltip>
+      )}
     </HStack>
   );
 
   const ActionButtons = () => (
     <HStack spacing={{ base: 2, md: 4 }} width="100%" justify="center">
-      <Tooltip label={`${pausesRemaining} pauses remaining`}>
-        <Button
-          leftIcon={<TimeIcon />}
-          onClick={onPauseResume}
-          isDisabled={pausesRemaining === 0 && !isPaused}
-          colorScheme={isPaused ? 'yellow' : 'gray'}
-          size={{ base: "sm", md: "md" }}
-        >
-          {isPaused ? 'Resume' : 'Pause'}
-          <Badge ml={2} colorScheme={pausesRemaining > 0 ? 'green' : 'red'}>
-            {pausesRemaining}
-          </Badge>
-        </Button>
-      </Tooltip>
+      {enableTimer && (
+        <Tooltip label={`${pausesRemaining} pauses remaining`}>
+          <Button
+            leftIcon={<TimeIcon />}
+            onClick={onPauseResume}
+            isDisabled={pausesRemaining === 0 && !isPaused}
+            colorScheme={isPaused ? 'yellow' : 'gray'}
+            size={{ base: "sm", md: "md" }}
+          >
+            {isPaused ? 'Resume' : 'Pause'}
+            <Badge ml={2} colorScheme={pausesRemaining > 0 ? 'green' : 'red'}>
+              {pausesRemaining}
+            </Badge>
+          </Button>
+        </Tooltip>
+      )}
 
       <Tooltip label={isLastQuestion ? 'Submit quiz' : 'Go to last question to submit'}>
         <Button

@@ -10,7 +10,7 @@ export const quizQuestions: QuizQuestion[] = [
       '7:1 for all text',
       '4.5:1 for normal text and 3:1 for large text'
     ],
-    correctAnswer: '4.5:1 for all text',
+    correctAnswer: '7:1 for all text',
     explanation: 'WCAG 2.2 Success Criterion 1.4.3 (Level AA) requires a contrast ratio of at least 4.5:1 for normal-size text. The 3:1 ratio applies only to large text (18pt/24px or 14pt/19px bold), and the 7:1 ratio is a Level AAA requirement. This ensures readability for users with low vision.',
     wcagCriterion: '1.4.3 Contrast (Minimum)',
     wcagLevel: 'AA',
@@ -1783,6 +1783,1689 @@ export const quizQuestions: QuizQuestion[] = [
     rating: 95
   },
   {
+    id: '102',
+    question: 'Which testing approach best supports end-user impact evaluation according to WASBoK Domain Two G?',
+    options: [
+      'Conducting automated tests only',
+      'Testing with diverse user groups and scenarios',
+      'Using expert evaluations exclusively',
+      'Implementing standard test cases'
+    ],
+    correctAnswer: 'Testing with diverse user groups and scenarios',
+    explanation: 'WASBoK Domain Two G emphasizes the importance of testing with diverse user groups in realistic scenarios to understand actual user impact. This approach reveals issues that might not be apparent through other testing methods.',
+    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
+    wasBoKSection: 'Domain Two G: Testing for end-user impact',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '103',
+    question: 'Which approach best supports semantic HTML implementation according to WASBoK Domain One B?',
+    options: [
+      'Using div elements for all structure',
+      'Implementing native HTML elements appropriately',
+      'Relying on ARIA for all semantics',
+      'Creating custom elements exclusively'
+    ],
+    correctAnswer: 'Implementing native HTML elements appropriately',
+    explanation: 'WASBoK Domain One B emphasizes using native HTML elements for their intended purpose to provide proper semantics. This ensures better accessibility support and reduces the need for complex ARIA implementations.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '104',
+    question: 'Which approach best supports accessibility conformance reporting according to WASBoK Domain Three C?',
+    options: [
+      'Providing general compliance statements',
+      'Documenting detailed testing results and methods',
+      'Using automated test results only',
+      'Relying on vendor documentation'
+    ],
+    correctAnswer: 'Documenting detailed testing results and methods',
+    explanation: 'WASBoK Domain Three C emphasizes the importance of detailed accessibility conformance reports that include testing methodologies, results, and specific findings. This provides transparency and actionable information for remediation.',
+    wasBoKDomain: 'Domain Three: Remediating issues in web solutions',
+    wasBoKSection: 'Domain Three C: Integrate Accessibility into the Procurement Process',
+    category: 'Documentation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '105',
+    question: 'Which implementation best supports dynamic content accessibility according to WASBoK Domain One B?',
+    options: [
+      'Using automatic content updates',
+      'Managing focus and providing notifications',
+      'Implementing continuous content refresh',
+      'Relying on visual indicators only'
+    ],
+    correctAnswer: 'Managing focus and providing notifications',
+    explanation: 'WASBoK Domain One B emphasizes the importance of managing focus and providing appropriate notifications for dynamic content updates. This ensures users are aware of changes and can maintain their context.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '106',
+    question: 'Which approach best supports issue prioritization according to WASBoK Domain Three A?',
+    options: [
+      'Fixing all Level A issues first',
+      'Prioritizing based on user impact and frequency',
+      'Following development team preferences',
+      'Addressing visual issues first'
+    ],
+    correctAnswer: 'Prioritizing based on user impact and frequency',
+    explanation: 'WASBoK Domain Three A emphasizes prioritizing accessibility issues based on their impact on users and how frequently they affect user interactions. This ensures the most significant barriers are addressed first.',
+    wasBoKDomain: 'Domain Three: Remediating issues in web solutions',
+    wasBoKSection: 'Domain Three A: Level of severity and prioritization of issues',
+    category: 'Remediation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '107',
+    question: 'Which testing approach best supports usability evaluation according to WASBoK Domain Two F?',
+    options: [
+      'Conducting automated usability scans',
+      'Testing with real users in realistic scenarios',
+      'Using expert reviews exclusively',
+      'Implementing standard test scripts'
+    ],
+    correctAnswer: 'Testing with real users in realistic scenarios',
+    explanation: 'WASBoK Domain Two F emphasizes the importance of testing with real users in realistic scenarios to evaluate usability. This approach reveals actual usage patterns and barriers that might not be apparent through other methods.',
+    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
+    wasBoKSection: 'Domain Two F: Testing with assistive technologies',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '108',
+    question: 'Which approach best supports state management according to WASBoK Domain One B?',
+    options: [
+      'Using visual indicators only',
+      'Implementing proper ARIA states and properties',
+      'Relying on color changes',
+      'Managing state through CSS classes'
+    ],
+    correctAnswer: 'Implementing proper ARIA states and properties',
+    explanation: 'WASBoK Domain One B emphasizes the importance of using appropriate ARIA states and properties to manage and communicate component states. This ensures state changes are properly conveyed to assistive technologies.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '109',
+    question: 'Which approach best supports automated testing tool implementation according to WASBoK Domain Two D?',
+    options: [
+      'Replacing manual testing entirely',
+      'Using tools as part of a comprehensive strategy',
+      'Running automated tests after deployment',
+      'Implementing random automated checks'
+    ],
+    correctAnswer: 'Using tools as part of a comprehensive strategy',
+    explanation: 'WASBoK Domain Two D emphasizes that automated testing tools should be part of a comprehensive testing strategy, not a replacement for manual testing. Tools help identify potential issues but require human verification.',
+    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
+    wasBoKSection: 'Domain Two D: Testing tools for the web',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '110',
+    question: 'Which approach best supports accessibility in the procurement process according to WASBoK Domain Three C?',
+    options: [
+      'Reviewing accessibility after purchase',
+      'Including accessibility throughout procurement',
+      'Relying on vendor certifications',
+      'Testing final products only'
+    ],
+    correctAnswer: 'Including accessibility throughout procurement',
+    explanation: 'WASBoK Domain Three C emphasizes integrating accessibility requirements throughout the procurement process, from initial requirements to final acceptance. This ensures accessibility is considered at every stage.',
+    wasBoKDomain: 'Domain Three: Remediating issues in web solutions',
+    wasBoKSection: 'Domain Three C: Integrate Accessibility into the Procurement Process',
+    category: 'Procurement',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '111',
+    question: 'Which approach best supports cognitive accessibility testing according to WASBoK Domain Two E?',
+    options: [
+      'Using only automated testing tools',
+      'Testing with users having diverse cognitive abilities',
+      'Relying on developer intuition',
+      'Following standard test scripts'
+    ],
+    correctAnswer: 'Testing with users having diverse cognitive abilities',
+    explanation: 'WASBoK Domain Two E emphasizes the importance of testing with users who have different cognitive abilities to identify potential barriers. This approach helps ensure content is perceivable and operable for users with various cognitive needs.',
+    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
+    wasBoKSection: 'Domain Two E: Testing for cognitive disabilities',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '112',
+    question: 'Which approach best supports mobile accessibility testing according to WASBoK Domain Two C?',
+    options: [
+      'Testing only on the latest devices',
+      'Testing with various input methods and orientations',
+      'Using desktop emulators exclusively',
+      'Following desktop testing procedures'
+    ],
+    correctAnswer: 'Testing with various input methods and orientations',
+    explanation: 'WASBoK Domain Two C emphasizes testing with different input methods and device orientations to ensure mobile accessibility. This includes touch gestures, screen rotation, and various interaction patterns.',
+    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
+    wasBoKSection: 'Domain Two C: Testing for mobile accessibility',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '113',
+    question: 'Which approach best supports accessibility in single-page applications according to WASBoK Domain One B?',
+    options: [
+      'Disabling client-side routing',
+      'Managing focus and announcing updates',
+      'Relying on page refreshes',
+      'Using only server-side rendering'
+    ],
+    correctAnswer: 'Managing focus and announcing updates',
+    explanation: 'WASBoK Domain One B emphasizes managing focus and announcing dynamic updates in single-page applications. This ensures users can track content changes and maintain their context during client-side navigation.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '114',
+    question: 'Which approach best supports accessibility documentation according to WASBoK Domain Three B?',
+    options: [
+      'Creating general guidelines',
+      'Documenting specific techniques and patterns',
+      'Referencing external resources',
+      'Using automated documentation'
+    ],
+    correctAnswer: 'Documenting specific techniques and patterns',
+    explanation: 'WASBoK Domain Three B emphasizes documenting specific accessibility techniques and patterns that work in your context. This helps maintain consistency and provides clear guidance for implementation.',
+    wasBoKDomain: 'Domain Three: Remediating issues in web solutions',
+    wasBoKSection: 'Domain Three B: Fixing versus redesigning',
+    category: 'Documentation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '115',
+    question: 'Which approach best supports accessibility in rich internet applications according to WASBoK Domain One B?',
+    options: [
+      'Using only native HTML elements',
+      'Implementing proper ARIA patterns',
+      'Avoiding JavaScript functionality',
+      'Relying on browser defaults'
+    ],
+    correctAnswer: 'Implementing proper ARIA patterns',
+    explanation: 'WASBoK Domain One B emphasizes implementing appropriate ARIA patterns for rich internet applications. This ensures complex widgets and interactions are properly exposed to assistive technologies.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '116',
+    question: 'Which approach best supports accessibility in the development process according to WASBoK Domain One A?',
+    options: [
+      'Testing after development',
+      'Integrating accessibility throughout development',
+      'Adding accessibility features last',
+      'Delegating to specialists only'
+    ],
+    correctAnswer: 'Integrating accessibility throughout development',
+    explanation: 'WASBoK Domain One A emphasizes integrating accessibility considerations throughout the development process. This ensures accessibility is built-in rather than bolted on as an afterthought.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One A: Basic knowledge of disabilities',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '117',
+    question: 'Which approach best supports accessibility testing in agile development according to WASBoK Domain Two A?',
+    options: [
+      'Testing only at sprint end',
+      'Integrating testing throughout sprints',
+      'Deferring testing to release',
+      'Testing in separate sprints'
+    ],
+    correctAnswer: 'Integrating testing throughout sprints',
+    explanation: 'WASBoK Domain Two A emphasizes integrating accessibility testing throughout agile sprints. This allows early identification and remediation of issues, reducing technical debt.',
+    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
+    wasBoKSection: 'Domain Two A: Testing process and test plan',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '118',
+    question: 'Which approach best supports multimedia accessibility according to WASBoK Domain One C?',
+    options: [
+      'Providing transcripts only',
+      'Using automated captions',
+      'Implementing multiple alternatives',
+      'Relying on player controls'
+    ],
+    correctAnswer: 'Implementing multiple alternatives',
+    explanation: 'WASBoK Domain One C emphasizes providing multiple alternatives for multimedia content, including captions, transcripts, and audio descriptions. This ensures access for users with different needs and preferences.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One C: Content authoring',
+    category: 'Content',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '119',
+    question: 'Which approach best supports accessibility in responsive design according to WASBoK Domain One B?',
+    options: [
+      'Using fixed layouts',
+      'Maintaining content relationships across viewports',
+      'Hiding content on mobile',
+      'Implementing separate mobile sites'
+    ],
+    correctAnswer: 'Maintaining content relationships across viewports',
+    explanation: 'WASBoK Domain One B emphasizes maintaining content relationships and functionality across different viewports in responsive design. This ensures consistent accessibility regardless of screen size.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '120',
+    question: 'Which approach best supports accessibility in user experience design according to WASBoK Domain One D?',
+    options: [
+      'Following visual design trends',
+      'Incorporating diverse user needs from start',
+      'Adding accessibility features later',
+      'Using standard templates only'
+    ],
+    correctAnswer: 'Incorporating diverse user needs from start',
+    explanation: 'WASBoK Domain One D emphasizes incorporating diverse user needs into UX design from the beginning. This ensures inclusive design that works well for users with different abilities and preferences.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One D: User experience',
+    category: 'Design',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '121',
+    question: 'According to WASBoK Domain One, which practice best supports creating accessible web solutions?',
+    options: [
+      'Adding accessibility features after development',
+      'Incorporating accessibility throughout the development lifecycle',
+      'Focusing only on technical implementation',
+      'Relying solely on automated testing'
+    ],
+    correctAnswer: 'Incorporating accessibility throughout the development lifecycle',
+    explanation: 'WASBoK Domain One emphasizes that accessibility should be integrated throughout the entire development lifecycle, from planning to implementation and testing, rather than being added as an afterthought.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One A: Planning',
+    category: 'Development Process',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '122',
+    question: 'Which approach aligns with WASBoK Domain One\'s principles for content authoring?',
+    options: [
+      'Using visual styling to convey meaning',
+      'Implementing semantic structure with proper heading hierarchy',
+      'Relying on color to indicate status',
+      'Using decorative images without alternatives'
+    ],
+    correctAnswer: 'Implementing semantic structure with proper heading hierarchy',
+    explanation: 'WASBoK Domain One emphasizes the importance of semantic structure in content authoring, including proper heading hierarchy, which ensures content is meaningful and navigable for all users.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One C: Content authoring',
+    category: 'Content',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '123',
+    question: 'According to WASBoK Domain One, which practice best supports user experience in accessible web solutions?',
+    options: [
+      'Designing for the majority of users',
+      'Creating experiences that work for diverse user needs',
+      'Focusing on visual aesthetics only',
+      'Implementing standard patterns without variation'
+    ],
+    correctAnswer: 'Creating experiences that work for diverse user needs',
+    explanation: 'WASBoK Domain One emphasizes that user experience should be designed to work for diverse user needs, including those with different abilities, preferences, and assistive technologies.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One D: User experience',
+    category: 'Design',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '124',
+    question: 'Which testing approach aligns with WASBoK Domain One\'s principles for quality assurance?',
+    options: [
+      'Relying solely on automated testing',
+      'Using only manual testing methods',
+      'Implementing a comprehensive testing strategy',
+      'Testing only with screen readers'
+    ],
+    correctAnswer: 'Implementing a comprehensive testing strategy',
+    explanation: 'WASBoK Domain One emphasizes the importance of a comprehensive testing strategy that includes both automated and manual testing methods, along with testing with various assistive technologies and user groups.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One E: Quality assurance',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '125',
+    question: 'According to WASBoK Domain One, which practice best supports maintenance of accessible web solutions?',
+    options: [
+      'Updating content without checking accessibility',
+      'Maintaining accessibility documentation and processes',
+      'Focusing only on technical updates',
+      'Ignoring accessibility in maintenance'
+    ],
+    correctAnswer: 'Maintaining accessibility documentation and processes',
+    explanation: 'WASBoK Domain One emphasizes the importance of maintaining accessibility documentation and processes during maintenance to ensure continued compliance and usability for all users.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One F: Maintenance',
+    category: 'Maintenance',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '126',
+    question: 'Which practice best aligns with WASBoK Domain Two\'s principles for managing accessibility?',
+    options: [
+      'Implementing accessibility as a separate project',
+      'Integrating accessibility into organizational processes',
+      'Addressing accessibility issues reactively',
+      'Focusing only on technical compliance'
+    ],
+    correctAnswer: 'Integrating accessibility into organizational processes',
+    explanation: 'WASBoK Domain Two emphasizes that accessibility should be integrated into all organizational processes, from procurement to development and maintenance, rather than being treated as a separate concern.',
+    wasBoKDomain: 'Domain Two: Managing Accessibility',
+    wasBoKSection: 'Domain Two A: Organizational processes',
+    category: 'Management',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '127',
+    question: 'According to WASBoK Domain Two, which approach best supports accessibility policy development?',
+    options: [
+      'Creating policies without stakeholder input',
+      'Developing policies based on legal requirements only',
+      'Establishing comprehensive policies with stakeholder involvement',
+      'Implementing policies without documentation'
+    ],
+    correctAnswer: 'Establishing comprehensive policies with stakeholder involvement',
+    explanation: 'WASBoK Domain Two emphasizes the importance of developing comprehensive accessibility policies with input from all relevant stakeholders to ensure buy-in and effective implementation.',
+    wasBoKDomain: 'Domain Two: Managing Accessibility',
+    wasBoKSection: 'Domain Two B: Policy development',
+    category: 'Policy',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '128',
+    question: 'Which practice best aligns with WASBoK Domain Two\'s principles for accessibility training?',
+    options: [
+      'Providing one-time training sessions',
+      'Implementing ongoing accessibility education programs',
+      'Focusing only on technical training',
+      'Training only development teams'
+    ],
+    correctAnswer: 'Implementing ongoing accessibility education programs',
+    explanation: 'WASBoK Domain Two emphasizes the importance of implementing ongoing accessibility education programs that cover all aspects of accessibility and reach all relevant team members.',
+    wasBoKDomain: 'Domain Two: Managing Accessibility',
+    wasBoKSection: 'Domain Two C: Training and education',
+    category: 'Training',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '129',
+    question: 'According to WASBoK Domain Two, which approach best supports accessibility procurement?',
+    options: [
+      'Evaluating accessibility after purchase',
+      'Including accessibility requirements in procurement criteria',
+      'Focusing only on cost considerations',
+      'Ignoring accessibility in procurement'
+    ],
+    correctAnswer: 'Including accessibility requirements in procurement criteria',
+    explanation: 'WASBoK Domain Two emphasizes the importance of including accessibility requirements in procurement criteria to ensure purchased products and services meet accessibility standards.',
+    wasBoKDomain: 'Domain Two: Managing Accessibility',
+    wasBoKSection: 'Domain Two D: Procurement',
+    category: 'Procurement',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '130',
+    question: 'Which practice best aligns with WASBoK Domain Two\'s principles for accessibility monitoring?',
+    options: [
+      'Conducting annual audits only',
+      'Implementing continuous monitoring and reporting',
+      'Focusing only on technical monitoring',
+      'Ignoring accessibility metrics'
+    ],
+    correctAnswer: 'Implementing continuous monitoring and reporting',
+    explanation: 'WASBoK Domain Two emphasizes the importance of implementing continuous monitoring and reporting of accessibility metrics to ensure ongoing compliance and improvement.',
+    wasBoKDomain: 'Domain Two: Managing Accessibility',
+    wasBoKSection: 'Domain Two E: Monitoring and reporting',
+    category: 'Monitoring',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '131',
+    question: 'According to WASBoK Domain Three, which practice best supports accessibility advocacy?',
+    options: [
+      'Focusing only on technical advocacy',
+      'Implementing comprehensive advocacy strategies',
+      'Addressing advocacy reactively',
+      'Ignoring stakeholder engagement'
+    ],
+    correctAnswer: 'Implementing comprehensive advocacy strategies',
+    explanation: 'WASBoK Domain Three emphasizes the importance of implementing comprehensive advocacy strategies that address all aspects of accessibility and engage all relevant stakeholders.',
+    wasBoKDomain: 'Domain Three: Advocating for Accessibility',
+    wasBoKSection: 'Domain Three A: Advocacy strategies',
+    category: 'Advocacy',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '132',
+    question: 'Which approach best aligns with WASBoK Domain Three\'s principles for stakeholder engagement?',
+    options: [
+      'Engaging stakeholders only when needed',
+      'Maintaining ongoing stakeholder relationships',
+      'Focusing only on internal stakeholders',
+      'Ignoring stakeholder feedback'
+    ],
+    correctAnswer: 'Maintaining ongoing stakeholder relationships',
+    explanation: 'WASBoK Domain Three emphasizes the importance of maintaining ongoing relationships with all stakeholders to ensure effective accessibility advocacy and implementation.',
+    wasBoKDomain: 'Domain Three: Advocating for Accessibility',
+    wasBoKSection: 'Domain Three B: Stakeholder engagement',
+    category: 'Stakeholder Management',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '133',
+    question: 'According to WASBoK Domain Three, which practice best supports accessibility communication?',
+    options: [
+      'Using technical language only',
+      'Implementing clear and effective communication strategies',
+      'Focusing only on written communication',
+      'Ignoring audience needs'
+    ],
+    correctAnswer: 'Implementing clear and effective communication strategies',
+    explanation: 'WASBoK Domain Three emphasizes the importance of implementing clear and effective communication strategies that reach and resonate with all relevant audiences.',
+    wasBoKDomain: 'Domain Three: Advocating for Accessibility',
+    wasBoKSection: 'Domain Three C: Communication strategies',
+    category: 'Communication',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '134',
+    question: 'Which practice best aligns with WASBoK Domain Three\'s principles for accessibility leadership?',
+    options: [
+      'Leading by technical expertise only',
+      'Demonstrating comprehensive accessibility leadership',
+      'Focusing only on team leadership',
+      'Ignoring organizational impact'
+    ],
+    correctAnswer: 'Demonstrating comprehensive accessibility leadership',
+    explanation: 'WASBoK Domain Three emphasizes the importance of demonstrating comprehensive accessibility leadership that influences both team and organizational practices.',
+    wasBoKDomain: 'Domain Three: Advocating for Accessibility',
+    wasBoKSection: 'Domain Three D: Leadership',
+    category: 'Leadership',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '135',
+    question: 'According to WASBoK Domain Three, which approach best supports accessibility innovation?',
+    options: [
+      'Focusing only on technical innovation',
+      'Implementing comprehensive innovation strategies',
+      'Addressing innovation reactively',
+      'Ignoring user needs'
+    ],
+    correctAnswer: 'Implementing comprehensive innovation strategies',
+    explanation: 'WASBoK Domain Three emphasizes the importance of implementing comprehensive innovation strategies that address all aspects of accessibility and consider user needs.',
+    wasBoKDomain: 'Domain Three: Advocating for Accessibility',
+    wasBoKSection: 'Domain Three E: Innovation',
+    category: 'Innovation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '136',
+    question: 'According to WASBoK Domain Four, which practice best supports accessibility research?',
+    options: [
+      'Conducting research without user involvement',
+      'Implementing user-centered accessibility research',
+      'Focusing only on technical research',
+      'Ignoring research methodologies'
+    ],
+    correctAnswer: 'Implementing user-centered accessibility research',
+    explanation: 'WASBoK Domain Four emphasizes the importance of implementing user-centered accessibility research that involves people with disabilities throughout the research process.',
+    wasBoKDomain: 'Domain Four: Researching Accessibility',
+    wasBoKSection: 'Domain Four A: Research methodologies',
+    category: 'Research',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '137',
+    question: 'Which approach best aligns with WASBoK Domain Four\'s principles for accessibility testing?',
+    options: [
+      'Testing with automated tools only',
+      'Implementing comprehensive testing methodologies',
+      'Focusing only on technical testing',
+      'Ignoring user feedback'
+    ],
+    correctAnswer: 'Implementing comprehensive testing methodologies',
+    explanation: 'WASBoK Domain Four emphasizes the importance of implementing comprehensive testing methodologies that combine automated, manual, and user testing approaches.',
+    wasBoKDomain: 'Domain Four: Researching Accessibility',
+    wasBoKSection: 'Domain Four B: Testing methodologies',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '138',
+    question: 'According to WASBoK Domain Four, which practice best supports accessibility evaluation?',
+    options: [
+      'Evaluating based on technical criteria only',
+      'Implementing comprehensive evaluation frameworks',
+      'Focusing only on compliance evaluation',
+      'Ignoring user experience'
+    ],
+    correctAnswer: 'Implementing comprehensive evaluation frameworks',
+    explanation: 'WASBoK Domain Four emphasizes the importance of implementing comprehensive evaluation frameworks that consider both technical compliance and user experience.',
+    wasBoKDomain: 'Domain Four: Researching Accessibility',
+    wasBoKSection: 'Domain Four C: Evaluation frameworks',
+    category: 'Evaluation',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '139',
+    question: 'Which practice best aligns with WASBoK Domain Four\'s principles for accessibility analysis?',
+    options: [
+      'Analyzing based on assumptions',
+      'Implementing data-driven analysis methods',
+      'Focusing only on qualitative analysis',
+      'Ignoring quantitative data'
+    ],
+    correctAnswer: 'Implementing data-driven analysis methods',
+    explanation: 'WASBoK Domain Four emphasizes the importance of implementing data-driven analysis methods that combine both qualitative and quantitative data for comprehensive insights.',
+    wasBoKDomain: 'Domain Four: Researching Accessibility',
+    wasBoKSection: 'Domain Four D: Analysis methods',
+    category: 'Analysis',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '140',
+    question: 'According to WASBoK Domain Four, which approach best supports accessibility reporting?',
+    options: [
+      'Creating reports without stakeholder input',
+      'Implementing comprehensive reporting frameworks',
+      'Focusing only on technical reporting',
+      'Ignoring audience needs'
+    ],
+    correctAnswer: 'Implementing comprehensive reporting frameworks',
+    explanation: 'WASBoK Domain Four emphasizes the importance of implementing comprehensive reporting frameworks that address the needs of all stakeholders and provide actionable insights.',
+    wasBoKDomain: 'Domain Four: Researching Accessibility',
+    wasBoKSection: 'Domain Four E: Reporting frameworks',
+    category: 'Reporting',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '141',
+    question: 'Which practice best aligns with WASBoK Domain Five\'s principles for accessibility standards?',
+    options: [
+      'Following standards without understanding',
+      'Implementing comprehensive standards knowledge',
+      'Focusing only on technical standards',
+      'Ignoring standard updates'
+    ],
+    correctAnswer: 'Implementing comprehensive standards knowledge',
+    explanation: 'WASBoK Domain Five emphasizes the importance of implementing comprehensive knowledge of accessibility standards, including their purpose, scope, and practical application.',
+    wasBoKDomain: 'Domain Five: Understanding Accessibility Standards',
+    wasBoKSection: 'Domain Five A: Standards knowledge',
+    category: 'Standards',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '142',
+    question: 'According to WASBoK Domain Five, which approach best supports accessibility compliance?',
+    options: [
+      'Addressing compliance reactively',
+      'Implementing proactive compliance strategies',
+      'Focusing only on technical compliance',
+      'Ignoring legal requirements'
+    ],
+    correctAnswer: 'Implementing proactive compliance strategies',
+    explanation: 'WASBoK Domain Five emphasizes the importance of implementing proactive compliance strategies that ensure ongoing adherence to accessibility standards and requirements.',
+    wasBoKDomain: 'Domain Five: Understanding Accessibility Standards',
+    wasBoKSection: 'Domain Five B: Compliance strategies',
+    category: 'Compliance',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '143',
+    question: 'Which practice best aligns with WASBoK Domain Five\'s principles for accessibility implementation?',
+    options: [
+      'Implementing standards without context',
+      'Applying standards with practical understanding',
+      'Focusing only on technical implementation',
+      'Ignoring user needs'
+    ],
+    correctAnswer: 'Applying standards with practical understanding',
+    explanation: 'WASBoK Domain Five emphasizes the importance of applying accessibility standards with practical understanding of their real-world implementation and impact.',
+    wasBoKDomain: 'Domain Five: Understanding Accessibility Standards',
+    wasBoKSection: 'Domain Five C: Implementation principles',
+    category: 'Implementation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '144',
+    question: 'According to WASBoK Domain Five, which approach best supports accessibility verification?',
+    options: [
+      'Verifying based on assumptions',
+      'Implementing comprehensive verification methods',
+      'Focusing only on technical verification',
+      'Ignoring user experience'
+    ],
+    correctAnswer: 'Implementing comprehensive verification methods',
+    explanation: 'WASBoK Domain Five emphasizes the importance of implementing comprehensive verification methods that ensure both technical compliance and practical usability.',
+    wasBoKDomain: 'Domain Five: Understanding Accessibility Standards',
+    wasBoKSection: 'Domain Five D: Verification methods',
+    category: 'Verification',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '145',
+    question: 'Which practice best aligns with WASBoK Domain Five\'s principles for accessibility documentation?',
+    options: [
+      'Creating documentation without context',
+      'Implementing comprehensive documentation practices',
+      'Focusing only on technical documentation',
+      'Ignoring stakeholder needs'
+    ],
+    correctAnswer: 'Implementing comprehensive documentation practices',
+    explanation: 'WASBoK Domain Five emphasizes the importance of implementing comprehensive documentation practices that address the needs of all stakeholders and provide clear guidance.',
+    wasBoKDomain: 'Domain Five: Understanding Accessibility Standards',
+    wasBoKSection: 'Domain Five E: Documentation practices',
+    category: 'Documentation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '146',
+    question: 'According to WASBoK Domain Six, which practice best supports accessibility tools?',
+    options: [
+      'Using tools without understanding',
+      'Implementing comprehensive tool knowledge',
+      'Focusing only on technical tools',
+      'Ignoring user needs'
+    ],
+    correctAnswer: 'Implementing comprehensive tool knowledge',
+    explanation: 'WASBoK Domain Six emphasizes the importance of implementing comprehensive knowledge of accessibility tools, including their capabilities, limitations, and appropriate use.',
+    wasBoKDomain: 'Domain Six: Understanding Accessibility Tools',
+    wasBoKSection: 'Domain Six A: Tool knowledge',
+    category: 'Tools',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '147',
+    question: 'Which approach best aligns with WASBoK Domain Six\'s principles for tool selection?',
+    options: [
+      'Selecting tools without evaluation',
+      'Implementing comprehensive tool evaluation',
+      'Focusing only on technical capabilities',
+      'Ignoring user requirements'
+    ],
+    correctAnswer: 'Implementing comprehensive tool evaluation',
+    explanation: 'WASBoK Domain Six emphasizes the importance of implementing comprehensive evaluation of accessibility tools to ensure they meet project needs and user requirements.',
+    wasBoKDomain: 'Domain Six: Understanding Accessibility Tools',
+    wasBoKSection: 'Domain Six B: Tool selection',
+    category: 'Tool Selection',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '148',
+    question: 'According to WASBoK Domain Six, which practice best supports tool implementation?',
+    options: [
+      'Implementing tools without planning',
+      'Implementing comprehensive tool strategies',
+      'Focusing only on technical implementation',
+      'Ignoring organizational needs'
+    ],
+    correctAnswer: 'Implementing comprehensive tool strategies',
+    explanation: 'WASBoK Domain Six emphasizes the importance of implementing comprehensive strategies for accessibility tool implementation that consider organizational needs and resources.',
+    wasBoKDomain: 'Domain Six: Understanding Accessibility Tools',
+    wasBoKSection: 'Domain Six C: Implementation strategies',
+    category: 'Implementation',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '149',
+    question: 'Which practice best aligns with WASBoK Domain Six\'s principles for tool maintenance?',
+    options: [
+      'Maintaining tools without updates',
+      'Implementing comprehensive maintenance practices',
+      'Focusing only on technical maintenance',
+      'Ignoring user feedback'
+    ],
+    correctAnswer: 'Implementing comprehensive maintenance practices',
+    explanation: 'WASBoK Domain Six emphasizes the importance of implementing comprehensive maintenance practices for accessibility tools to ensure their continued effectiveness.',
+    wasBoKDomain: 'Domain Six: Understanding Accessibility Tools',
+    wasBoKSection: 'Domain Six D: Maintenance practices',
+    category: 'Maintenance',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '150',
+    question: 'According to WASBoK Domain Six, which approach best supports tool integration?',
+    options: [
+      'Integrating tools without planning',
+      'Implementing comprehensive integration strategies',
+      'Focusing only on technical integration',
+      'Ignoring workflow impact'
+    ],
+    correctAnswer: 'Implementing comprehensive integration strategies',
+    explanation: 'WASBoK Domain Six emphasizes the importance of implementing comprehensive strategies for integrating accessibility tools into existing workflows and processes.',
+    wasBoKDomain: 'Domain Six: Understanding Accessibility Tools',
+    wasBoKSection: 'Domain Six E: Integration strategies',
+    category: 'Integration',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '151',
+    question: 'According to WASBoK Domain Seven, which practice best supports accessibility evaluation?',
+    options: [
+      'Evaluating based on assumptions',
+      'Implementing comprehensive evaluation methodologies',
+      'Focusing only on technical evaluation',
+      'Ignoring user experience'
+    ],
+    correctAnswer: 'Implementing comprehensive evaluation methodologies',
+    explanation: 'WASBoK Domain Seven emphasizes the importance of implementing comprehensive evaluation methodologies that consider both technical compliance and user experience in accessibility assessment.',
+    wasBoKDomain: 'Domain Seven: Evaluating Accessibility',
+    wasBoKSection: 'Domain Seven A: Evaluation methodologies',
+    category: 'Evaluation',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '152',
+    question: 'Which approach best aligns with WASBoK Domain Seven\'s principles for accessibility testing?',
+    options: [
+      'Testing with automated tools only',
+      'Implementing comprehensive testing strategies',
+      'Focusing only on technical testing',
+      'Ignoring user feedback'
+    ],
+    correctAnswer: 'Implementing comprehensive testing strategies',
+    explanation: 'WASBoK Domain Seven emphasizes the importance of implementing comprehensive testing strategies that combine automated, manual, and user testing approaches for thorough accessibility assessment.',
+    wasBoKDomain: 'Domain Seven: Evaluating Accessibility',
+    wasBoKSection: 'Domain Seven B: Testing strategies',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '153',
+    question: 'According to WASBoK Domain Seven, which practice best supports accessibility reporting?',
+    options: [
+      'Creating reports without stakeholder input',
+      'Implementing comprehensive reporting methodologies',
+      'Focusing only on technical reporting',
+      'Ignoring audience needs'
+    ],
+    correctAnswer: 'Implementing comprehensive reporting methodologies',
+    explanation: 'WASBoK Domain Seven emphasizes the importance of implementing comprehensive reporting methodologies that address the needs of all stakeholders and provide actionable insights.',
+    wasBoKDomain: 'Domain Seven: Evaluating Accessibility',
+    wasBoKSection: 'Domain Seven C: Reporting methodologies',
+    category: 'Reporting',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '154',
+    question: 'Which practice best aligns with WASBoK Domain Seven\'s principles for accessibility analysis?',
+    options: [
+      'Analyzing based on assumptions',
+      'Implementing comprehensive analysis frameworks',
+      'Focusing only on technical analysis',
+      'Ignoring user experience'
+    ],
+    correctAnswer: 'Implementing comprehensive analysis frameworks',
+    explanation: 'WASBoK Domain Seven emphasizes the importance of implementing comprehensive analysis frameworks that consider both technical compliance and user experience in accessibility assessment.',
+    wasBoKDomain: 'Domain Seven: Evaluating Accessibility',
+    wasBoKSection: 'Domain Seven D: Analysis frameworks',
+    category: 'Analysis',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '155',
+    question: 'According to WASBoK Domain Seven, which approach best supports accessibility recommendations?',
+    options: [
+      'Providing generic recommendations',
+      'Implementing comprehensive recommendation strategies',
+      'Focusing only on technical recommendations',
+      'Ignoring stakeholder needs'
+    ],
+    correctAnswer: 'Implementing comprehensive recommendation strategies',
+    explanation: 'WASBoK Domain Seven emphasizes the importance of implementing comprehensive recommendation strategies that address the specific needs of stakeholders and provide actionable solutions.',
+    wasBoKDomain: 'Domain Seven: Evaluating Accessibility',
+    wasBoKSection: 'Domain Seven E: Recommendation strategies',
+    category: 'Recommendations',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '156',
+    question: 'Which practice best aligns with WASBoK Domain Eight\'s principles for accessibility training?',
+    options: [
+      'Providing one-time training sessions',
+      'Implementing comprehensive training programs',
+      'Focusing only on technical training',
+      'Ignoring learner needs'
+    ],
+    correctAnswer: 'Implementing comprehensive training programs',
+    explanation: 'WASBoK Domain Eight emphasizes the importance of implementing comprehensive training programs that address the diverse needs of learners and cover all aspects of accessibility.',
+    wasBoKDomain: 'Domain Eight: Training in Accessibility',
+    wasBoKSection: 'Domain Eight A: Training programs',
+    category: 'Training',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '157',
+    question: 'According to WASBoK Domain Eight, which approach best supports accessibility education?',
+    options: [
+      'Educating without assessment',
+      'Implementing comprehensive education strategies',
+      'Focusing only on technical education',
+      'Ignoring learning outcomes'
+    ],
+    correctAnswer: 'Implementing comprehensive education strategies',
+    explanation: 'WASBoK Domain Eight emphasizes the importance of implementing comprehensive education strategies that ensure effective learning and measurable outcomes in accessibility education.',
+    wasBoKDomain: 'Domain Eight: Training in Accessibility',
+    wasBoKSection: 'Domain Eight B: Education strategies',
+    category: 'Education',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '158',
+    question: 'Which practice best aligns with WASBoK Domain Eight\'s principles for accessibility assessment?',
+    options: [
+      'Assessing without feedback',
+      'Implementing comprehensive assessment methods',
+      'Focusing only on technical assessment',
+      'Ignoring learner progress'
+    ],
+    correctAnswer: 'Implementing comprehensive assessment methods',
+    explanation: 'WASBoK Domain Eight emphasizes the importance of implementing comprehensive assessment methods that measure learning outcomes and provide valuable feedback for improvement.',
+    wasBoKDomain: 'Domain Eight: Training in Accessibility',
+    wasBoKSection: 'Domain Eight C: Assessment methods',
+    category: 'Assessment',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '159',
+    question: 'According to WASBoK Domain Eight, which approach best supports accessibility curriculum development?',
+    options: [
+      'Developing curriculum without input',
+      'Implementing comprehensive curriculum design',
+      'Focusing only on technical content',
+      'Ignoring learning objectives'
+    ],
+    correctAnswer: 'Implementing comprehensive curriculum design',
+    explanation: 'WASBoK Domain Eight emphasizes the importance of implementing comprehensive curriculum design that addresses learning objectives and meets the needs of diverse learners.',
+    wasBoKDomain: 'Domain Eight: Training in Accessibility',
+    wasBoKSection: 'Domain Eight D: Curriculum development',
+    category: 'Curriculum',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '160',
+    question: 'Which practice best aligns with WASBoK Domain Eight\'s principles for accessibility delivery?',
+    options: [
+      'Delivering without engagement',
+      'Implementing comprehensive delivery methods',
+      'Focusing only on technical delivery',
+      'Ignoring learner engagement'
+    ],
+    correctAnswer: 'Implementing comprehensive delivery methods',
+    explanation: 'WASBoK Domain Eight emphasizes the importance of implementing comprehensive delivery methods that engage learners and ensure effective knowledge transfer in accessibility training.',
+    wasBoKDomain: 'Domain Eight: Training in Accessibility',
+    wasBoKSection: 'Domain Eight E: Delivery methods',
+    category: 'Delivery',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '161',
+    question: 'According to WASBoK Domain Nine, which practice best supports accessibility research?',
+    options: [
+      'Researching without methodology',
+      'Implementing comprehensive research approaches',
+      'Focusing only on technical research',
+      'Ignoring research ethics'
+    ],
+    correctAnswer: 'Implementing comprehensive research approaches',
+    explanation: 'WASBoK Domain Nine emphasizes the importance of implementing comprehensive research approaches that follow ethical guidelines and produce meaningful accessibility insights.',
+    wasBoKDomain: 'Domain Nine: Researching Accessibility',
+    wasBoKSection: 'Domain Nine A: Research approaches',
+    category: 'Research',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '162',
+    question: 'Which approach best aligns with WASBoK Domain Nine\'s principles for accessibility methodology?',
+    options: [
+      'Using methodology without validation',
+      'Implementing comprehensive research methodologies',
+      'Focusing only on technical methodology',
+      'Ignoring research validity'
+    ],
+    correctAnswer: 'Implementing comprehensive research methodologies',
+    explanation: 'WASBoK Domain Nine emphasizes the importance of implementing comprehensive research methodologies that ensure validity and reliability in accessibility research.',
+    wasBoKDomain: 'Domain Nine: Researching Accessibility',
+    wasBoKSection: 'Domain Nine B: Research methodologies',
+    category: 'Methodology',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '163',
+    question: 'According to WASBoK Domain Nine, which practice best supports accessibility analysis?',
+    options: [
+      'Analyzing without rigor',
+      'Implementing comprehensive analysis approaches',
+      'Focusing only on technical analysis',
+      'Ignoring research quality'
+    ],
+    correctAnswer: 'Implementing comprehensive analysis approaches',
+    explanation: 'WASBoK Domain Nine emphasizes the importance of implementing comprehensive analysis approaches that ensure quality and rigor in accessibility research.',
+    wasBoKDomain: 'Domain Nine: Researching Accessibility',
+    wasBoKSection: 'Domain Nine C: Analysis approaches',
+    category: 'Analysis',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '164',
+    question: 'Which practice best aligns with WASBoK Domain Nine\'s principles for accessibility dissemination?',
+    options: [
+      'Disseminating without impact',
+      'Implementing comprehensive dissemination strategies',
+      'Focusing only on technical dissemination',
+      'Ignoring audience needs'
+    ],
+    correctAnswer: 'Implementing comprehensive dissemination strategies',
+    explanation: 'WASBoK Domain Nine emphasizes the importance of implementing comprehensive dissemination strategies that ensure research findings reach and impact relevant audiences.',
+    wasBoKDomain: 'Domain Nine: Researching Accessibility',
+    wasBoKSection: 'Domain Nine D: Dissemination strategies',
+    category: 'Dissemination',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '165',
+    question: 'According to WASBoK Domain Nine, which approach best supports accessibility collaboration?',
+    options: [
+      'Collaborating without coordination',
+      'Implementing comprehensive collaboration frameworks',
+      'Focusing only on technical collaboration',
+      'Ignoring stakeholder needs'
+    ],
+    correctAnswer: 'Implementing comprehensive collaboration frameworks',
+    explanation: 'WASBoK Domain Nine emphasizes the importance of implementing comprehensive collaboration frameworks that facilitate effective partnerships in accessibility research.',
+    wasBoKDomain: 'Domain Nine: Researching Accessibility',
+    wasBoKSection: 'Domain Nine E: Collaboration frameworks',
+    category: 'Collaboration',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '166',
+    question: 'According to WASBoK Domain Ten, which practice best supports accessibility innovation?',
+    options: [
+      'Innovating without research',
+      'Implementing comprehensive innovation approaches',
+      'Focusing only on technical innovation',
+      'Ignoring user needs'
+    ],
+    correctAnswer: 'Implementing comprehensive innovation approaches',
+    explanation: 'WASBoK Domain Ten emphasizes the importance of implementing comprehensive innovation approaches that consider user needs and leverage research insights for meaningful accessibility solutions.',
+    wasBoKDomain: 'Domain Ten: Innovating Accessibility',
+    wasBoKSection: 'Domain Ten A: Innovation approaches',
+    category: 'Innovation',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '167',
+    question: 'Which approach best aligns with WASBoK Domain Ten\'s principles for accessibility technology?',
+    options: [
+      'Using technology without evaluation',
+      'Implementing comprehensive technology strategies',
+      'Focusing only on technical capabilities',
+      'Ignoring user requirements'
+    ],
+    correctAnswer: 'Implementing comprehensive technology strategies',
+    explanation: 'WASBoK Domain Ten emphasizes the importance of implementing comprehensive technology strategies that address user needs and leverage emerging technologies for accessibility.',
+    wasBoKDomain: 'Domain Ten: Innovating Accessibility',
+    wasBoKSection: 'Domain Ten B: Technology strategies',
+    category: 'Technology',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '168',
+    question: 'According to WASBoK Domain Ten, which practice best supports accessibility design?',
+    options: [
+      'Designing without research',
+      'Implementing comprehensive design approaches',
+      'Focusing only on technical design',
+      'Ignoring user experience'
+    ],
+    correctAnswer: 'Implementing comprehensive design approaches',
+    explanation: 'WASBoK Domain Ten emphasizes the importance of implementing comprehensive design approaches that consider user needs and leverage research insights for accessible solutions.',
+    wasBoKDomain: 'Domain Ten: Innovating Accessibility',
+    wasBoKSection: 'Domain Ten C: Design approaches',
+    category: 'Design',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '169',
+    question: 'Which practice best aligns with WASBoK Domain Ten\'s principles for accessibility development?',
+    options: [
+      'Developing without planning',
+      'Implementing comprehensive development strategies',
+      'Focusing only on technical development',
+      'Ignoring user feedback'
+    ],
+    correctAnswer: 'Implementing comprehensive development strategies',
+    explanation: 'WASBoK Domain Ten emphasizes the importance of implementing comprehensive development strategies that incorporate user feedback and leverage innovative approaches for accessibility.',
+    wasBoKDomain: 'Domain Ten: Innovating Accessibility',
+    wasBoKSection: 'Domain Ten D: Development strategies',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '170',
+    question: 'According to WASBoK Domain Ten, which approach best supports accessibility implementation?',
+    options: [
+      'Implementing without evaluation',
+      'Implementing comprehensive implementation strategies',
+      'Focusing only on technical implementation',
+      'Ignoring organizational needs'
+    ],
+    correctAnswer: 'Implementing comprehensive implementation strategies',
+    explanation: 'WASBoK Domain Ten emphasizes the importance of implementing comprehensive strategies for accessibility implementation that consider organizational needs and leverage innovative approaches.',
+    wasBoKDomain: 'Domain Ten: Innovating Accessibility',
+    wasBoKSection: 'Domain Ten E: Implementation strategies',
+    category: 'Implementation',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '171',
+    question: 'Which practice best aligns with WASBoK Domain Eleven\'s principles for accessibility leadership?',
+    options: [
+      'Leading without vision',
+      'Implementing comprehensive leadership approaches',
+      'Focusing only on technical leadership',
+      'Ignoring organizational impact'
+    ],
+    correctAnswer: 'Implementing comprehensive leadership approaches',
+    explanation: 'WASBoK Domain Eleven emphasizes the importance of implementing comprehensive leadership approaches that drive organizational change and promote accessibility excellence.',
+    wasBoKDomain: 'Domain Eleven: Leading Accessibility',
+    wasBoKSection: 'Domain Eleven A: Leadership approaches',
+    category: 'Leadership',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '172',
+    question: 'According to WASBoK Domain Eleven, which approach best supports accessibility strategy?',
+    options: [
+      'Strategizing without planning',
+      'Implementing comprehensive strategic approaches',
+      'Focusing only on technical strategy',
+      'Ignoring organizational goals'
+    ],
+    correctAnswer: 'Implementing comprehensive strategic approaches',
+    explanation: 'WASBoK Domain Eleven emphasizes the importance of implementing comprehensive strategic approaches that align with organizational goals and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Eleven: Leading Accessibility',
+    wasBoKSection: 'Domain Eleven B: Strategic approaches',
+    category: 'Strategy',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '173',
+    question: 'Which practice best aligns with WASBoK Domain Eleven\'s principles for accessibility management?',
+    options: [
+      'Managing without oversight',
+      'Implementing comprehensive management approaches',
+      'Focusing only on technical management',
+      'Ignoring team needs'
+    ],
+    correctAnswer: 'Implementing comprehensive management approaches',
+    explanation: 'WASBoK Domain Eleven emphasizes the importance of implementing comprehensive management approaches that support team needs and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Eleven: Leading Accessibility',
+    wasBoKSection: 'Domain Eleven C: Management approaches',
+    category: 'Management',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '174',
+    question: 'According to WASBoK Domain Eleven, which approach best supports accessibility governance?',
+    options: [
+      'Governing without structure',
+      'Implementing comprehensive governance frameworks',
+      'Focusing only on technical governance',
+      'Ignoring organizational needs'
+    ],
+    correctAnswer: 'Implementing comprehensive governance frameworks',
+    explanation: 'WASBoK Domain Eleven emphasizes the importance of implementing comprehensive governance frameworks that ensure organizational accountability and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Eleven: Leading Accessibility',
+    wasBoKSection: 'Domain Eleven D: Governance frameworks',
+    category: 'Governance',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '175',
+    question: 'Which practice best aligns with WASBoK Domain Eleven\'s principles for accessibility culture?',
+    options: [
+      'Building culture without engagement',
+      'Implementing comprehensive cultural approaches',
+      'Focusing only on technical culture',
+      'Ignoring organizational values'
+    ],
+    correctAnswer: 'Implementing comprehensive cultural approaches',
+    explanation: 'WASBoK Domain Eleven emphasizes the importance of implementing comprehensive cultural approaches that align with organizational values and promote accessibility excellence.',
+    wasBoKDomain: 'Domain Eleven: Leading Accessibility',
+    wasBoKSection: 'Domain Eleven E: Cultural approaches',
+    category: 'Culture',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '176',
+    question: 'According to WASBoK Domain Twelve, which practice best supports accessibility advocacy?',
+    options: [
+      'Advocating without impact',
+      'Implementing comprehensive advocacy approaches',
+      'Focusing only on technical advocacy',
+      'Ignoring stakeholder needs'
+    ],
+    correctAnswer: 'Implementing comprehensive advocacy approaches',
+    explanation: 'WASBoK Domain Twelve emphasizes the importance of implementing comprehensive advocacy approaches that address stakeholder needs and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Twelve: Advocating for Accessibility',
+    wasBoKSection: 'Domain Twelve A: Advocacy approaches',
+    category: 'Advocacy',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '177',
+    question: 'Which approach best aligns with WASBoK Domain Twelve\'s principles for accessibility communication?',
+    options: [
+      'Communicating without strategy',
+      'Implementing comprehensive communication approaches',
+      'Focusing only on technical communication',
+      'Ignoring audience needs'
+    ],
+    correctAnswer: 'Implementing comprehensive communication approaches',
+    explanation: 'WASBoK Domain Twelve emphasizes the importance of implementing comprehensive communication approaches that reach and resonate with all relevant audiences.',
+    wasBoKDomain: 'Domain Twelve: Advocating for Accessibility',
+    wasBoKSection: 'Domain Twelve B: Communication approaches',
+    category: 'Communication',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '178',
+    question: 'According to WASBoK Domain Twelve, which practice best supports accessibility engagement?',
+    options: [
+      'Engaging without purpose',
+      'Implementing comprehensive engagement strategies',
+      'Focusing only on technical engagement',
+      'Ignoring stakeholder needs'
+    ],
+    correctAnswer: 'Implementing comprehensive engagement strategies',
+    explanation: 'WASBoK Domain Twelve emphasizes the importance of implementing comprehensive engagement strategies that build meaningful relationships with stakeholders.',
+    wasBoKDomain: 'Domain Twelve: Advocating for Accessibility',
+    wasBoKSection: 'Domain Twelve C: Engagement strategies',
+    category: 'Engagement',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '179',
+    question: 'Which practice best aligns with WASBoK Domain Twelve\'s principles for accessibility influence?',
+    options: [
+      'Influencing without impact',
+      'Implementing comprehensive influence approaches',
+      'Focusing only on technical influence',
+      'Ignoring organizational needs'
+    ],
+    correctAnswer: 'Implementing comprehensive influence approaches',
+    explanation: 'WASBoK Domain Twelve emphasizes the importance of implementing comprehensive influence approaches that drive organizational change and promote accessibility excellence.',
+    wasBoKDomain: 'Domain Twelve: Advocating for Accessibility',
+    wasBoKSection: 'Domain Twelve D: Influence approaches',
+    category: 'Influence',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '180',
+    question: 'According to WASBoK Domain Twelve, which approach best supports accessibility collaboration?',
+    options: [
+      'Collaborating without coordination',
+      'Implementing comprehensive collaboration strategies',
+      'Focusing only on technical collaboration',
+      'Ignoring partner needs'
+    ],
+    correctAnswer: 'Implementing comprehensive collaboration strategies',
+    explanation: 'WASBoK Domain Twelve emphasizes the importance of implementing comprehensive collaboration strategies that build effective partnerships and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Twelve: Advocating for Accessibility',
+    wasBoKSection: 'Domain Twelve E: Collaboration strategies',
+    category: 'Collaboration',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '181',
+    question: 'According to WASBoK Domain Thirteen, which practice best supports accessibility policy?',
+    options: [
+      'Creating policies without research',
+      'Implementing comprehensive policy approaches',
+      'Focusing only on technical policies',
+      'Ignoring stakeholder needs'
+    ],
+    correctAnswer: 'Implementing comprehensive policy approaches',
+    explanation: 'WASBoK Domain Thirteen emphasizes the importance of implementing comprehensive policy approaches that address stakeholder needs and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Thirteen: Policy and Standards',
+    wasBoKSection: 'Domain Thirteen A: Policy approaches',
+    category: 'Policy',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '182',
+    question: 'Which approach best aligns with WASBoK Domain Thirteen\'s principles for accessibility standards?',
+    options: [
+      'Following standards without understanding',
+      'Implementing comprehensive standards approaches',
+      'Focusing only on technical standards',
+      'Ignoring standard updates'
+    ],
+    correctAnswer: 'Implementing comprehensive standards approaches',
+    explanation: 'WASBoK Domain Thirteen emphasizes the importance of implementing comprehensive approaches to accessibility standards that ensure effective implementation and ongoing compliance.',
+    wasBoKDomain: 'Domain Thirteen: Policy and Standards',
+    wasBoKSection: 'Domain Thirteen B: Standards approaches',
+    category: 'Standards',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '183',
+    question: 'According to WASBoK Domain Thirteen, which practice best supports accessibility compliance?',
+    options: [
+      'Addressing compliance reactively',
+      'Implementing comprehensive compliance strategies',
+      'Focusing only on technical compliance',
+      'Ignoring legal requirements'
+    ],
+    correctAnswer: 'Implementing comprehensive compliance strategies',
+    explanation: 'WASBoK Domain Thirteen emphasizes the importance of implementing comprehensive compliance strategies that ensure ongoing adherence to accessibility standards and requirements.',
+    wasBoKDomain: 'Domain Thirteen: Policy and Standards',
+    wasBoKSection: 'Domain Thirteen C: Compliance strategies',
+    category: 'Compliance',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '184',
+    question: 'Which practice best aligns with WASBoK Domain Thirteen\'s principles for accessibility regulation?',
+    options: [
+      'Regulating without flexibility',
+      'Implementing comprehensive regulatory approaches',
+      'Focusing only on technical regulation',
+      'Ignoring organizational needs'
+    ],
+    correctAnswer: 'Implementing comprehensive regulatory approaches',
+    explanation: 'WASBoK Domain Thirteen emphasizes the importance of implementing comprehensive regulatory approaches that balance compliance requirements with organizational needs.',
+    wasBoKDomain: 'Domain Thirteen: Policy and Standards',
+    wasBoKSection: 'Domain Thirteen D: Regulatory approaches',
+    category: 'Regulation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '185',
+    question: 'According to WASBoK Domain Thirteen, which approach best supports accessibility enforcement?',
+    options: [
+      'Enforcing without guidance',
+      'Implementing comprehensive enforcement strategies',
+      'Focusing only on technical enforcement',
+      'Ignoring stakeholder needs'
+    ],
+    correctAnswer: 'Implementing comprehensive enforcement strategies',
+    explanation: 'WASBoK Domain Thirteen emphasizes the importance of implementing comprehensive enforcement strategies that ensure effective implementation of accessibility requirements.',
+    wasBoKDomain: 'Domain Thirteen: Policy and Standards',
+    wasBoKSection: 'Domain Thirteen E: Enforcement strategies',
+    category: 'Enforcement',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '186',
+    question: 'Which practice best aligns with WASBoK Domain Fourteen\'s principles for accessibility research?',
+    options: [
+      'Researching without methodology',
+      'Implementing comprehensive research approaches',
+      'Focusing only on technical research',
+      'Ignoring research ethics'
+    ],
+    correctAnswer: 'Implementing comprehensive research approaches',
+    explanation: 'WASBoK Domain Fourteen emphasizes the importance of implementing comprehensive research approaches that follow ethical guidelines and produce meaningful accessibility insights.',
+    wasBoKDomain: 'Domain Fourteen: Research and Development',
+    wasBoKSection: 'Domain Fourteen A: Research approaches',
+    category: 'Research',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '187',
+    question: 'According to WASBoK Domain Fourteen, which approach best supports accessibility development?',
+    options: [
+      'Developing without planning',
+      'Implementing comprehensive development strategies',
+      'Focusing only on technical development',
+      'Ignoring user needs'
+    ],
+    correctAnswer: 'Implementing comprehensive development strategies',
+    explanation: 'WASBoK Domain Fourteen emphasizes the importance of implementing comprehensive development strategies that incorporate user needs and leverage research insights.',
+    wasBoKDomain: 'Domain Fourteen: Research and Development',
+    wasBoKSection: 'Domain Fourteen B: Development strategies',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '188',
+    question: 'Which practice best aligns with WASBoK Domain Fourteen\'s principles for accessibility innovation?',
+    options: [
+      'Innovating without research',
+      'Implementing comprehensive innovation approaches',
+      'Focusing only on technical innovation',
+      'Ignoring user requirements'
+    ],
+    correctAnswer: 'Implementing comprehensive innovation approaches',
+    explanation: 'WASBoK Domain Fourteen emphasizes the importance of implementing comprehensive innovation approaches that address user needs and leverage research insights.',
+    wasBoKDomain: 'Domain Fourteen: Research and Development',
+    wasBoKSection: 'Domain Fourteen C: Innovation approaches',
+    category: 'Innovation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '189',
+    question: 'According to WASBoK Domain Fourteen, which approach best supports accessibility testing?',
+    options: [
+      'Testing without methodology',
+      'Implementing comprehensive testing approaches',
+      'Focusing only on technical testing',
+      'Ignoring user feedback'
+    ],
+    correctAnswer: 'Implementing comprehensive testing approaches',
+    explanation: 'WASBoK Domain Fourteen emphasizes the importance of implementing comprehensive testing approaches that combine automated, manual, and user testing methods.',
+    wasBoKDomain: 'Domain Fourteen: Research and Development',
+    wasBoKSection: 'Domain Fourteen D: Testing approaches',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '190',
+    question: 'Which practice best aligns with WASBoK Domain Fourteen\'s principles for accessibility evaluation?',
+    options: [
+      'Evaluating without criteria',
+      'Implementing comprehensive evaluation approaches',
+      'Focusing only on technical evaluation',
+      'Ignoring user experience'
+    ],
+    correctAnswer: 'Implementing comprehensive evaluation approaches',
+    explanation: 'WASBoK Domain Fourteen emphasizes the importance of implementing comprehensive evaluation approaches that consider both technical compliance and user experience.',
+    wasBoKDomain: 'Domain Fourteen: Research and Development',
+    wasBoKSection: 'Domain Fourteen E: Evaluation approaches',
+    category: 'Evaluation',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '191',
+    question: 'According to WASBoK Domain Fifteen, which practice best supports accessibility education?',
+    options: [
+      'Educating without assessment',
+      'Implementing comprehensive education approaches',
+      'Focusing only on technical education',
+      'Ignoring learning outcomes'
+    ],
+    correctAnswer: 'Implementing comprehensive education approaches',
+    explanation: 'WASBoK Domain Fifteen emphasizes the importance of implementing comprehensive education approaches that ensure effective learning and measurable outcomes.',
+    wasBoKDomain: 'Domain Fifteen: Education and Training',
+    wasBoKSection: 'Domain Fifteen A: Education approaches',
+    category: 'Education',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '192',
+    question: 'Which approach best aligns with WASBoK Domain Fifteen\'s principles for accessibility training?',
+    options: [
+      'Training without planning',
+      'Implementing comprehensive training approaches',
+      'Focusing only on technical training',
+      'Ignoring learner needs'
+    ],
+    correctAnswer: 'Implementing comprehensive training approaches',
+    explanation: 'WASBoK Domain Fifteen emphasizes the importance of implementing comprehensive training approaches that address the diverse needs of learners.',
+    wasBoKDomain: 'Domain Fifteen: Education and Training',
+    wasBoKSection: 'Domain Fifteen B: Training approaches',
+    category: 'Training',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '193',
+    question: 'According to WASBoK Domain Fifteen, which practice best supports accessibility assessment?',
+    options: [
+      'Assessing without feedback',
+      'Implementing comprehensive assessment approaches',
+      'Focusing only on technical assessment',
+      'Ignoring learner progress'
+    ],
+    correctAnswer: 'Implementing comprehensive assessment approaches',
+    explanation: 'WASBoK Domain Fifteen emphasizes the importance of implementing comprehensive assessment approaches that measure learning outcomes and provide valuable feedback.',
+    wasBoKDomain: 'Domain Fifteen: Education and Training',
+    wasBoKSection: 'Domain Fifteen C: Assessment approaches',
+    category: 'Assessment',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '194',
+    question: 'Which practice best aligns with WASBoK Domain Fifteen\'s principles for accessibility curriculum?',
+    options: [
+      'Developing curriculum without input',
+      'Implementing comprehensive curriculum approaches',
+      'Focusing only on technical content',
+      'Ignoring learning objectives'
+    ],
+    correctAnswer: 'Implementing comprehensive curriculum approaches',
+    explanation: 'WASBoK Domain Fifteen emphasizes the importance of implementing comprehensive curriculum approaches that address learning objectives and meet diverse learner needs.',
+    wasBoKDomain: 'Domain Fifteen: Education and Training',
+    wasBoKSection: 'Domain Fifteen D: Curriculum approaches',
+    category: 'Curriculum',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '195',
+    question: 'According to WASBoK Domain Fifteen, which approach best supports accessibility delivery?',
+    options: [
+      'Delivering without engagement',
+      'Implementing comprehensive delivery approaches',
+      'Focusing only on technical delivery',
+      'Ignoring learner engagement'
+    ],
+    correctAnswer: 'Implementing comprehensive delivery approaches',
+    explanation: 'WASBoK Domain Fifteen emphasizes the importance of implementing comprehensive delivery approaches that engage learners and ensure effective knowledge transfer.',
+    wasBoKDomain: 'Domain Fifteen: Education and Training',
+    wasBoKSection: 'Domain Fifteen E: Delivery approaches',
+    category: 'Delivery',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '196',
+    question: 'Which practice best aligns with WASBoK Domain Sixteen\'s principles for accessibility management?',
+    options: [
+      'Managing without planning',
+      'Implementing comprehensive management approaches',
+      'Focusing only on technical management',
+      'Ignoring organizational needs'
+    ],
+    correctAnswer: 'Implementing comprehensive management approaches',
+    explanation: 'WASBoK Domain Sixteen emphasizes the importance of implementing comprehensive management approaches that support organizational needs and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Sixteen: Management and Leadership',
+    wasBoKSection: 'Domain Sixteen A: Management approaches',
+    category: 'Management',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '197',
+    question: 'According to WASBoK Domain Sixteen, which approach best supports accessibility leadership?',
+    options: [
+      'Leading without vision',
+      'Implementing comprehensive leadership approaches',
+      'Focusing only on technical leadership',
+      'Ignoring organizational impact'
+    ],
+    correctAnswer: 'Implementing comprehensive leadership approaches',
+    explanation: 'WASBoK Domain Sixteen emphasizes the importance of implementing comprehensive leadership approaches that drive organizational change and promote accessibility excellence.',
+    wasBoKDomain: 'Domain Sixteen: Management and Leadership',
+    wasBoKSection: 'Domain Sixteen B: Leadership approaches',
+    category: 'Leadership',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '198',
+    question: 'Which practice best aligns with WASBoK Domain Sixteen\'s principles for accessibility strategy?',
+    options: [
+      'Strategizing without planning',
+      'Implementing comprehensive strategic approaches',
+      'Focusing only on technical strategy',
+      'Ignoring organizational goals'
+    ],
+    correctAnswer: 'Implementing comprehensive strategic approaches',
+    explanation: 'WASBoK Domain Sixteen emphasizes the importance of implementing comprehensive strategic approaches that align with organizational goals and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Sixteen: Management and Leadership',
+    wasBoKSection: 'Domain Sixteen C: Strategic approaches',
+    category: 'Strategy',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '199',
+    question: 'According to WASBoK Domain Sixteen, which approach best supports accessibility governance?',
+    options: [
+      'Governing without structure',
+      'Implementing comprehensive governance approaches',
+      'Focusing only on technical governance',
+      'Ignoring organizational needs'
+    ],
+    correctAnswer: 'Implementing comprehensive governance approaches',
+    explanation: 'WASBoK Domain Sixteen emphasizes the importance of implementing comprehensive governance approaches that ensure organizational accountability and drive accessibility excellence.',
+    wasBoKDomain: 'Domain Sixteen: Management and Leadership',
+    wasBoKSection: 'Domain Sixteen D: Governance approaches',
+    category: 'Governance',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '200',
+    question: 'Which practice best aligns with WASBoK Domain Sixteen\'s principles for accessibility culture?',
+    options: [
+      'Building culture without engagement',
+      'Implementing comprehensive cultural approaches',
+      'Focusing only on technical culture',
+      'Ignoring organizational values'
+    ],
+    correctAnswer: 'Implementing comprehensive cultural approaches',
+    explanation: 'WASBoK Domain Sixteen emphasizes the importance of implementing comprehensive cultural approaches that align with organizational values and promote accessibility excellence.',
+    wasBoKDomain: 'Domain Sixteen: Management and Leadership',
+    wasBoKSection: 'Domain Sixteen E: Cultural approaches',
+    category: 'Culture',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
     id: '201',
     question: 'Which implementation best meets WCAG 2.2 Success Criterion 2.5.7 Dragging Movements?',
     options: [
@@ -2665,6 +4348,329 @@ export const quizQuestions: QuizQuestion[] = [
     wasBoKSection: 'Dynamic Content Testing'
   },
   {
+    id: '252',
+    question: 'Which practice helps avoid the failure of Success Criterion 1.3.2 (F1) regarding positioning information with CSS?',
+    options: [
+      'Using CSS positioning to convey meaning',
+      'Using semantic HTML structure and proper markup',
+      'Relying on visual layout only',
+      'Removing all CSS positioning'
+    ],
+    correctAnswer: 'Using semantic HTML structure and proper markup',
+    explanation: 'To avoid F1 failure, content should use proper semantic HTML structure rather than relying on CSS positioning to convey meaning. This ensures information and relationships are preserved when CSS is disabled or modified.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '253',
+    question: 'How can you avoid the failure of Success Criterion 1.3.1 (F2) regarding text presentation?',
+    options: [
+      'Using only visual formatting',
+      'Applying appropriate semantic markup for text changes',
+      'Changing font styles without markup',
+      'Removing all text formatting'
+    ],
+    correctAnswer: 'Applying appropriate semantic markup for text changes',
+    explanation: 'To avoid F2 failure, use proper semantic markup (like <em>, <strong>, or ARIA attributes) when changes in text presentation convey meaning, rather than relying solely on visual formatting.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '254',
+    question: 'Which approach prevents the failure of Success Criterion 1.1.1 (F3) regarding CSS background images?',
+    options: [
+      'Using CSS background-image for all images',
+      'Providing text alternatives for important images in HTML',
+      'Hiding images from screen readers',
+      'Converting all images to CSS backgrounds'
+    ],
+    correctAnswer: 'Providing text alternatives for important images in HTML',
+    explanation: 'To avoid F3 failure, important images should be included using HTML <img> elements with appropriate alt text, rather than CSS background images which cannot convey meaningful information to assistive technologies.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '255',
+    question: 'How can you prevent the failure of Success Criterion 2.2.2 (F4) regarding blinking content?',
+    options: [
+      'Using CSS text-decoration:blink',
+      'Providing a mechanism to stop blinking within 5 seconds',
+      'Making content blink indefinitely',
+      'Using JavaScript for blinking effects'
+    ],
+    correctAnswer: 'Providing a mechanism to stop blinking within 5 seconds',
+    explanation: 'To avoid F4 failure, any blinking content must either stop within 5 seconds automatically or provide a mechanism for users to stop it. This helps prevent seizures and cognitive difficulties.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '256',
+    question: 'Which practice helps avoid the failure of Success Criterion 1.2.2 (F8) regarding captions?',
+    options: [
+      'Providing partial captions',
+      'Including all dialogue and important sound effects in captions',
+      'Using auto-generated captions only',
+      'Omitting background sounds'
+    ],
+    correctAnswer: 'Including all dialogue and important sound effects in captions',
+    explanation: 'To avoid F8 failure, captions must include all dialogue and important sound effects, ensuring deaf or hard-of-hearing users have access to all essential audio information.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '257',
+    question: 'How can you prevent the failure of Success Criterion 3.2.5 (F9) regarding context changes?',
+    options: [
+      'Changing context when focus moves',
+      'Waiting for explicit user action before changing context',
+      'Using automatic form submission',
+      'Implementing automatic updates'
+    ],
+    correctAnswer: 'Waiting for explicit user action before changing context',
+    explanation: 'To avoid F9 failure, context changes should only occur when users explicitly request them, not automatically when focus moves away from an element. This prevents confusion and maintains user control.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '258',
+    question: 'Which approach prevents the failure of Success Criterion 2.1.2 (F10) regarding keyboard traps?',
+    options: [
+      'Combining formats without keyboard access',
+      'Ensuring keyboard navigation through all content',
+      'Using mouse-only interactions',
+      'Implementing modal dialogs without exits'
+    ],
+    correctAnswer: 'Ensuring keyboard navigation through all content',
+    explanation: 'To avoid F10 failure, ensure that keyboard users can navigate through all content and functionality, including when multiple content formats are combined, without getting trapped.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '259',
+    question: 'How can you avoid the failure of Success Criterion 2.2.5 (F12) regarding session timeouts?',
+    options: [
+      'Using fixed session timeouts',
+      'Providing mechanisms to extend time and save data',
+      'Implementing automatic logouts',
+      'Removing all timeouts'
+    ],
+    correctAnswer: 'Providing mechanisms to extend time and save data',
+    explanation: 'To avoid F12 failure, provide users with options to extend their session time and save their data before timeout, ensuring they don\'t lose work due to authentication expiration.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '260',
+    question: 'Which practice prevents the failure of Success Criterion 1.1.1 and 1.4.1 (F13) regarding color information?',
+    options: [
+      'Using color alone to convey information',
+      'Including text alternatives that describe color differences',
+      'Removing all color information',
+      'Using high contrast colors only'
+    ],
+    correctAnswer: 'Including text alternatives that describe color differences',
+    explanation: 'To avoid F13 failure, ensure that information conveyed through color differences is also available through text alternatives, making it accessible to users who cannot perceive color.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '261',
+    question: 'How can you prevent the failure of Success Criterion 1.3.3 (F14) regarding content identification?',
+    options: [
+      'Identifying content by shape or location only',
+      'Using descriptive text and labels',
+      'Relying on visual positioning',
+      'Using coordinate-based instructions'
+    ],
+    correctAnswer: 'Using descriptive text and labels',
+    explanation: 'To avoid F14 failure, content must be identified through descriptive text and labels rather than relying solely on shape, size, or spatial location, which may not be perceivable to all users.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '262',
+    question: 'Which approach helps avoid the failure of Success Criterion 4.1.2 (F15) regarding custom controls?',
+    options: [
+      'Creating controls without ARIA',
+      'Using standard HTML controls or proper ARIA implementation',
+      'Implementing custom JavaScript only',
+      'Avoiding interactive elements'
+    ],
+    correctAnswer: 'Using standard HTML controls or proper ARIA implementation',
+    explanation: 'To avoid F15 failure, use standard HTML controls when possible, or implement custom controls with proper ARIA roles, states, and properties to ensure accessibility API compatibility.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '263',
+    question: 'How can you prevent the failure of Success Criterion 2.2.2 (F16) regarding scrolling content?',
+    options: [
+      'Using automatic scrolling without controls',
+      'Providing pause and restart mechanisms',
+      'Implementing continuous movement',
+      'Removing all scrolling content'
+    ],
+    correctAnswer: 'Providing pause and restart mechanisms',
+    explanation: 'To avoid F16 failure, provide mechanisms to pause, stop, or hide any scrolling content that starts automatically and lasts more than 5 seconds, giving users control over moving content.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '264',
+    question: 'Which practice helps avoid the failure of Success Criterion 2.5.1 (F105) regarding path-based gestures?',
+    options: [
+      'Using path-based gestures only',
+      'Providing simple pointer alternatives',
+      'Requiring complex gestures',
+      'Implementing swipe-only interactions'
+    ],
+    correctAnswer: 'Providing simple pointer alternatives',
+    explanation: 'To avoid F105 failure, ensure that any functionality using path-based gestures can also be operated through simple pointer alternatives, making it accessible to users with motor limitations.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '265',
+    question: 'How can you prevent the failure of Success Criterion 1.4.12 (F104) regarding text spacing?',
+    options: [
+      'Using fixed text spacing',
+      'Ensuring content adapts to custom text spacing',
+      'Clipping overflow content',
+      'Disabling text adjustments'
+    ],
+    correctAnswer: 'Ensuring content adapts to custom text spacing',
+    explanation: 'To avoid F104 failure, ensure that content remains readable and functional when users adjust text spacing properties, without clipping or overlapping.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '266',
+    question: 'Which approach prevents the failure of Success Criterion 4.1.3 (F103) regarding status messages?',
+    options: [
+      'Using visual changes only',
+      'Implementing proper ARIA roles and properties',
+      'Relying on color changes',
+      'Using setTimeout for updates'
+    ],
+    correctAnswer: 'Implementing proper ARIA roles and properties',
+    explanation: 'To avoid F103 failure, ensure status messages can be programmatically determined through proper ARIA roles or properties, allowing assistive technologies to announce updates.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '267',
+    question: 'How can you avoid the failure of Success Criterion 1.4.10 (F102) regarding content reflow?',
+    options: [
+      'Using fixed-width layouts',
+      'Ensuring content remains available after reflow',
+      'Hiding content on small screens',
+      'Requiring horizontal scrolling'
+    ],
+    correctAnswer: 'Ensuring content remains available after reflow',
+    explanation: 'To avoid F102 failure, ensure that all content remains available and functional when the viewport is resized or content reflows, without requiring horizontal scrolling.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '268',
+    question: 'Which practice prevents the failure of Success Criterion 2.1.4 (F99) regarding character key shortcuts?',
+    options: [
+      'Using single-character shortcuts only',
+      'Providing mechanisms to disable or remap shortcuts',
+      'Implementing automatic shortcuts',
+      'Using modifier keys exclusively'
+    ],
+    correctAnswer: 'Providing mechanisms to disable or remap shortcuts',
+    explanation: 'To avoid F99 failure, ensure that character key shortcuts can be turned off, remapped, or activated only on focus, preventing accidental activation.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '269',
+    question: 'How can you prevent the failure of Success Criterion 1.4.13 (F95) regarding hover content?',
+    options: [
+      'Using hover-only interactions',
+      'Making hover content hoverable and persistent',
+      'Hiding content on hover',
+      'Using automatic timeouts'
+    ],
+    correctAnswer: 'Making hover content hoverable and persistent',
+    explanation: 'To avoid F95 failure, ensure that additional content revealed by hover or focus can be hovered over, dismissed, and remains visible until actively dismissed by the user.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
+    id: '270',
+    question: 'Which approach helps avoid the failure of Success Criterion 2.5.7 (F106) regarding motion actuation?',
+    options: [
+      'Requiring device motion',
+      'Providing interface controls for motion features',
+      'Using motion-only interactions',
+      'Implementing tilt controls only'
+    ],
+    correctAnswer: 'Providing interface controls for motion features',
+    explanation: 'To avoid F106 failure, ensure that any functionality that can be operated by device motion can also be operated through user interface components, and motion activation can be disabled.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Common Failures'
+  },
+  {
     id: '271',
     question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.5.7 Dragging Movements?',
     options: [
@@ -2700,15 +4706,15 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: '273',
-    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.2.6 Consistent Help?',
+    question: 'How should help mechanisms be implemented according to WCAG 2.2 Success Criterion 3.2.6 Consistent Help?',
     options: [
-      'Placing help links in different locations',
-      'Maintaining consistent help mechanism locations',
-      'Hiding help options in menus',
-      'Using different help icons'
+      'Maintain consistent locations for help features across pages',
+      'Provide context-sensitive help based on user location',
+      'Implement help features through modal dialogs',
+      'Display help content through hover interactions'
     ],
-    correctAnswer: 'Maintaining consistent help mechanism locations',
-    explanation: 'Maintaining consistent locations for help mechanisms across pages successfully implements SC 3.2.6. This ensures users can reliably find assistance when needed throughout the website.',
+    correctAnswer: 'Maintain consistent locations for help features across pages',
+    explanation: 'WCAG 2.2 SC 3.2.6 requires help mechanisms to maintain consistent locations across pages. This ensures users can reliably find assistance throughout the website without having to learn new patterns or search in different locations. While context-sensitive help and modal dialogs can be useful, the primary requirement is location consistency for help features.',
     category: 'Techniques',
     difficulty: 'intermediate',
     rating: 93,
@@ -2717,15 +4723,15 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: '274',
-    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.3.7 Redundant Entry?',
+    question: 'How should form data entry be handled according to WCAG 2.2 Success Criterion 3.3.7 Redundant Entry?',
     options: [
-      'Requiring users to re-enter information',
-      'Auto-filling previously provided information',
-      'Clearing form fields on errors',
-      'Using session timeouts'
+      'Auto-populate fields with previously provided information',
+      'Request confirmation for repeated information entry',
+      'Store form data in browser storage',
+      'Validate duplicate entries server-side'
     ],
-    correctAnswer: 'Auto-filling previously provided information',
-    explanation: 'Auto-filling previously provided information successfully implements SC 3.3.7. This prevents unnecessary repetition and reduces the burden on users, especially those with cognitive or motor disabilities.',
+    correctAnswer: 'Auto-populate fields with previously provided information',
+    explanation: 'WCAG 2.2 SC 3.3.7 requires that previously entered information is automatically populated when the same information is requested again. This reduces cognitive load and physical effort, particularly benefiting users with memory or motor limitations. While other options like validation and storage are important, auto-population directly addresses the core requirement of preventing unnecessary repetition.',
     category: 'Techniques',
     difficulty: 'intermediate',
     rating: 94,
@@ -2870,15 +4876,15 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: '283',
-    question: 'Which development practice best supports cognitive accessibility in interactive components?',
+    question: 'What development approach best supports cognitive accessibility in interactive components?',
     options: [
-      'Using complex animations for engagement',
-      'Providing consistent, predictable patterns with clear feedback',
-      'Implementing automatic timeouts for security',
-      'Using technical terminology for precision'
+      'Implement consistent patterns with clear feedback',
+      'Add animated transitions between states',
+      'Use technical terms for precise communication',
+      'Require confirmation for all actions'
     ],
-    correctAnswer: 'Providing consistent, predictable patterns with clear feedback',
-    explanation: 'Consistent patterns and clear feedback are essential for cognitive accessibility. This approach helps users understand how to interact with components, predict their behavior, and confirm their actions, reducing cognitive load and potential confusion.',
+    correctAnswer: 'Implement consistent patterns with clear feedback',
+    explanation: 'Consistent patterns and clear feedback are essential for cognitive accessibility because they help users understand interactions, predict behavior, and confirm their actions. This approach reduces cognitive load by establishing predictable patterns and providing immediate, clear feedback. While animations and confirmations can be helpful in some cases, overuse can increase cognitive load.',
     category: 'Development',
     difficulty: 'intermediate',
     rating: 96,
@@ -2887,15 +4893,15 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: '284',
-    question: 'Which implementation best supports cognitive accessibility in form validation?',
+    question: 'How should form validation be implemented to best support cognitive accessibility?',
     options: [
-      'Displaying all errors after submission',
-      'Providing real-time validation with clear guidance',
-      'Using color-only error indicators',
-      'Requiring complex password rules'
+      'Provide real-time validation with clear guidance',
+      'Display all errors after form submission',
+      'Highlight fields using color indicators',
+      'Implement strict password requirements'
     ],
-    correctAnswer: 'Providing real-time validation with clear guidance',
-    explanation: 'Real-time validation with clear guidance supports cognitive accessibility by helping users understand and correct errors as they occur. This reduces memory load and provides immediate feedback, making forms more manageable for users with cognitive disabilities.',
+    correctAnswer: 'Provide real-time validation with clear guidance',
+    explanation: 'Real-time validation with clear guidance best supports cognitive accessibility by helping users understand and correct errors as they occur. This approach reduces memory load and provides immediate feedback, making forms more manageable. The validation should include clear instructions, error prevention, and specific guidance for corrections.',
     category: 'Cognitive',
     difficulty: 'intermediate',
     rating: 97,
@@ -3173,26 +5179,860 @@ export const quizQuestions: QuizQuestion[] = [
     rating: 97,
     wasBoKDomain: 'https://www.w3.org/WAI/pronunciation/',
     wasBoKSection: 'Navigation Elements'
+  },
+  {
+    id: '301',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.1.3 Unusual Words?',
+    options: [
+      'Implementing an interactive glossary with contextual definitions',
+      'Providing inline explanations with expandable details',
+      'Using simplified language exclusively',
+      'Replacing technical terms with basic vocabulary'
+    ],
+    correctAnswer: 'Implementing an interactive glossary with contextual definitions',
+    explanation: 'Implementing an interactive glossary with contextual definitions best satisfies SC 3.1.3 by: 1) Providing immediate access to definitions through interactive mechanisms, 2) Maintaining technical accuracy while ensuring understanding, 3) Supporting both inline and linked definitions for flexibility, 4) Allowing users to learn domain-specific vocabulary in context, and 5) Ensuring consistent identification of unusual terms throughout the content.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Unusual Words'
+  },
+  {
+    id: '302',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 3.1.4 Abbreviations?',
+    options: [
+      'Implementing expandable abbreviation definitions',
+      'Using only common abbreviations',
+      'Avoiding abbreviations entirely',
+      'Providing a separate glossary page'
+    ],
+    correctAnswer: 'Implementing expandable abbreviation definitions',
+    explanation: 'Implementing expandable abbreviation definitions best satisfies SC 3.1.4 by providing immediate access to the expanded form of abbreviations while maintaining document flow and readability.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Abbreviations'
+  },
+  {
+    id: '303',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.1.5 Reading Level?',
+    options: [
+      'Providing simplified versions of complex content',
+      'Using technical language exclusively',
+      'Removing all specialized terms',
+      'Limiting sentence length only'
+    ],
+    correctAnswer: 'Providing simplified versions of complex content',
+    explanation: 'Providing simplified versions of complex content implements SC 3.1.5 by ensuring content is accessible to users with different reading abilities while maintaining the original technical information.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Reading Level'
+  },
+  {
+    id: '304',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 3.1.6 Pronunciation?',
+    options: [
+      'Providing audio pronunciation guides',
+      'Using phonetic spelling only',
+      'Removing difficult words',
+      'Including dictionary links'
+    ],
+    correctAnswer: 'Providing audio pronunciation guides',
+    explanation: 'Providing audio pronunciation guides implements SC 3.1.6 by ensuring users can access the correct pronunciation of words where meaning is ambiguous without pronunciation information.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Pronunciation'
+  },
+  {
+    id: '305',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.3.5 Help?',
+    options: [
+      'Implementing context-aware help systems with multiple formats',
+      'Providing static FAQ pages',
+      'Using automated chatbot support',
+      'Displaying error messages with generic guidance'
+    ],
+    correctAnswer: 'Implementing context-aware help systems with multiple formats',
+    explanation: 'Implementing context-aware help systems with multiple formats best satisfies SC 3.3.5 by: 1) Providing help relevant to the user\'s current context and task, 2) Offering multiple formats including text, video, and interactive guides, 3) Ensuring help content is accessible through both keyboard and touch interfaces, 4) Supporting progressive disclosure of complex information, and 5) Maintaining consistency in help mechanisms across the application.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Help'
+  },
+  {
+    id: '306',
+    question: 'Which technique most effectively implements WCAG 2.2 Success Criterion 2.5.5 Target Size (Enhanced) for touch interfaces?',
+    options: [
+      'Implementing touch targets of exactly 44x44 CSS pixels',
+      'Providing touch targets of at least 44x44 CSS pixels with adequate spacing',
+      'Using viewport-relative sizing for all interactive elements',
+      'Adding padding to achieve minimum clickable areas'
+    ],
+    correctAnswer: 'Providing touch targets of at least 44x44 CSS pixels with adequate spacing',
+    explanation: 'Providing touch targets of at least 44x44 CSS pixels with adequate spacing best implements SC 2.5.5 (Enhanced) by: 1) Ensuring targets are large enough for reliable touch interaction, 2) Preventing accidental activation of adjacent elements through proper spacing, 3) Supporting users with motor impairments or larger fingers, 4) Maintaining consistency across different device sizes and orientations, and 5) Exceeding the minimum requirements while following touch interface best practices.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Target Size Enhanced'
+  },
+  {
+    id: '307',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 1.3.6 Identify Purpose?',
+    options: [
+      'Using generic ARIA landmarks',
+      'Implementing purpose attributes for interface components',
+      'Adding random IDs to elements',
+      'Removing semantic markup'
+    ],
+    correctAnswer: 'Implementing purpose attributes for interface components',
+    explanation: 'Implementing purpose attributes for interface components implements SC 1.3.6 by programmatically identifying the purpose of user interface components, controls, and regions to support personalization.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Identify Purpose'
+  },
+  {
+    id: '308',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.4.11 Focus Not Obscured (Minimum)?',
+    options: [
+      'Using absolute positioning for all elements',
+      'Ensuring at least 90% of focused element is visible',
+      'Hiding focus indicators',
+      'Disabling keyboard navigation'
+    ],
+    correctAnswer: 'Ensuring at least 90% of focused element is visible',
+    explanation: 'Ensuring at least 90% of focused element is visible implements SC 2.4.11 by preventing focused elements from being substantially obscured by other content.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Focus Not Obscured'
+  },
+  {
+    id: '309',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 2.5.8 Target Size (Minimum)?',
+    options: [
+      'Using variable target sizes',
+      'Implementing targets of at least 24x24 CSS pixels',
+      'Requiring precise pointer control',
+      'Ignoring touch interfaces'
+    ],
+    correctAnswer: 'Implementing targets of at least 24x24 CSS pixels',
+    explanation: 'Implementing targets of at least 24x24 CSS pixels implements SC 2.5.8 by ensuring that interactive targets are large enough to be activated without accidentally triggering adjacent elements.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Target Size'
+  },
+  {
+    id: '310',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.2.6 Consistent Help?',
+    options: [
+      'Randomizing help locations',
+      'Maintaining consistent help mechanisms across pages',
+      'Using different help icons per page',
+      'Hiding help on mobile devices'
+    ],
+    correctAnswer: 'Maintaining consistent help mechanisms across pages',
+    explanation: 'Maintaining consistent help mechanisms across pages implements SC 3.2.6 by ensuring help features are located in the same relative order and identified consistently throughout the website.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Consistent Help'
+  },
+  {
+    id: '311',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 3.3.7 Redundant Entry?',
+    options: [
+      'Requiring data re-entry',
+      'Auto-filling previously provided information',
+      'Clearing form data regularly',
+      'Using temporary storage only'
+    ],
+    correctAnswer: 'Auto-filling previously provided information',
+    explanation: 'Auto-filling previously provided information implements SC 3.3.7 by ensuring users do not have to re-enter information they have already provided during the same process.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Redundant Entry'
+  },
+  {
+    id: '312',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.3.8 Accessible Authentication?',
+    options: [
+      'Using complex CAPTCHAs',
+      'Implementing cognitive-free authentication methods',
+      'Requiring memory tests',
+      'Using handwriting recognition'
+    ],
+    correctAnswer: 'Implementing cognitive-free authentication methods',
+    explanation: 'Implementing cognitive-free authentication methods implements SC 3.3.8 by providing authentication options that do not rely on cognitive function tests or memorization.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Accessible Authentication'
+  },
+  {
+    id: '313',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 3.3.9 Accessible Authentication (Enhanced)?',
+    options: [
+      'Using personal knowledge questions',
+      'Implementing biometric authentication options',
+      'Requiring password memorization',
+      'Using timed challenges'
+    ],
+    correctAnswer: 'Implementing biometric authentication options',
+    explanation: 'Implementing biometric authentication options implements SC 3.3.9 by providing authentication methods that do not rely on cognitive skills or memory, offering enhanced accessibility.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Accessible Authentication Enhanced'
+  },
+  {
+    id: '314',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.4.13 Focus Appearance (Enhanced)?',
+    options: [
+      'Using subtle focus indicators',
+      'Implementing high-contrast focus indicators with minimum area',
+      'Removing focus outlines',
+      'Using browser defaults'
+    ],
+    correctAnswer: 'Implementing high-contrast focus indicators with minimum area',
+    explanation: 'Implementing high-contrast focus indicators with minimum area implements SC 2.4.13 by ensuring focus indicators have sufficient contrast and cover an adequate area of the focused element.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Focus Appearance Enhanced'
+  },
+  {
+    id: '315',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 2.5.7 Dragging Movements?',
+    options: [
+      'Using drag-only interactions',
+      'Providing pointer alternatives to dragging',
+      'Requiring complex gestures',
+      'Implementing touch-only controls'
+    ],
+    correctAnswer: 'Providing pointer alternatives to dragging',
+    explanation: 'Providing pointer alternatives to dragging implements SC 2.5.7 by ensuring all functionality that uses dragging movements can be operated through single pointer actions without dragging.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Dragging Movements'
+  },
+  {
+    id: '316',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.4.12 Focus Not Obscured (Enhanced)?',
+    options: [
+      'Using partial visibility',
+      'Ensuring complete visibility of focused elements',
+      'Hiding focus indicators',
+      'Using transparent overlays'
+    ],
+    correctAnswer: 'Ensuring complete visibility of focused elements',
+    explanation: 'Ensuring complete visibility of focused elements implements SC 2.4.12 by preventing any part of the focused element from being obscured by other content.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Focus Not Obscured Enhanced'
+  },
+  {
+    id: '317',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 2.5.5 Target Size (Enhanced)?',
+    options: [
+      'Using minimum target sizes',
+      'Implementing targets of at least 44x44 CSS pixels',
+      'Requiring precise clicking',
+      'Using small touch targets'
+    ],
+    correctAnswer: 'Implementing targets of at least 44x44 CSS pixels',
+    explanation: 'Implementing targets of at least 44x44 CSS pixels implements SC 2.5.5 by providing larger touch targets that are easier to activate and reduce accidental activation of adjacent elements.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Target Size Enhanced'
+  },
+  {
+    id: '318',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.2.6 Consistent Help?',
+    options: [
+      'Using inconsistent help locations',
+      'Providing help mechanisms in consistent locations',
+      'Hiding help features',
+      'Using random help icons'
+    ],
+    correctAnswer: 'Providing help mechanisms in consistent locations',
+    explanation: 'Providing help mechanisms in consistent locations implements SC 3.2.6 by ensuring help features are consistently placed and identified across multiple web pages.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Consistent Help'
+  },
+  {
+    id: '319',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 3.3.7 Redundant Entry?',
+    options: [
+      'Requiring data re-entry',
+      'Implementing auto-save functionality',
+      'Using session timeouts',
+      'Clearing form data'
+    ],
+    correctAnswer: 'Implementing auto-save functionality',
+    explanation: 'Implementing auto-save functionality implements SC 3.3.7 by preserving user-entered data and preventing unnecessary re-entry of information.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Redundant Entry'
+  },
+  {
+    id: '320',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.3.8 Accessible Authentication?',
+    options: [
+      'Using memory-based verification',
+      'Implementing passwordless authentication',
+      'Requiring complex CAPTCHAs',
+      'Using timed challenges'
+    ],
+    correctAnswer: 'Implementing passwordless authentication',
+    explanation: 'Implementing passwordless authentication implements SC 3.3.8 by providing authentication methods that do not rely on cognitive function tests or memorization.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Accessible Authentication'
+  },
+  {
+    id: '321',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 2.4.11 Focus Not Obscured?',
+    options: [
+      'Using fixed headers without adjustment',
+      'Implementing scroll padding for focused elements',
+      'Hiding focus indicators',
+      'Using overlapping content'
+    ],
+    correctAnswer: 'Implementing scroll padding for focused elements',
+    explanation: 'Implementing scroll padding for focused elements implements SC 2.4.11 by ensuring focused elements are not obscured by fixed content when scrolled into view.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Focus Not Obscured'
+  },
+  {
+    id: '322',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.5.8 Target Size?',
+    options: [
+      'Using variable target sizes',
+      'Implementing consistent minimum target sizes',
+      'Requiring precise clicking',
+      'Using small touch targets'
+    ],
+    correctAnswer: 'Implementing consistent minimum target sizes',
+    explanation: 'Implementing consistent minimum target sizes implements SC 2.5.8 by ensuring interactive elements are large enough to be easily activated without accidentally triggering adjacent elements.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Target Size'
+  },
+  {
+    id: '323',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 3.2.6 Consistent Help?',
+    options: [
+      'Using dynamic help locations',
+      'Maintaining consistent help mechanisms',
+      'Hiding help on mobile',
+      'Using contextual help only'
+    ],
+    correctAnswer: 'Maintaining consistent help mechanisms',
+    explanation: 'Maintaining consistent help mechanisms implements SC 3.2.6 by ensuring help features are consistently located and identified across web pages.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Consistent Help'
+  },
+  {
+    id: '324',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.3.7 Redundant Entry?',
+    options: [
+      'Using session storage only',
+      'Implementing data persistence across sessions',
+      'Requiring data re-entry',
+      'Clearing form data regularly'
+    ],
+    correctAnswer: 'Implementing data persistence across sessions',
+    explanation: 'Implementing data persistence across sessions implements SC 3.3.7 by ensuring users do not have to re-enter information they have previously provided.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Redundant Entry'
+  },
+  {
+    id: '325',
+    question: 'Which technique best implements WCAG 2.2 Success Criterion 3.3.8 Accessible Authentication?',
+    options: [
+      'Using knowledge-based authentication',
+      'Implementing device-based authentication',
+      'Requiring complex passwords',
+      'Using timed verification'
+    ],
+    correctAnswer: 'Implementing device-based authentication',
+    explanation: 'Implementing device-based authentication implements SC 3.3.8 by providing authentication methods that do not rely on cognitive function tests or memorization.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Accessible Authentication'
+  },
+  {
+    id: '326',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.4.13 Focus Appearance?',
+    options: [
+      'Using default focus styles',
+      'Implementing custom focus indicators with sufficient contrast',
+      'Removing focus outlines',
+      'Using color changes only'
+    ],
+    correctAnswer: 'Implementing custom focus indicators with sufficient contrast',
+    explanation: 'Implementing custom focus indicators with sufficient contrast implements SC 2.4.13 by ensuring focus indicators are clearly visible and meet minimum contrast requirements.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/Techniques/',
+    wasBoKSection: 'Focus Appearance'
+  },
+  {
+    id: '327',
+    question: 'According to ACT rules, how should HTML page language be specified?',
+    options: [
+      'Using meta tags only',
+      'Implementing valid lang attribute on html element',
+      'Specifying language in comments',
+      'Setting language through JavaScript'
+    ],
+    correctAnswer: 'Implementing valid lang attribute on html element',
+    explanation: 'ACT rules require the HTML page language to be specified using a valid lang attribute on the html element, ensuring proper interpretation by assistive technologies.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/act/rules/',
+    wasBoKSection: 'HTML Page Language'
+  },
+  {
+    id: '328',
+    question: 'Which practice correctly implements ACT rules for image buttons?',
+    options: [
+      'Using empty alt attributes',
+      'Providing descriptive accessible names',
+      'Omitting alt attributes',
+      'Using generic text alternatives'
+    ],
+    correctAnswer: 'Providing descriptive accessible names',
+    explanation: 'ACT rules require image buttons to have descriptive accessible names that clearly indicate their purpose and function to users of assistive technologies.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/act/rules/',
+    wasBoKSection: 'Image Buttons'
+  },
+  {
+    id: '329',
+    question: 'According to ACT rules, how should meta viewport scaling be implemented?',
+    options: [
+      'Disabling zoom completely',
+      'Allowing users to zoom and scale content',
+      'Setting maximum-scale to 1',
+      'Removing viewport meta tag'
+    ],
+    correctAnswer: 'Allowing users to zoom and scale content',
+    explanation: 'ACT rules specify that meta viewport must not restrict zoom and scaling on mobile devices, ensuring users can adjust content size according to their needs.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/act/rules/',
+    wasBoKSection: 'Meta Viewport Scaling'
+  },
+  {
+    id: '330',
+    question: 'Which approach correctly implements ACT rules for orientation lock?',
+    options: [
+      'Locking to portrait mode',
+      'Allowing both portrait and landscape orientations',
+      'Forcing landscape orientation',
+      'Implementing device-specific locks'
+    ],
+    correctAnswer: 'Allowing both portrait and landscape orientations',
+    explanation: 'ACT rules require content to be viewable and operable in both portrait and landscape orientations unless a specific orientation is essential.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/act/rules/',
+    wasBoKSection: 'Orientation Lock'
+  },
+  {
+    id: '331',
+    question: 'How should error identification be implemented according to ACT rules?',
+    options: [
+      'Using color changes only',
+      'Providing programmatically determinable error messages',
+      'Displaying generic alerts',
+      'Removing error indicators'
+    ],
+    correctAnswer: 'Providing programmatically determinable error messages',
+    explanation: 'ACT rules require error messages to be programmatically determinable, ensuring they can be identified and understood by assistive technologies.',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/act/rules/',
+    wasBoKSection: 'Error Identification'
+  },
+  {
+    id: '332',
+    question: 'Which practice correctly implements ACT rules for focus appearance?',
+    options: [
+      'Removing focus indicators',
+      'Implementing visible focus indicators with sufficient contrast',
+      'Using subtle outlines',
+      'Relying on browser defaults'
+    ],
+    correctAnswer: 'Implementing visible focus indicators with sufficient contrast',
+    explanation: 'ACT rules require focus indicators to be clearly visible with sufficient contrast against their background, helping keyboard users track their position.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/act/rules/',
+    wasBoKSection: 'Focus Appearance'
+  },
+  {
+    id: '333',
+    question: 'According to ACT rules, how should role presentation be implemented?',
+    options: [
+      'Applying role="presentation" to all elements',
+      'Using presentation role only on elements without semantic meaning',
+      'Removing ARIA roles completely',
+      'Adding presentation roles to interactive elements'
+    ],
+    correctAnswer: 'Using presentation role only on elements without semantic meaning',
+    explanation: 'ACT rules specify that role="presentation" should only be applied to elements that do not convey semantic meaning, preserving accessibility information where needed.',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/act/rules/',
+    wasBoKSection: 'Role Presentation'
+  },
+  {
+    id: '117',
+    question: 'Which approach best supports accessibility in the design process according to WASBoK Domain One A?',
+    options: [
+      'Adding accessibility after design',
+      'Incorporating accessibility principles from the start',
+      'Focusing on visual design first',
+      'Delegating to accessibility experts'
+    ],
+    correctAnswer: 'Incorporating accessibility principles from the start',
+    explanation: 'WASBoK Domain One A emphasizes integrating accessibility principles into the design process from the beginning. This ensures accessibility is considered in all design decisions and patterns.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One A: Basic knowledge of accessibility',
+    category: 'Design',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '118',
+    question: 'Which approach best supports accessibility testing in agile development according to WASBoK Domain Two A?',
+    options: [
+      'Testing only at sprint end',
+      'Integrating accessibility testing throughout sprints',
+      'Conducting accessibility audits quarterly',
+      'Relying on automated testing only'
+    ],
+    correctAnswer: 'Integrating accessibility testing throughout sprints',
+    explanation: 'WASBoK Domain Two A emphasizes integrating accessibility testing throughout the agile development process. This ensures issues are identified and addressed early in each sprint.',
+    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
+    wasBoKSection: 'Domain Two A: Testing in agile development',
+    category: 'Testing',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '119',
+    question: 'Which approach best supports accessibility in content management systems according to WASBoK Domain One C?',
+    options: [
+      'Relying on default templates',
+      'Implementing accessible content creation workflows',
+      'Using basic text editors',
+      'Post-processing content for accessibility'
+    ],
+    correctAnswer: 'Implementing accessible content creation workflows',
+    explanation: 'WASBoK Domain One C emphasizes implementing accessible content creation workflows in CMS platforms. This ensures content is created with accessibility in mind from the start.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One C: Content management systems',
+    category: 'Content',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '120',
+    question: 'Which approach best supports accessibility in responsive design according to WASBoK Domain One B?',
+    options: [
+      'Using fixed layouts',
+      'Implementing flexible, accessible layouts',
+      'Creating separate mobile versions',
+      'Relying on media queries only'
+    ],
+    correctAnswer: 'Implementing flexible, accessible layouts',
+    explanation: 'WASBoK Domain One B emphasizes implementing flexible, accessible layouts that work across different screen sizes and orientations. This ensures content remains accessible regardless of viewport size.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '121',
+    question: 'Which approach best supports accessibility in form validation according to WASBoK Domain One B?',
+    options: [
+      'Using client-side validation only',
+      'Implementing accessible form validation patterns',
+      'Relying on browser defaults',
+      'Adding validation after submission'
+    ],
+    correctAnswer: 'Implementing accessible form validation patterns',
+    explanation: 'WASBoK Domain One B emphasizes implementing accessible form validation patterns that provide clear, immediate feedback to users. This includes proper error messages and validation states.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '122',
+    question: 'Which approach best supports accessibility in navigation systems according to WASBoK Domain One B?',
+    options: [
+      'Using standard navigation patterns',
+      'Implementing accessible navigation structures',
+      'Relying on breadcrumbs only',
+      'Creating simple menus'
+    ],
+    correctAnswer: 'Implementing accessible navigation structures',
+    explanation: 'WASBoK Domain One B emphasizes implementing accessible navigation structures that are clear, consistent, and operable by all users. This includes proper ARIA landmarks and keyboard navigation.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '123',
+    question: 'Which approach best supports accessibility in data tables according to WASBoK Domain One B?',
+    options: [
+      'Using simple tables only',
+      'Implementing accessible table structures',
+      'Avoiding complex tables',
+      'Using CSS for layout'
+    ],
+    correctAnswer: 'Implementing accessible table structures',
+    explanation: 'WASBoK Domain One B emphasizes implementing accessible table structures with proper headers, relationships, and descriptions. This ensures table content is understandable by assistive technologies.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '124',
+    question: 'Which approach best supports accessibility in multimedia content according to WASBoK Domain One C?',
+    options: [
+      'Using text-only alternatives',
+      'Implementing comprehensive multimedia accessibility',
+      'Avoiding multimedia content',
+      'Relying on auto-captioning'
+    ],
+    correctAnswer: 'Implementing comprehensive multimedia accessibility',
+    explanation: 'WASBoK Domain One C emphasizes implementing comprehensive multimedia accessibility, including captions, audio descriptions, and transcripts. This ensures multimedia content is accessible to all users.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One C: Content management systems',
+    category: 'Content',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '125',
+    question: 'Which approach best supports accessibility in error handling according to WASBoK Domain One B?',
+    options: [
+      'Using generic error messages',
+      'Implementing accessible error handling',
+      'Avoiding error states',
+      'Relying on console logs'
+    ],
+    correctAnswer: 'Implementing accessible error handling',
+    explanation: 'WASBoK Domain One B emphasizes implementing accessible error handling that provides clear, actionable feedback to users. This includes proper error messages and recovery suggestions.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '126',
+    question: 'Which approach best supports accessibility in modal dialogs according to WASBoK Domain One B?',
+    options: [
+      'Using standard dialogs only',
+      'Implementing accessible modal patterns',
+      'Avoiding modal dialogs',
+      'Using inline content'
+    ],
+    correctAnswer: 'Implementing accessible modal patterns',
+    explanation: 'WASBoK Domain One B emphasizes implementing accessible modal patterns that manage focus, provide proper ARIA attributes, and ensure keyboard navigation. This makes modal dialogs usable by all users.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '127',
+    question: 'Which approach best supports accessibility in custom widgets according to WASBoK Domain One B?',
+    options: [
+      'Using native elements only',
+      'Implementing accessible custom widgets',
+      'Avoiding custom components',
+      'Using third-party widgets'
+    ],
+    correctAnswer: 'Implementing accessible custom widgets',
+    explanation: 'WASBoK Domain One B emphasizes implementing accessible custom widgets with proper ARIA roles, states, and properties. This ensures custom components are usable by assistive technologies.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '128',
+    question: 'Which approach best supports accessibility in color contrast according to WASBoK Domain One A?',
+    options: [
+      'Using high contrast only',
+      'Implementing accessible color schemes',
+      'Avoiding color',
+      'Using grayscale'
+    ],
+    correctAnswer: 'Implementing accessible color schemes',
+    explanation: 'WASBoK Domain One A emphasizes implementing accessible color schemes that meet WCAG contrast requirements while maintaining visual appeal. This ensures text is readable for all users.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One A: Basic knowledge of accessibility',
+    category: 'Design',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '129',
+    question: 'Which approach best supports accessibility in keyboard navigation according to WASBoK Domain One B?',
+    options: [
+      'Using tab only',
+      'Implementing comprehensive keyboard support',
+      'Avoiding keyboard interaction',
+      'Using mouse-only features'
+    ],
+    correctAnswer: 'Implementing comprehensive keyboard support',
+    explanation: 'WASBoK Domain One B emphasizes implementing comprehensive keyboard support that allows all functionality to be accessed via keyboard. This includes proper focus management and keyboard shortcuts.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '130',
+    question: 'Which approach best supports accessibility in form labels according to WASBoK Domain One B?',
+    options: [
+      'Using placeholder text only',
+      'Implementing accessible form labels',
+      'Avoiding labels',
+      'Using visual cues'
+    ],
+    correctAnswer: 'Implementing accessible form labels',
+    explanation: 'WASBoK Domain One B emphasizes implementing accessible form labels that are properly associated with form controls. This ensures form fields are properly identified by assistive technologies.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 97
+  },
+  {
+    id: '131',
+    question: 'Which approach best supports accessibility in skip links according to WASBoK Domain One B?',
+    options: [
+      'Using standard navigation only',
+      'Implementing accessible skip links',
+      'Avoiding skip links',
+      'Using breadcrumbs'
+    ],
+    correctAnswer: 'Implementing accessible skip links',
+    explanation: 'WASBoK Domain One B emphasizes implementing accessible skip links that allow keyboard users to bypass repetitive content. This improves navigation efficiency for keyboard users.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 96
+  },
+  {
+    id: '132',
+    question: 'Which approach best supports accessibility in headings according to WASBoK Domain One B?',
+    options: [
+      'Using visual styling only',
+      'Implementing proper heading structure',
+      'Avoiding headings',
+      'Using div elements'
+    ],
+    correctAnswer: 'Implementing proper heading structure',
+    explanation: 'WASBoK Domain One B emphasizes implementing proper heading structure that creates a logical document outline. This helps users understand the content hierarchy and navigate efficiently.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 98
+  },
+  {
+    id: '133',
+    question: 'Which approach best supports accessibility in lists according to WASBoK Domain One B?',
+    options: [
+      'Using div elements only',
+      'Implementing proper list structures',
+      'Avoiding lists',
+      'Using custom styling'
+    ],
+    correctAnswer: 'Implementing proper list structures',
+    explanation: 'WASBoK Domain One B emphasizes implementing proper list structures using semantic HTML elements. This ensures lists are properly identified and structured by assistive technologies.',
+    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
+    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    category: 'Development',
+    difficulty: 'advanced',
+    rating: 97
   }
 ];
 
-export function getRandomQuestions(count: number = 10, type: 'all' | 'wcag' | 'general' = 'all'): QuizQuestion[] {
-  // Filter questions based on type
-  const filteredQuestions = type === 'all' 
-    ? quizQuestions // Return all questions for 'all' type
-    : type === 'wcag'
-      ? quizQuestions.filter(q => q.wcagCriterion) // Select questions with wcagCriterion field
-      : quizQuestions.filter(q => !q.wcagCriterion); // Select questions without wcagCriterion field
-
-  // Log filtering results
-  console.log(`Question type: ${type}`);
-  console.log(`Total questions: ${quizQuestions.length}`);
-  console.log(`Filtered questions: ${filteredQuestions.length}`);
-  
-  // Shuffle and return requested number of questions
-  const shuffled = [...filteredQuestions].sort(() => 0.5 - Math.random());
-  const selected = shuffled.slice(0, Math.min(count, filteredQuestions.length));
-  
-  console.log(`Selected ${selected.length} questions`);
-  return selected;
+export function getRandomQuestions(count: number): QuizQuestion[] {
+  const shuffled = [...quizQuestions].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
 } 
