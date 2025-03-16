@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self' https://*.github.io http://localhost:*;
-      script-src 'self' https://*.github.io http://localhost:* 'unsafe-inline' 'unsafe-eval';
-      style-src 'self' https://*.github.io http://localhost:* 'unsafe-inline';
-      img-src 'self' data: https: https://*.github.io http://localhost:*;
-      font-src 'self' data: https://*.github.io http://localhost:*;
-      connect-src 'self' https://*.github.io http://localhost:* ws://localhost:*;
+      default-src 'self' https://*.github.io https://*.adobe.com http://localhost:*;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.github.io https://*.adobe.com http://localhost:*;
+      style-src 'self' 'unsafe-inline' https://*.github.io https://*.adobe.com http://localhost:*;
+      img-src 'self' data: https: https://*.github.io https://*.adobe.com http://localhost:*;
+      font-src 'self' data: https://*.github.io https://*.adobe.com http://localhost:*;
+      connect-src 'self' https://*.github.io https://*.adobe.com http://localhost:* ws://localhost:*;
       manifest-src 'self' https://*.github.io http://localhost:*;
       base-uri 'self';
       form-action 'self'">
@@ -19,6 +19,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="src/main.tsx"></script>
   </body>
 </html>

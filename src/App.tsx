@@ -4,7 +4,8 @@ import { Box, Container, VStack, useColorMode, IconButton, useDisclosure, Modal,
 import { SettingsIcon } from '@chakra-ui/icons';
 import Quiz from './components/Quiz';
 import { QuizSettings as QuizSettingsType, QuizResult } from './types/quiz';
-import { quizQuestions, getRandomQuestions } from './data/quizQuestions';
+import { quizQuestions } from './data/quizQuestions';
+import { getRandomQuestions } from './utils/questionFilters';
 import { config, isFeatureEnabled } from './config/env';
 import { QuizSettings } from './components/QuizSettings';
 import QuizResults from './components/QuizResults';
@@ -28,6 +29,7 @@ function App() {
   const handleStartQuiz = useCallback((newSettings: QuizSettingsType) => {
     setSettings(newSettings);
     const selectedQuestions = getRandomQuestions(
+      quizQuestions,
       newSettings.questionCount,
       newSettings.filters.questionType
     );
@@ -49,6 +51,7 @@ function App() {
       setQuizKey(prev => prev + 1);
     } else if (mode === 'new' && settings) {
       const newQuestions = getRandomQuestions(
+        quizQuestions,
         settings.questionCount,
         settings.filters.questionType
       );
