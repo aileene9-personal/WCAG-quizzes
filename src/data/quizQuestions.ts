@@ -1767,351 +1767,1416 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: '101',
-    question: 'Which approach best supports accessibility in JavaScript implementations according to WASBoK Domain One B?',
+    question: 'Which of the following is NOT a primary goal of the Web Accessibility Standards Body of Knowledge (WASBoK)?',
     options: [
-      'Using JavaScript as the sole interaction method',
-      'Ensuring functionality with JavaScript disabled',
-      'Implementing complex client-side processing',
-      'Requiring modern JavaScript features'
+      'Providing a comprehensive framework for understanding web accessibility',
+      'Establishing a standardized certification process for accessibility professionals',
+      'Organizing accessibility knowledge into clear domains and topics',
+      'Supporting the development of accessibility training and education'
     ],
-    correctAnswer: 'Ensuring functionality with JavaScript disabled',
-    explanation: 'WASBoK Domain One B emphasizes the importance of progressive enhancement and ensuring core functionality works without JavaScript. This ensures accessibility for users who may have JavaScript disabled or unavailable.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One B: Basic knowledge of programming',
-    category: 'Development',
+    correctAnswer: 'Establishing a standardized certification process for accessibility professionals',
+    explanation: 'The WASBoK aims to provide a framework for understanding web accessibility, organize knowledge into domains and topics, and support training development. While it may inform certification programs, establishing certification processes is not a primary goal.',
+    wasBoKDomain: 'Introduction to Web Accessibility',
+    wasBoKSection: 'Overview and Fundamentals',
+    category: 'WASBoK',
+    difficulty: 'intermediate',
+    rating: 95
+  },
+  {
+    id: '201',
+    question: 'Which implementation best meets WCAG 2.2 Success Criterion 2.5.7 Dragging Movements?',
+    options: [
+      'A drag-and-drop interface with keyboard alternatives',
+      'A drag-and-drop interface with touch alternatives',
+      'A drag-and-drop interface with mouse alternatives',
+      'A drag-and-drop interface with no alternatives'
+    ],
+    correctAnswer: 'A drag-and-drop interface with keyboard alternatives',
+    explanation: 'WCAG 2.2 SC 2.5.7 requires that any functionality that can be operated by dragging must have an alternative input method. Keyboard alternatives are the most accessible option as they work for all users who cannot use a mouse or touch screen.',
+    wcagCriterion: '2.5.7 Dragging Movements',
+    wcagLevel: 'AA',
+    category: 'Input Methods',
     difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html',
     rating: 97
   },
   {
-    id: '102',
-    question: 'Which testing approach best supports end-user impact evaluation according to WASBoK Domain Two G?',
+    id: '202',
+    question: 'Which implementation of a carousel/slider meets WCAG 2.2 Success Criterion 2.5.6 Target Size (Enhanced)?',
     options: [
-      'Conducting automated tests only',
-      'Testing with diverse user groups and scenarios',
-      'Using expert evaluations exclusively',
-      'Implementing standard test cases'
+      'A carousel with 44x44 pixel navigation buttons',
+      'A carousel with 32x32 pixel navigation buttons',
+      'A carousel with 24x24 pixel navigation buttons',
+      'A carousel with 20x20 pixel navigation buttons'
     ],
-    correctAnswer: 'Testing with diverse user groups and scenarios',
-    explanation: 'WASBoK Domain Two G emphasizes the importance of testing with diverse user groups in realistic scenarios to understand actual user impact. This approach reveals issues that might not be apparent through other testing methods.',
-    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
-    wasBoKSection: 'Domain Two G: Testing for end-user impact',
-    category: 'Testing',
+    correctAnswer: 'A carousel with 44x44 pixel navigation buttons',
+    explanation: 'WCAG 2.2 SC 2.5.6 requires that targets be at least 44x44 CSS pixels unless an alternative method is provided. This ensures that interactive elements are large enough to be easily activated by users with motor impairments.',
+    wcagCriterion: '2.5.6 Target Size (Enhanced)',
+    wcagLevel: 'AAA',
+    category: 'Input Methods',
     difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html',
     rating: 98
   },
   {
-    id: '103',
-    question: 'Which approach best supports semantic HTML implementation according to WASBoK Domain One B?',
+    id: '203',
+    question: 'Which form validation message implementation meets WCAG 2.2 Success Criterion 3.3.3 Error Suggestion?',
     options: [
-      'Using div elements for all structure',
-      'Implementing native HTML elements appropriately',
-      'Relying on ARIA for all semantics',
-      'Creating custom elements exclusively'
+      'A message that only states "Invalid input"',
+      'A message that states "Invalid input" with a suggestion for correction',
+      'A message that only shows a red border',
+      'A message that only plays an error sound'
     ],
-    correctAnswer: 'Implementing native HTML elements appropriately',
-    explanation: 'WASBoK Domain One B emphasizes using native HTML elements for their intended purpose to provide proper semantics. This ensures better accessibility support and reduces the need for complex ARIA implementations.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One B: Basic knowledge of programming',
-    category: 'Development',
+    correctAnswer: 'A message that states "Invalid input" with a suggestion for correction',
+    explanation: 'WCAG 2.2 SC 3.3.3 requires that when an input error is detected, the error is identified and suggestions for correction are provided. This helps users understand what went wrong and how to fix it.',
+    wcagCriterion: '3.3.3 Error Suggestion',
+    wcagLevel: 'AA',
+    category: 'Forms',
     difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html',
+    rating: 97
+  },
+  {
+    id: '204',
+    question: 'Which implementation of content that appears on hover or focus meets WCAG 2.2 Success Criterion 1.4.13?',
+    options: [
+      'Content that disappears when the pointer moves away',
+      'Content that remains visible until dismissed',
+      'Content that moves with the pointer',
+      'Content that appears instantly'
+    ],
+    correctAnswer: 'Content that remains visible until dismissed',
+    explanation: 'WCAG 2.2 SC 1.4.13 requires that content that appears on hover or focus can be dismissed without moving the pointer, remains visible until dismissed, and is hoverable. This ensures users can read and interact with the content.',
+    wcagCriterion: '1.4.13 Content on Hover or Focus',
+    wcagLevel: 'AA',
+    category: 'Visual Design',
+    difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html',
     rating: 96
   },
   {
-    id: '104',
-    question: 'Which approach best supports accessibility conformance reporting according to WASBoK Domain Three C?',
+    id: '205',
+    question: 'Which implementation of status messages meets WCAG 2.2 Success Criterion 4.1.3?',
     options: [
-      'Providing general compliance statements',
-      'Documenting detailed testing results and methods',
-      'Using automated test results only',
-      'Relying on vendor documentation'
+      'A message that only updates the DOM',
+      'A message that uses aria-live="polite"',
+      'A message that uses aria-live="assertive"',
+      'A message that only uses visual indicators'
     ],
-    correctAnswer: 'Documenting detailed testing results and methods',
-    explanation: 'WASBoK Domain Three C emphasizes the importance of detailed accessibility conformance reports that include testing methodologies, results, and specific findings. This provides transparency and actionable information for remediation.',
-    wasBoKDomain: 'Domain Three: Remediating issues in web solutions',
-    wasBoKSection: 'Domain Three C: Integrate Accessibility into the Procurement Process',
-    category: 'Documentation',
+    correctAnswer: 'A message that uses aria-live="polite"',
+    explanation: 'WCAG 2.2 SC 4.1.3 requires that status messages be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus. Using aria-live="polite" ensures the message is announced without interrupting the user.',
+    wcagCriterion: '4.1.3 Status Messages',
+    wcagLevel: 'AA',
+    category: 'ARIA',
     difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html',
     rating: 97
   },
   {
-    id: '105',
-    question: 'Which implementation best supports dynamic content accessibility according to WASBoK Domain One B?',
+    id: '206',
+    question: 'Which of the following is NOT a valid technique for making drag and drop functionality accessible?',
     options: [
-      'Using automatic content updates',
-      'Managing focus and providing notifications',
-      'Implementing continuous content refresh',
-      'Relying on visual indicators only'
+      'Providing keyboard shortcuts for drag and drop actions',
+      'Adding touch gestures with haptic feedback',
+      'Relying solely on mousedown and mouseup events',
+      'Implementing a button-based alternative interface'
     ],
-    correctAnswer: 'Managing focus and providing notifications',
-    explanation: 'WASBoK Domain One B emphasizes the importance of managing focus and providing appropriate notifications for dynamic content updates. This ensures users are aware of changes and can maintain their context.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One B: Basic knowledge of programming',
-    category: 'Development',
+    correctAnswer: 'Relying solely on mousedown and mouseup events',
+    explanation: 'Relying solely on mousedown and mouseup events violates WCAG 2.2 SC 2.1.1 (Keyboard) and 2.5.7 (Dragging Movements). Drag and drop functionality must be operable through alternative means like keyboard controls or button interfaces. Mouse-only implementations exclude users who rely on keyboards, switches, or other input devices.',
+    wcagCriterion: '2.5.7 Dragging Movements',
+    wcagLevel: 'AA',
+    category: 'Input Methods',
     difficulty: 'advanced',
-    rating: 98
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html',
+    rating: 95
   },
   {
-    id: '106',
-    question: 'Which approach best supports issue prioritization according to WASBoK Domain Three A?',
+    id: '207',
+    question: 'Which scenario violates WCAG 2.2 Success Criterion 2.4.11 Focus Not Obscured (Minimum)?',
     options: [
-      'Fixing all Level A issues first',
-      'Prioritizing based on user impact and frequency',
-      'Following development team preferences',
-      'Addressing visual issues first'
+      'A sticky header that partially overlaps the focused element',
+      'A modal dialog that traps focus within its boundaries',
+      'A dropdown menu that expands below the focused trigger button',
+      'A tooltip that appears adjacent to the focused element'
     ],
-    correctAnswer: 'Prioritizing based on user impact and frequency',
-    explanation: 'WASBoK Domain Three A emphasizes prioritizing accessibility issues based on their impact on users and how frequently they affect user interactions. This ensures the most significant barriers are addressed first.',
-    wasBoKDomain: 'Domain Three: Remediating issues in web solutions',
-    wasBoKSection: 'Domain Three A: Level of severity and prioritization of issues',
-    category: 'Remediation',
+    correctAnswer: 'A sticky header that partially overlaps the focused element',
+    explanation: 'A sticky header that obscures any part of the focused element violates SC 2.4.11. The criterion requires that when a user interface component receives keyboard focus, no part of the focused component is hidden by author-created content. This ensures keyboard users can always see which element they are interacting with.',
+    wcagCriterion: '2.4.11 Focus Not Obscured (Minimum)',
+    wcagLevel: 'AA',
+    category: 'Focus Management',
     difficulty: 'advanced',
-    rating: 97
-  },
-  {
-    id: '107',
-    question: 'Which testing approach best supports usability evaluation according to WASBoK Domain Two F?',
-    options: [
-      'Conducting automated usability scans',
-      'Testing with real users in realistic scenarios',
-      'Using expert reviews exclusively',
-      'Implementing standard test scripts'
-    ],
-    correctAnswer: 'Testing with real users in realistic scenarios',
-    explanation: 'WASBoK Domain Two F emphasizes the importance of testing with real users in realistic scenarios to evaluate usability. This approach reveals actual usage patterns and barriers that might not be apparent through other methods.',
-    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
-    wasBoKSection: 'Domain Two F: Testing with assistive technologies',
-    category: 'Testing',
-    difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html',
     rating: 96
   },
   {
-    id: '108',
-    question: 'Which approach best supports state management according to WASBoK Domain One B?',
+    id: '208',
+    question: 'Which implementation of an authentication process violates WCAG 2.2 Success Criterion 3.3.7 Redundant Entry?',
     options: [
-      'Using visual indicators only',
-      'Implementing proper ARIA states and properties',
-      'Relying on color changes',
-      'Managing state through CSS classes'
+      'Auto-filling previously entered information in a multi-step form',
+      'Requiring re-entry of a password for security confirmation',
+      'Asking for the same information twice without auto-fill',
+      'Providing a "remember me" option for future sessions'
     ],
-    correctAnswer: 'Implementing proper ARIA states and properties',
-    explanation: 'WASBoK Domain One B emphasizes the importance of using appropriate ARIA states and properties to manage and communicate component states. This ensures state changes are properly conveyed to assistive technologies.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One B: Basic knowledge of programming',
-    category: 'Development',
+    correctAnswer: 'Asking for the same information twice without auto-fill',
+    explanation: 'Requiring users to re-enter information that was previously provided in the same process without auto-filling or providing the option to copy violates SC 3.3.7. This is particularly burdensome for users with motor or cognitive disabilities. The exception is for security-sensitive information like passwords or when re-entry is essential.',
+    wcagCriterion: '3.3.7 Redundant Entry',
+    wcagLevel: 'A',
+    category: 'Forms',
     difficulty: 'advanced',
-    rating: 98
-  },
-  {
-    id: '109',
-    question: 'Which approach best supports automated testing tool implementation according to WASBoK Domain Two D?',
-    options: [
-      'Replacing manual testing entirely',
-      'Using tools as part of a comprehensive strategy',
-      'Running automated tests after deployment',
-      'Implementing random automated checks'
-    ],
-    correctAnswer: 'Using tools as part of a comprehensive strategy',
-    explanation: 'WASBoK Domain Two D emphasizes that automated testing tools should be part of a comprehensive testing strategy, not a replacement for manual testing. Tools help identify potential issues but require human verification.',
-    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
-    wasBoKSection: 'Domain Two D: Testing tools for the web',
-    category: 'Testing',
-    difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html',
     rating: 97
   },
   {
-    id: '110',
-    question: 'Which approach best supports accessibility in the procurement process according to WASBoK Domain Three C?',
+    id: '209',
+    question: 'Which scenario correctly implements WCAG 2.2 Success Criterion 2.5.8 Target Size (Minimum) for inline links within a paragraph of text?',
     options: [
-      'Reviewing accessibility after purchase',
-      'Including accessibility throughout procurement',
-      'Relying on vendor certifications',
-      'Testing final products only'
+      'Making all inline links 44x44 pixels',
+      'Providing a minimum 24-pixel spacing between links',
+      'Relying on the default text size for target area',
+      'The inline links are exempt from the target size requirement'
     ],
-    correctAnswer: 'Including accessibility throughout procurement',
-    explanation: 'WASBoK Domain Three C emphasizes integrating accessibility requirements throughout the procurement process, from initial requirements to final acceptance. This ensures accessibility is considered at every stage.',
-    wasBoKDomain: 'Domain Three: Remediating issues in web solutions',
-    wasBoKSection: 'Domain Three C: Integrate Accessibility into the Procurement Process',
-    category: 'Procurement',
+    correctAnswer: 'The inline links are exempt from the target size requirement',
+    explanation: 'According to SC 2.5.8, inline links within a block of text are exempt from the minimum target size requirement. This exception recognizes that enlarging inline links would disrupt text flow and readability. However, adequate spacing between clickable elements is still important for usability.',
+    wcagCriterion: '2.5.8 Target Size (Minimum)',
+    wcagLevel: 'AA',
+    category: 'Mobile Accessibility',
     difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html',
+    rating: 95
+  },
+  {
+    id: '210',
+    question: 'Which implementation of visible focus indication fails to meet WCAG 2.2 Success Criterion 2.4.12 Focus Not Obscured (Enhanced)?',
+    options: [
+      'Focus indicator partially hidden by a floating action button',
+      'Focus indicator with minimum 2 pixel thickness',
+      'Focus indicator using only background color change',
+      'Focus indicator visible at 200% zoom'
+    ],
+    correctAnswer: 'Focus indicator partially hidden by a floating action button',
+    explanation: 'SC 2.4.12 requires that no part of the focus indicator is hidden by author-created content. A floating action button that obscures any part of the focus indicator would violate this criterion. This ensures keyboard users can always see the entire focus indicator, which is crucial for understanding their current position on the page.',
+    wcagCriterion: '2.4.12 Focus Not Obscured (Enhanced)',
+    wcagLevel: 'AAA',
+    category: 'Focus Management',
+    difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-enhanced.html',
+    rating: 94
+  },
+  {
+    id: '211',
+    question: 'Which scenario violates WCAG 2.2 Success Criterion 3.2.6 Consistent Help?',
+    options: [
+      'Help link appears in different positions on mobile and desktop',
+      'Help documentation requires authentication to access',
+      'Contact form available through a chat widget',
+      'Help link consistently located in the footer'
+    ],
+    correctAnswer: 'Help link appears in different positions on mobile and desktop',
+    explanation: 'SC 3.2.6 requires that help mechanisms (like help links, contact information, or human assistance) appear in the same relative order and location across pages. Having the help link in different positions on mobile versus desktop violates this consistency requirement, making it harder for users to find assistance when needed.',
+    wcagCriterion: '3.2.6 Consistent Help',
+    wcagLevel: 'A',
+    category: 'Navigation',
+    difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/consistent-help.html',
     rating: 96
   },
   {
-    id: '111',
-    question: 'Which approach best supports cognitive accessibility testing according to WASBoK Domain Two E?',
+    id: '212',
+    question: 'Which implementation of an accessible name calculation violates the ARIA specification and WCAG 2.2?',
     options: [
-      'Using only automated testing tools',
-      'Testing with users having diverse cognitive abilities',
-      'Relying on developer intuition',
-      'Following standard test scripts'
+      'Using both aria-label and aria-labelledby on the same element',
+      'Referencing multiple IDs in aria-labelledby',
+      'Using aria-describedby for supplementary information',
+      'Combining visible text with aria-describedby'
     ],
-    correctAnswer: 'Testing with users having diverse cognitive abilities',
-    explanation: 'WASBoK Domain Two E emphasizes the importance of testing with users who have different cognitive abilities to identify potential barriers. This approach helps ensure content is perceivable and operable for users with various cognitive needs.',
-    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
-    wasBoKSection: 'Domain Two E: Testing for cognitive disabilities',
-    category: 'Testing',
+    correctAnswer: 'Using both aria-label and aria-labelledby on the same element',
+    explanation: 'Using both aria-label and aria-labelledby on the same element is prohibited by the ARIA specification. When both are present, aria-labelledby takes precedence, but this creates confusion and potential maintenance issues. Choose either aria-label for custom text or aria-labelledby to reference visible text, but not both.',
+    wcagCriterion: '4.1.2 Name, Role, Value',
+    wcagLevel: 'A',
+    category: 'ARIA',
     difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html',
     rating: 97
   },
   {
-    id: '112',
-    question: 'Which approach best supports mobile accessibility testing according to WASBoK Domain Two C?',
+    id: '213',
+    question: 'Which scenario correctly implements WCAG 2.2 Success Criterion 2.4.13 Focus Appearance?',
     options: [
-      'Testing only on the latest devices',
-      'Testing with various input methods and orientations',
-      'Using desktop emulators exclusively',
-      'Following desktop testing procedures'
+      'A 1px dotted outline with background color change',
+      'A solid 2px contrasting border around the entire element',
+      'A semi-transparent highlight with 2:1 contrast ratio',
+      'An outline that matches the text color'
     ],
-    correctAnswer: 'Testing with various input methods and orientations',
-    explanation: 'WASBoK Domain Two C emphasizes testing with different input methods and device orientations to ensure mobile accessibility. This includes touch gestures, screen rotation, and various interaction patterns.',
-    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
-    wasBoKSection: 'Domain Two C: Testing for mobile accessibility',
-    category: 'Testing',
+    correctAnswer: 'A solid 2px contrasting border around the entire element',
+    explanation: 'SC 2.4.13 requires that the focus indicator have a minimum area of 1x1 CSS pixels, contrast ratio of at least 3:1 against adjacent colors, and cover at least 2 CSS pixels on the longest side of the element. A solid 2px contrasting border meets these requirements, ensuring the focus indicator is clearly visible.',
+    wcagCriterion: '2.4.13 Focus Appearance',
+    wcagLevel: 'AAA',
+    category: 'Focus Management',
     difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html',
+    rating: 95
+  },
+  {
+    id: '214',
+    question: 'Which implementation of error prevention for authentication violates WCAG 2.2 Success Criterion 3.3.8?',
+    options: [
+      'Allowing users to review their entries before submission',
+      'Providing a password strength meter during input',
+      'Auto-logging out users after 20 minutes of inactivity',
+      'Offering a mechanism to recover lost data'
+    ],
+    correctAnswer: 'Auto-logging out users after 20 minutes of inactivity',
+    explanation: 'Auto-logging out users without warning or data preservation violates SC 3.3.8. For authentication processes where data loss could occur, users must be able to review, correct, or recover data. Sudden session expiration without these safeguards can cause significant frustration and data loss, particularly for users with cognitive disabilities.',
+    wcagCriterion: '3.3.8 Accessible Authentication (Minimum)',
+    wcagLevel: 'AA',
+    category: 'Forms',
+    difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html',
     rating: 96
   },
   {
-    id: '113',
-    question: 'Which approach best supports accessibility in single-page applications according to WASBoK Domain One B?',
+    id: '215',
+    question: 'Which scenario violates WCAG 2.2 Success Criterion 2.5.7 Dragging Movements for touch interfaces?',
     options: [
-      'Disabling client-side routing',
-      'Managing focus and announcing updates',
-      'Relying on page refreshes',
-      'Using only server-side rendering'
+      'Providing a slider with both drag and button controls',
+      'Implementing pinch-to-zoom with keyboard zoom options',
+      'Requiring drag gestures for essential functionality',
+      'Supporting both drag-and-drop and cut-paste operations'
     ],
-    correctAnswer: 'Managing focus and announcing updates',
-    explanation: 'WASBoK Domain One B emphasizes managing focus and announcing dynamic updates in single-page applications. This ensures users can track content changes and maintain their context during client-side navigation.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One B: Basic knowledge of programming',
-    category: 'Development',
+    correctAnswer: 'Requiring drag gestures for essential functionality',
+    explanation: 'SC 2.5.7 requires that all functionality that uses dragging movements can be achieved through single-point activation (like tapping or clicking). Requiring drag gestures for essential functionality without alternatives violates this criterion, as it excludes users who have difficulty performing precise movements.',
+    wcagCriterion: '2.5.7 Dragging Movements',
+    wcagLevel: 'AA',
+    category: 'Input Methods',
     difficulty: 'advanced',
-    rating: 98
-  },
-  {
-    id: '114',
-    question: 'Which approach best supports accessibility documentation according to WASBoK Domain Three B?',
-    options: [
-      'Creating general guidelines',
-      'Documenting specific techniques and patterns',
-      'Referencing external resources',
-      'Using automated documentation'
-    ],
-    correctAnswer: 'Documenting specific techniques and patterns',
-    explanation: 'WASBoK Domain Three B emphasizes documenting specific accessibility techniques and patterns that work in your context. This helps maintain consistency and provides clear guidance for implementation.',
-    wasBoKDomain: 'Domain Three: Remediating issues in web solutions',
-    wasBoKSection: 'Domain Three B: Fixing versus redesigning',
-    category: 'Documentation',
-    difficulty: 'advanced',
+    wcagLink: 'https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html',
     rating: 97
   },
   {
-    id: '115',
-    question: 'Which approach best supports accessibility in rich internet applications according to WASBoK Domain One B?',
+    id: '216',
+    question: 'Which federal agencies are responsible for Section 508 implementation?',
     options: [
-      'Using only native HTML elements',
-      'Implementing proper ARIA patterns',
-      'Avoiding JavaScript functionality',
-      'Relying on browser defaults'
+      'Only the Department of Justice',
+      'Only the U.S. Access Board',
+      'GSA, U.S. Access Board, and Department of Justice',
+      'Only the General Services Administration'
     ],
-    correctAnswer: 'Implementing proper ARIA patterns',
-    explanation: 'WASBoK Domain One B emphasizes implementing appropriate ARIA patterns for rich internet applications. This ensures complex widgets and interactions are properly exposed to assistive technologies.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One B: Basic knowledge of programming',
-    category: 'Development',
-    difficulty: 'advanced',
-    rating: 98
+    correctAnswer: 'GSA, U.S. Access Board, and Department of Justice',
+    explanation: 'Section 508 implementation is managed by three main entities: the General Services Administration (GSA), U.S. Access Board, and Department of Justice, each with specific responsibilities in the process.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-states/',
+    wasBoKSection: 'Section 508 of the US Rehabilitation Act of 1973, as amended'
   },
   {
-    id: '116',
-    question: 'Which approach best supports accessibility in the development process according to WASBoK Domain One A?',
+    id: '217',
+    question: 'Which WCAG version is referenced in the updated Section 508 standards?',
     options: [
-      'Testing after development',
-      'Integrating accessibility throughout development',
-      'Adding accessibility features last',
-      'Delegating to specialists only'
+      'WCAG 2.0',
+      'WCAG 2.1',
+      'WCAG 2.2',
+      'WCAG 3.0'
     ],
-    correctAnswer: 'Integrating accessibility throughout development',
-    explanation: 'WASBoK Domain One A emphasizes integrating accessibility considerations throughout the development process. This ensures accessibility is built-in rather than bolted on as an afterthought.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One A: Basic knowledge of disabilities',
-    category: 'Development',
-    difficulty: 'advanced',
-    rating: 97
+    correctAnswer: 'WCAG 2.1',
+    explanation: 'The updated Section 508 standards reference WCAG 2.1, which is the most recent version of the Web Content Accessibility Guidelines at the time of the update.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-states/',
+    wasBoKSection: 'Section 508 of the US Rehabilitation Act of 1973, as amended'
   },
   {
-    id: '117',
-    question: 'Which approach best supports accessibility testing in agile development according to WASBoK Domain Two A?',
+    id: '218',
+    question: 'What is the scope of the European Accessibility Act enacted in 2019?',
     options: [
-      'Testing only at sprint end',
-      'Integrating testing throughout sprints',
-      'Deferring testing to release',
-      'Testing in separate sprints'
+      'Only public sector organizations',
+      'Only private sector organizations',
+      'Both public and private sectors',
+      'Only educational institutions'
     ],
-    correctAnswer: 'Integrating testing throughout sprints',
-    explanation: 'WASBoK Domain Two A emphasizes integrating accessibility testing throughout agile sprints. This allows early identification and remediation of issues, reducing technical debt.',
-    wasBoKDomain: 'Domain Two: Identify accessibility issues in web solutions',
-    wasBoKSection: 'Domain Two A: Testing process and test plan',
+    correctAnswer: 'Both public and private sectors',
+    explanation: 'The European Accessibility Act, enacted on June 27, 2019, applies to both public and private sectors, making it more comprehensive in scope than the Web and Mobile Accessibility Directive.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/european-union/',
+    wasBoKSection: 'European Accessibility Act'
+  },
+  {
+    id: '219',
+    question: 'Under The Accessible Canada Act, which WCAG version and level is required for compliance?',
+    options: [
+      'WCAG 2.0 Level A',
+      'WCAG 2.0 Level AA',
+      'WCAG 2.1 Level AA',
+      'WCAG 2.2 Level AA'
+    ],
+    correctAnswer: 'WCAG 2.0 Level AA',
+    explanation: 'The Accessible Canada Act, which applies to government and all federally regulated agencies, requires compliance with WCAG 2.0 Level AA standards as specified in the Directive on Service and Digital.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 93,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/canada/',
+    wasBoKSection: 'The Accessible Canada Act'
+  },
+  {
+    id: '220',
+    question: 'Which entities are responsible for implementing The Accessible Canada Act?',
+    options: [
+      'Only Employment and Social Development Canada',
+      'Only Accessible Standards Canada',
+      'Both Employment and Social Development Canada and Accessible Standards Canada',
+      'The Canadian Human Rights Commission'
+    ],
+    correctAnswer: 'Both Employment and Social Development Canada and Accessible Standards Canada',
+    explanation: 'The Accessible Canada Act is implemented by two main entities: Employment and Social Development Canada and Accessible Standards Canada, working together to ensure accessibility standards are developed and maintained.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/canada/',
+    wasBoKSection: 'The Accessible Canada Act'
+  },
+  {
+    id: '221',
+    question: 'What is the scope of the UK Equality Act 2010 regarding web accessibility?',
+    options: [
+      'Public sector only',
+      'Private sector only',
+      'Both public and private sectors',
+      'Government websites only'
+    ],
+    correctAnswer: 'Both public and private sectors',
+    explanation: 'The UK Equality Act 2010 applies to both public and private sectors. It is a non-discrimination law that covers web accessibility as part of its broader scope to prevent discrimination against people with disabilities.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-kingdom/',
+    wasBoKSection: 'Equality Act 2010'
+  },
+  {
+    id: '222',
+    question: 'What is the purpose of BS 8878 in relation to the UK Equality Act 2010?',
+    options: [
+      'It provides technical requirements for web accessibility',
+      'It provides a framework for designing or procuring accessible web products',
+      'It enforces WCAG compliance',
+      'It establishes penalties for non-compliance'
+    ],
+    correctAnswer: 'It provides a framework for designing or procuring accessible web products',
+    explanation: 'BS 8878 is a British standard that provides a framework for designing or procuring accessible web products. While it supports compliance with the Equality Act 2010, it does not contain technical requirements itself.',
+    category: 'Policy',
+    difficulty: 'advanced',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-kingdom/',
+    wasBoKSection: 'BS 8878 Web Accessibility'
+  },
+  {
+    id: '223',
+    question: 'Which EU body is responsible for monitoring compliance with the Web Accessibility Directive?',
+    options: [
+      'The European Commission directly',
+      'Individual Member States through designated bodies',
+      'The European Parliament',
+      'The European Court of Justice'
+    ],
+    correctAnswer: 'Individual Member States through designated bodies',
+    explanation: 'Under the EU Web Accessibility Directive, each Member State designates its own monitoring body responsible for verifying compliance with the directive\'s requirements. This is established in Commission Implementing Decision (EU) 2018/1524.',
+    category: 'Policy',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/european-union/',
+    wasBoKSection: 'Web and Mobile Accessibility Directive'
+  },
+  {
+    id: '224',
+    question: 'What type of law is The Accessible Canada Act classified as?',
+    options: [
+      'Only a non-discrimination law',
+      'Only a procurement law',
+      'Both a non-discrimination law and a procurement law',
+      'Only a technical standards law'
+    ],
+    correctAnswer: 'Both a non-discrimination law and a procurement law',
+    explanation: 'The Accessible Canada Act is classified as both a non-discrimination law and a procurement law, reflecting its comprehensive approach to ensuring accessibility in federal jurisdiction.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 93,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/canada/',
+    wasBoKSection: 'The Accessible Canada Act'
+  },
+  {
+    id: '225',
+    question: 'Which document is required by the EU Web Accessibility Directive for public sector websites?',
+    options: [
+      'Privacy policy',
+      'Terms of service',
+      'Accessibility statement',
+      'Cookie policy'
+    ],
+    correctAnswer: 'Accessibility statement',
+    explanation: 'The EU Web Accessibility Directive requires public sector bodies to provide and regularly update a detailed accessibility statement for their websites and mobile applications, as established in Commission Implementing Decision (EU) 2018/1523.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/european-union/',
+    wasBoKSection: 'Web and Mobile Accessibility Directive'
+  },
+  {
+    id: '226',
+    question: 'Which organization is responsible for enforcing the UK Equality Act 2010?',
+    options: [
+      'British Standards Institution',
+      'Equality and Human Rights Commission',
+      'Department for Digital, Culture, Media & Sport',
+      'Government Digital Service'
+    ],
+    correctAnswer: 'Equality and Human Rights Commission',
+    explanation: 'The Equality and Human Rights Commission is the responsible entity for enforcing the UK Equality Act 2010, which includes ensuring compliance with web accessibility requirements as part of preventing discrimination.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-kingdom/',
+    wasBoKSection: 'Equality Act 2010'
+  },
+  {
+    id: '227',
+    question: 'What is the primary focus of Section 508 of the Rehabilitation Act?',
+    options: [
+      'Ensuring accessibility in federal procurement',
+      'Promoting universal design principles',
+      'Establishing minimum requirements for web accessibility',
+      'Providing guidance on implementing WCAG 2.0'
+    ],
+    correctAnswer: 'Ensuring accessibility in federal procurement',
+    explanation: 'Section 508 of the Rehabilitation Act focuses on ensuring that federal procurement processes include accessibility requirements. This ensures that products and services procured by federal agencies are accessible to people with disabilities.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-states/',
+    wasBoKSection: 'Section 508 of the US Rehabilitation Act of 1973, as amended'
+  },
+  {
+    id: '228',
+    question: 'What is the scope of the Americans with Disabilities Act (ADA) regarding web accessibility?',
+    options: [
+      'Only federal government websites',
+      'All government and private sector websites',
+      'Federal agencies and their ICT procurement',
+      'Only state government websites'
+    ],
+    correctAnswer: 'All government and private sector websites',
+    explanation: 'The Americans with Disabilities Act (ADA) applies to all government and private sector websites. It requires that these websites be accessible to people with disabilities, which includes using WCAG 2.0 Level AA as a minimum standard.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-states/',
+    wasBoKSection: 'Americans with Disabilities Act of 1990 (ADA), as amended'
+  },
+  {
+    id: '229',
+    question: 'Which federal agency is primarily responsible for enforcing the ADA?',
+    options: [
+      'Department of Justice',
+      'Department of Transportation',
+      'Department of Labor',
+      'Equal Employment Opportunity Commission'
+    ],
+    correctAnswer: 'Department of Justice',
+    explanation: 'The Department of Justice is primarily responsible for enforcing the Americans with Disabilities Act (ADA). They work with other federal agencies to ensure compliance with the law.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-states/',
+    wasBoKSection: 'Americans with Disabilities Act of 1990 (ADA), as amended'
+  },
+  {
+    id: '230',
+    question: 'What is required under the Air Carrier Access Act regarding web accessibility?',
+    options: [
+      'WCAG 2.0 Level AA',
+      'WCAG 2.1 Level AA',
+      'WCAG 2.2 Level AA',
+      'WCAG 3.0'
+    ],
+    correctAnswer: 'WCAG 2.0 Level AA',
+    explanation: 'The Air Carrier Access Act requires airline websites to conform to WCAG 2.0 Level AA standards, as specified in the Department of Transportation\'s final rule published in 2013.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 93,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-states/',
+    wasBoKSection: 'Air Carrier Access Act of 1986'
+  },
+  {
+    id: '231',
+    question: 'What is the role of the U.S. Access Board in Section 508?',
+    options: [
+      'Providing guidance on implementing WCAG 2.0',
+      'Establishing minimum requirements for web accessibility',
+      'Ensuring compliance with Section 508',
+      'Promoting universal design principles'
+    ],
+    correctAnswer: 'Ensuring compliance with Section 508',
+    explanation: 'The U.S. Access Board plays a key role in Section 508 by ensuring that federal agencies comply with the law. They provide guidance on implementing WCAG 2.0, establish minimum requirements for web accessibility, and promote universal design principles.',
+    category: 'Policy',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/policies/united-states/',
+    wasBoKSection: 'Section 508 of the US Rehabilitation Act of 1973, as amended'
+  },
+  {
+    id: '232',
+    question: 'Which W3C standard defines the accessibility requirements for authoring tools?',
+    options: [
+      'WCAG 2.2',
+      'ATAG 2.0',
+      'WAI-ARIA 1.2',
+      'UAAG 2.0'
+    ],
+    correctAnswer: 'ATAG 2.0',
+    explanation: 'The Authoring Tool Accessibility Guidelines (ATAG) 2.0 defines how authoring tools should help developers produce accessible web content and how to make the authoring tools themselves accessible.',
+    category: 'Standards',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'W3C Accessibility Standards Overview'
+  },
+  {
+    id: '233',
+    question: 'What is the primary purpose of WAI-ARIA according to W3C standards?',
+    options: [
+      'To replace HTML semantic elements',
+      'To provide additional semantics for custom interactive components',
+      'To create new HTML elements',
+      'To validate web accessibility'
+    ],
+    correctAnswer: 'To provide additional semantics for custom interactive components',
+    explanation: 'WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) provides additional semantics to describe the nature of custom widgets, structures, and behaviors to assistive technologies when native HTML semantics are insufficient.',
+    category: 'Standards',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'WAI-ARIA Overview'
+  },
+  {
+    id: '234',
+    question: 'Which statement accurately describes the relationship between WCAG 2.2 and EN 301 549 in the context of international accessibility standards?',
+    options: [
+      'They are competing standards with different requirements',
+      'EN 301 549 incorporates WCAG 2.2 requirements by reference and extends them for ICT',
+      'WCAG 2.2 replaces EN 301 549 in European legislation',
+      'They cover mutually exclusive aspects of digital accessibility'
+    ],
+    correctAnswer: 'EN 301 549 incorporates WCAG 2.2 requirements by reference and extends them for ICT',
+    explanation: 'EN 301 549, the European accessibility standard, incorporates WCAG requirements by reference and extends them with additional ICT-specific requirements. This harmonization ensures consistency between international web accessibility requirements and European ICT accessibility standards while providing comprehensive coverage for all digital technologies.',
+    category: 'Standards',
+    difficulty: 'advanced',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'Standards Harmonization'
+  },
+  {
+    id: '235',
+    question: 'What distinguishes WAI-ARIA attributes from standard HTML attributes in accessibility implementation?',
+    options: [
+      'WAI-ARIA attributes modify the visual appearance',
+      'WAI-ARIA attributes only affect assistive technologies',
+      'WAI-ARIA attributes replace HTML attributes',
+      'WAI-ARIA attributes require JavaScript to function'
+    ],
+    correctAnswer: 'WAI-ARIA attributes only affect assistive technologies',
+    explanation: 'WAI-ARIA attributes provide information exclusively to assistive technologies without affecting the visual appearance or behavior of elements. They supplement native HTML semantics to convey additional information about roles, states, and properties.',
+    category: 'Standards',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'WAI-ARIA Overview'
+  },
+  {
+    id: '236',
+    question: 'Which guideline set addresses the accessibility of user agents like browsers and media players?',
+    options: [
+      'WCAG 2.2',
+      'ATAG 2.0',
+      'UAAG 2.0',
+      'WAI-ARIA 1.2'
+    ],
+    correctAnswer: 'UAAG 2.0',
+    explanation: 'The User Agent Accessibility Guidelines (UAAG) 2.0 provides guidelines for making user agents (browsers, media players, and assistive technologies) accessible to people with disabilities and interoperable with assistive technologies.',
+    category: 'Standards',
+    difficulty: 'intermediate',
+    rating: 93,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'W3C Accessibility Standards Overview'
+  },
+  {
+    id: '237',
+    question: 'What is the key difference between normative and informative content in W3C accessibility standards?',
+    options: [
+      'Normative content is required for conformance while informative content provides guidance',
+      'Normative content is newer than informative content',
+      'Informative content is required while normative content is optional',
+      'There is no difference between them'
+    ],
+    correctAnswer: 'Normative content is required for conformance while informative content provides guidance',
+    explanation: 'In W3C standards, normative content specifies what is required for conformance, while informative content provides helpful information, examples, and guidance but is not required for conformance.',
+    category: 'Standards',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'W3C Standards and Notes'
+  },
+  {
+    id: '238',
+    question: 'Which statement best describes the relationship between WCAG and WAI-ARIA?',
+    options: [
+      'WCAG replaces WAI-ARIA',
+      'WAI-ARIA helps meet WCAG success criteria',
+      'They are competing standards',
+      'They apply to different technologies'
+    ],
+    correctAnswer: 'WAI-ARIA helps meet WCAG success criteria',
+    explanation: 'WAI-ARIA is a technical specification that helps developers meet WCAG success criteria, particularly for dynamic and interactive content. It provides a way to add accessibility information that HTML cannot express natively.',
+    category: 'Standards',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'Standards Integration'
+  },
+  {
+    id: '239',
+    question: 'What is the primary focus of XAG (XML Accessibility Guidelines)?',
+    options: [
+      'Making XML applications accessible',
+      'Replacing HTML with XML',
+      'Creating new XML standards',
+      'Testing XML validity'
+    ],
+    correctAnswer: 'Making XML applications accessible',
+    explanation: 'The XML Accessibility Guidelines (XAG) focus on making XML applications and documents accessible to people with disabilities. They provide guidance on how to create XML languages that support accessibility and how to use XML markup for accessibility.',
+    category: 'Standards',
+    difficulty: 'advanced',
+    rating: 92,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'Additional W3C Standards'
+  },
+  {
+    id: '240',
+    question: 'How do WCAG Techniques documents relate to WCAG success criteria?',
+    options: [
+      'They replace success criteria',
+      'They provide examples and methods for meeting success criteria',
+      'They are competing standards',
+      'They only apply to specific technologies'
+    ],
+    correctAnswer: 'They provide examples and methods for meeting success criteria',
+    explanation: 'WCAG Techniques documents provide specific, documented ways to meet WCAG success criteria. They include code examples, testing procedures, and common approaches but are informative rather than normative.',
+    category: 'Standards',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'WCAG Technical Documents'
+  },
+  {
+    id: '241',
+    question: 'Which W3C working group is responsible for developing accessibility standards?',
+    options: [
+      'HTML Working Group',
+      'Accessibility Guidelines Working Group (AG WG)',
+      'CSS Working Group',
+      'JavaScript Working Group'
+    ],
+    correctAnswer: 'Accessibility Guidelines Working Group (AG WG)',
+    explanation: 'The Accessibility Guidelines Working Group (AG WG) is responsible for developing guidelines and techniques for making web content accessible to people with disabilities, including WCAG standards.',
+    category: 'Standards',
+    difficulty: 'intermediate',
+    rating: 93,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/',
+    wasBoKSection: 'W3C Process and Groups'
+  },
+  {
+    id: '242',
+    question: 'What is the primary purpose of the WCAG-EM evaluation methodology?',
+    options: [
+      'To replace automated testing tools',
+      'To provide a structured approach for evaluating web accessibility conformance',
+      'To generate accessibility reports automatically',
+      'To fix accessibility issues'
+    ],
+    correctAnswer: 'To provide a structured approach for evaluating web accessibility conformance',
+    explanation: 'The Website Accessibility Conformance Evaluation Methodology (WCAG-EM) provides evaluators with a structured approach to determine how well websites conform to WCAG, ensuring consistent and thorough evaluations.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'WCAG-EM Overview'
+  },
+  {
+    id: '243',
+    question: 'What is the most effective first step in conducting a preliminary accessibility evaluation according to WCAG-EM methodology?',
+    options: [
+      'Run automated tools on the entire website without manual verification',
+      'Perform basic manual checks on representative key pages to identify patterns',
+      'Conduct comprehensive user testing with assistive technologies',
+      'Generate a detailed technical compliance report'
+    ],
+    correctAnswer: 'Perform basic manual checks on representative key pages to identify patterns',
+    explanation: 'According to WCAG-EM methodology, starting with basic manual checks on representative pages is most effective as it helps identify common patterns and critical issues quickly. This approach provides immediate insights into major accessibility barriers and helps inform the scope and direction of more comprehensive testing.',
+    category: 'Testing',
+    difficulty: 'beginner',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'Easy Checks'
+  },
+  {
+    id: '244',
+    question: 'What is the recommended approach for selecting a representative sample of web pages for accessibility evaluation?',
+    options: [
+      'Test only the homepage',
+      'Test every page on the website',
+      'Select pages that represent different layouts, functionality, and types of content',
+      'Test only pages with known issues'
+    ],
+    correctAnswer: 'Select pages that represent different layouts, functionality, and types of content',
+    explanation: 'When evaluating web accessibility, it is important to select a representative sample that includes pages with different layouts, functionality, and content types to ensure comprehensive coverage of potential accessibility issues.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'WCAG-EM Sample Selection'
+  },
+  {
+    id: '245',
+    question: 'What is the primary limitation of automated accessibility testing tools?',
+    options: [
+      'They are too expensive',
+      'They can only identify about 25-30% of potential accessibility issues',
+      'They are difficult to use',
+      'They only work on simple websites'
+    ],
+    correctAnswer: 'They can only identify about 25-30% of potential accessibility issues',
+    explanation: 'Automated testing tools can only identify about 25-30% of potential accessibility issues. Many accessibility requirements require human judgment to evaluate properly, such as the appropriateness of alternative text or the logical reading order.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'Tools Overview'
+  },
+  {
+    id: '246',
+    question: 'Which aspect of accessibility testing requires manual verification even when using automated tools?',
+    options: [
+      'Color contrast ratios',
+      'Alternative text quality and appropriateness',
+      'HTML validation',
+      'Missing form labels'
+    ],
+    correctAnswer: 'Alternative text quality and appropriateness',
+    explanation: 'While automated tools can detect the presence or absence of alternative text, they cannot evaluate its quality or appropriateness. This requires human judgment to ensure the alt text accurately describes the image and its context.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'Combined Expertise'
+  },
+  {
+    id: '247',
+    question: 'What is the essential first step in conducting a thorough keyboard accessibility evaluation?',
+    options: [
+      'Use a screen reader to verify content accessibility',
+      'Press the Tab key to verify navigation order and focus visibility',
+      'Check for ARIA attributes and roles in the code',
+      'Validate HTML structure and semantics'
+    ],
+    correctAnswer: 'Press the Tab key to verify navigation order and focus visibility',
+    explanation: 'The critical first step in keyboard accessibility testing is using the Tab key to verify that all interactive elements are reachable in a logical sequence and that the current focus is clearly visible. This foundational check ensures basic keyboard operability before proceeding to more complex interactions and helps identify major navigation barriers.',
+    category: 'Testing',
+    difficulty: 'beginner',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'Keyboard Testing'
+  },
+  {
+    id: '248',
+    question: 'What are the essential components that must be included in an accessibility evaluation report according to WCAG-EM methodology?',
+    options: [
+      'Only failed success criteria and screenshots',
+      'Automated tool results and code snippets',
+      'Scope, conformance level, results, evaluation process, and impact analysis',
+      'List of errors and recommended fixes'
+    ],
+    correctAnswer: 'Scope, conformance level, results, evaluation process, and impact analysis',
+    explanation: 'According to WCAG-EM, a comprehensive accessibility evaluation report must include the evaluation scope, target conformance level, detailed results with impact analysis, and a thorough description of the evaluation process used. This ensures stakeholders understand not only what was tested and found but also the implications of the results and the methodology used.',
     category: 'Testing',
     difficulty: 'advanced',
-    rating: 96
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'WCAG-EM Report'
   },
   {
-    id: '118',
-    question: 'Which approach best supports multimedia accessibility according to WASBoK Domain One C?',
+    id: '249',
+    question: 'What is the purpose of conducting accessibility testing with different browsers?',
     options: [
-      'Providing transcripts only',
-      'Using automated captions',
-      'Implementing multiple alternatives',
-      'Relying on player controls'
+      'To increase website traffic',
+      'To verify visual design consistency',
+      'To ensure accessibility features work across different user agents',
+      'To test website speed'
     ],
-    correctAnswer: 'Implementing multiple alternatives',
-    explanation: 'WASBoK Domain One C emphasizes providing multiple alternatives for multimedia content, including captions, transcripts, and audio descriptions. This ensures access for users with different needs and preferences.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One C: Content authoring',
-    category: 'Content',
+    correctAnswer: 'To ensure accessibility features work across different user agents',
+    explanation: 'Testing with different browsers helps verify that accessibility features, such as ARIA attributes and keyboard navigation, work consistently across different user agents and assistive technologies.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 92,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'Browser Testing'
+  },
+  {
+    id: '250',
+    question: 'When should accessibility testing ideally begin in the development process?',
+    options: [
+      'After the website launches',
+      'During the planning and design phase',
+      'When users report issues',
+      'During the final quality assurance phase'
+    ],
+    correctAnswer: 'During the planning and design phase',
+    explanation: 'Accessibility testing should begin during the planning and design phase to identify and address potential issues early, reducing the cost and effort required to fix problems later in development.',
+    category: 'Testing',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'Early Testing'
+  },
+  {
+    id: '251',
+    question: 'What is the recommended approach for testing dynamic content updates?',
+    options: [
+      'Only test the initial page load',
+      'Test with JavaScript disabled',
+      'Use both automated tools and manual testing with assistive technologies',
+      'Wait for user feedback'
+    ],
+    correctAnswer: 'Use both automated tools and manual testing with assistive technologies',
+    explanation: 'Testing dynamic content requires a combination of automated tools and manual testing with assistive technologies to ensure that updates are properly announced and that the content remains accessible after changes.',
+    category: 'Testing',
     difficulty: 'advanced',
-    rating: 97
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/test-evaluate/',
+    wasBoKSection: 'Dynamic Content Testing'
   },
   {
-    id: '119',
-    question: 'Which approach best supports accessibility in responsive design according to WASBoK Domain One B?',
+    id: '271',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.5.7 Dragging Movements?',
     options: [
-      'Using fixed layouts',
-      'Maintaining content relationships across viewports',
-      'Hiding content on mobile',
-      'Implementing separate mobile sites'
+      'Using drag-and-drop as the only input method',
+      'Providing both dragging and click/tap alternatives',
+      'Requiring precise mouse movements',
+      'Using touch-only gestures'
     ],
-    correctAnswer: 'Maintaining content relationships across viewports',
-    explanation: 'WASBoK Domain One B emphasizes maintaining content relationships and functionality across different viewports in responsive design. This ensures consistent accessibility regardless of screen size.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One B: Basic knowledge of programming',
+    correctAnswer: 'Providing both dragging and click/tap alternatives',
+    explanation: 'Providing alternatives to dragging movements, such as click/tap operations, successfully implements SC 2.5.7. This ensures that users who cannot perform drag operations can still accomplish tasks.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Dragging Movements Techniques'
+  },
+  {
+    id: '272',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.4.11 Focus Not Obscured (Minimum)?',
+    options: [
+      'Using a sticky header that partially covers focused elements',
+      'Ensuring focused elements are fully visible',
+      'Using z-index to layer elements',
+      'Scrolling focused elements into view'
+    ],
+    correctAnswer: 'Ensuring focused elements are fully visible',
+    explanation: 'Ensuring that focused elements are fully visible and not obscured by other content successfully implements SC 2.4.11. This helps keyboard users maintain awareness of their current position.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Focus Not Obscured Techniques'
+  },
+  {
+    id: '273',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.2.6 Consistent Help?',
+    options: [
+      'Placing help links in different locations',
+      'Maintaining consistent help mechanism locations',
+      'Hiding help options in menus',
+      'Using different help icons'
+    ],
+    correctAnswer: 'Maintaining consistent help mechanism locations',
+    explanation: 'Maintaining consistent locations for help mechanisms across pages successfully implements SC 3.2.6. This ensures users can reliably find assistance when needed throughout the website.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 93,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Consistent Help Techniques'
+  },
+  {
+    id: '274',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.3.7 Redundant Entry?',
+    options: [
+      'Requiring users to re-enter information',
+      'Auto-filling previously provided information',
+      'Clearing form fields on errors',
+      'Using session timeouts'
+    ],
+    correctAnswer: 'Auto-filling previously provided information',
+    explanation: 'Auto-filling previously provided information successfully implements SC 3.3.7. This prevents unnecessary repetition and reduces the burden on users, especially those with cognitive or motor disabilities.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Redundant Entry Techniques'
+  },
+  {
+    id: '275',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.4.13 Focus Appearance?',
+    options: [
+      'Using a 1px dotted outline',
+      'Using a solid 2px contrasting border with minimum area',
+      'Changing only the background color',
+      'Removing focus indicators'
+    ],
+    correctAnswer: 'Using a solid 2px contrasting border with minimum area',
+    explanation: 'Using a solid 2px contrasting border that meets minimum area requirements successfully implements SC 2.4.13. This ensures the focus indicator is clearly visible and meets the enhanced focus appearance requirements.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Focus Appearance Techniques'
+  },
+  {
+    id: '276',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 3.3.8 Accessible Authentication?',
+    options: [
+      'Using CAPTCHA as the only verification',
+      'Providing cognitive function alternatives',
+      'Requiring complex passwords',
+      'Using biometric-only authentication'
+    ],
+    correctAnswer: 'Providing cognitive function alternatives',
+    explanation: 'Providing alternatives that do not rely on cognitive function tests successfully implements SC 3.3.8. This ensures users with cognitive disabilities can authenticate without having to remember or transcribe characters.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Accessible Authentication Techniques'
+  },
+  {
+    id: '277',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.5.8 Target Size (Minimum)?',
+    options: [
+      'Using 16x16 pixel click targets',
+      'Providing 24x24 pixel minimum target size',
+      'Using variable target sizes',
+      'Making all targets 44x44 pixels'
+    ],
+    correctAnswer: 'Providing 24x24 pixel minimum target size',
+    explanation: 'Providing a minimum target size of 24x24 CSS pixels for all non-inline interactive elements successfully implements SC 2.5.8. This ensures targets are large enough to be easily activated.',
+    category: 'Techniques',
+    difficulty: 'intermediate',
+    rating: 93,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Target Size Techniques'
+  },
+  {
+    id: '278',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 4.1.3 Status Messages?',
+    options: [
+      'Using visual changes only',
+      'Using aria-live for dynamic updates',
+      'Relying on screen refresh',
+      'Using alert dialogs for all messages'
+    ],
+    correctAnswer: 'Using aria-live for dynamic updates',
+    explanation: 'Using appropriate aria-live regions for status messages successfully implements SC 4.1.3. This ensures that updates can be programmatically determined and announced to assistive technology users without receiving focus.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Status Messages Techniques'
+  },
+  {
+    id: '279',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 1.3.6 Identify Purpose?',
+    options: [
+      'Using generic ARIA labels',
+      'Using semantic HTML and ARIA landmarks',
+      'Using decorative images',
+      'Using custom attributes'
+    ],
+    correctAnswer: 'Using semantic HTML and ARIA landmarks',
+    explanation: 'Using semantic HTML elements and ARIA landmarks successfully implements SC 1.3.6. This helps identify the purpose of interface components, making it easier for user agents to present and modify content presentation.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 94,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Identify Purpose Techniques'
+  },
+  {
+    id: '280',
+    question: 'Which technique successfully implements WCAG 2.2 Success Criterion 2.5.5 Target Size (Enhanced)?',
+    options: [
+      'Using 24x24 pixel targets',
+      'Providing 44x44 pixel minimum target size',
+      'Using inline links of any size',
+      'Making targets fill available space'
+    ],
+    correctAnswer: 'Providing 44x44 pixel minimum target size',
+    explanation: 'Providing a minimum target size of 44x44 CSS pixels for all non-inline interactive elements successfully implements SC 2.5.5 (Enhanced). This larger size ensures even better usability for people with motor impairments.',
+    category: 'Techniques',
+    difficulty: 'advanced',
+    rating: 95,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG22/quickref/',
+    wasBoKSection: 'Target Size Enhanced Techniques'
+  },
+  {
+    id: '281',
+    question: 'Which approach best supports WCAG 2.2 application in non-web ICT software?',
+    options: [
+      'Applying web-specific techniques directly to software',
+      'Ignoring success criteria that mention web technologies',
+      'Adapting web principles to software-specific contexts',
+      'Using only software-specific guidelines'
+    ],
+    correctAnswer: 'Adapting web principles to software-specific contexts',
+    explanation: 'When applying WCAG 2.2 to non-web ICT software, the principles and success criteria should be adapted to software-specific contexts while maintaining the core accessibility objectives. This ensures consistent accessibility across different technology platforms.',
+    category: 'Standards',
+    difficulty: 'advanced',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/wcag/non-web-ict/',
+    wasBoKSection: 'WCAG2ICT Overview'
+  },
+  {
+    id: '282',
+    question: 'Which mobile accessibility consideration is most critical for touch target implementation?',
+    options: [
+      'Using exact pixel measurements from desktop',
+      'Considering both physical size and pixel density',
+      'Implementing desktop hover states',
+      'Relying on device default sizes'
+    ],
+    correctAnswer: 'Considering both physical size and pixel density',
+    explanation: 'For mobile accessibility, touch targets must consider both physical size and pixel density to ensure consistent usability across devices. This accounts for varying screen sizes and resolutions while maintaining appropriate physical touch target sizes for users with motor impairments.',
+    category: 'Mobile',
+    difficulty: 'advanced',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/mobile/',
+    wasBoKSection: 'Mobile Accessibility'
+  },
+  {
+    id: '283',
+    question: 'Which development practice best supports cognitive accessibility in interactive components?',
+    options: [
+      'Using complex animations for engagement',
+      'Providing consistent, predictable patterns with clear feedback',
+      'Implementing automatic timeouts for security',
+      'Using technical terminology for precision'
+    ],
+    correctAnswer: 'Providing consistent, predictable patterns with clear feedback',
+    explanation: 'Consistent patterns and clear feedback are essential for cognitive accessibility. This approach helps users understand how to interact with components, predict their behavior, and confirm their actions, reducing cognitive load and potential confusion.',
+    category: 'Development',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/tips/developing/',
+    wasBoKSection: 'Developing for Web Accessibility'
+  },
+  {
+    id: '284',
+    question: 'Which implementation best supports cognitive accessibility in form validation?',
+    options: [
+      'Displaying all errors after submission',
+      'Providing real-time validation with clear guidance',
+      'Using color-only error indicators',
+      'Requiring complex password rules'
+    ],
+    correctAnswer: 'Providing real-time validation with clear guidance',
+    explanation: 'Real-time validation with clear guidance supports cognitive accessibility by helping users understand and correct errors as they occur. This reduces memory load and provides immediate feedback, making forms more manageable for users with cognitive disabilities.',
+    category: 'Cognitive',
+    difficulty: 'intermediate',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG2/supplemental/#cognitiveaccessibilityguidance',
+    wasBoKSection: 'Cognitive Accessibility Guidance'
+  },
+  {
+    id: '285',
+    question: 'How should viewport orientation be handled in mobile accessibility implementation?',
+    options: [
+      'Lock orientation to portrait mode',
+      'Support both orientations with equivalent functionality',
+      'Require landscape for complex content',
+      'Disable orientation changes'
+    ],
+    correctAnswer: 'Support both orientations with equivalent functionality',
+    explanation: 'Mobile applications should support both portrait and landscape orientations with equivalent functionality, allowing users to choose their preferred orientation based on physical needs, device mounting, or personal preference.',
+    category: 'Mobile',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/mobile/',
+    wasBoKSection: 'Mobile Accessibility Guidelines'
+  },
+  {
+    id: '286',
+    question: 'Which approach best supports cognitive accessibility in navigation design?',
+    options: [
+      'Using innovative navigation patterns',
+      'Providing multiple paths to content',
+      'Implementing automatic redirects',
+      'Using dynamic menu structures'
+    ],
+    correctAnswer: 'Providing multiple paths to content',
+    explanation: 'Providing multiple paths to content supports cognitive accessibility by accommodating different user preferences and mental models. This includes consistent navigation, search functionality, and site maps, allowing users to find content in ways that work best for them.',
+    category: 'Cognitive',
+    difficulty: 'advanced',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG2/supplemental/#cognitiveaccessibilityguidance',
+    wasBoKSection: 'Navigation and Wayfinding'
+  },
+  {
+    id: '287',
+    question: 'Which non-web ICT consideration is most important for document accessibility?',
+    options: [
+      'Using proprietary formats only',
+      'Ensuring accessibility features transfer across formats',
+      'Restricting to PDF format',
+      'Requiring specific software'
+    ],
+    correctAnswer: 'Ensuring accessibility features transfer across formats',
+    explanation: 'When implementing accessibility in non-web documents, it is crucial that accessibility features (such as headings, alternative text, and reading order) transfer correctly across different document formats and platforms to maintain accessibility for all users.',
+    category: 'Standards',
+    difficulty: 'advanced',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/wcag/non-web-ict/',
+    wasBoKSection: 'Document Accessibility'
+  },
+  {
+    id: '288',
+    question: 'Which development practice best supports both mobile and desktop accessibility?',
+    options: [
+      'Using separate mobile and desktop sites',
+      'Implementing responsive design with accessible features',
+      'Providing mobile-only alternatives',
+      'Using fixed layouts'
+    ],
+    correctAnswer: 'Implementing responsive design with accessible features',
+    explanation: 'Responsive design with built-in accessibility features ensures consistent accessibility across devices while adapting to different screen sizes and interaction methods. This approach maintains accessibility without requiring separate implementations for different platforms.',
     category: 'Development',
     difficulty: 'advanced',
-    rating: 98
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/tips/developing/',
+    wasBoKSection: 'Cross-platform Development'
   },
   {
-    id: '120',
-    question: 'Which approach best supports accessibility in user experience design according to WASBoK Domain One D?',
+    id: '289',
+    question: 'Which implementation best supports cognitive accessibility in content presentation?',
     options: [
-      'Following visual design trends',
-      'Incorporating diverse user needs from start',
-      'Adding accessibility features later',
-      'Using standard templates only'
+      'Using dense text layouts',
+      'Presenting content in manageable chunks with clear structure',
+      'Requiring timed responses',
+      'Using abstract imagery'
     ],
-    correctAnswer: 'Incorporating diverse user needs from start',
-    explanation: 'WASBoK Domain One D emphasizes incorporating diverse user needs into UX design from the beginning. This ensures inclusive design that works well for users with different abilities and preferences.',
-    wasBoKDomain: 'Domain One: Creating Accessible Web Solutions',
-    wasBoKSection: 'Domain One D: User experience',
-    category: 'Design',
+    correctAnswer: 'Presenting content in manageable chunks with clear structure',
+    explanation: 'Breaking content into manageable chunks with clear structure supports cognitive accessibility by reducing cognitive load and making information easier to process and remember. This includes using headings, lists, and appropriate spacing.',
+    category: 'Cognitive',
+    difficulty: 'intermediate',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG2/supplemental/#cognitiveaccessibilityguidance',
+    wasBoKSection: 'Content Structure'
+  },
+  {
+    id: '290',
+    question: 'Which mobile accessibility feature is most critical for form input fields?',
+    options: [
+      'Using desktop keyboard layouts',
+      'Providing appropriate input types for on-screen keyboards',
+      'Requiring complex input patterns',
+      'Using fixed input sizes'
+    ],
+    correctAnswer: 'Providing appropriate input types for on-screen keyboards',
+    explanation: 'Using appropriate input types (such as tel, email, number) for mobile form fields ensures that users get the most appropriate on-screen keyboard layout, making data entry more efficient and reducing errors on mobile devices.',
+    category: 'Mobile',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/standards-guidelines/mobile/',
+    wasBoKSection: 'Mobile Forms'
+  },
+  {
+    id: '291',
+    question: 'Which approach best supports low vision accessibility for text resizing?',
+    options: [
+      'Using fixed font sizes throughout',
+      'Supporting zoom up to 200% without loss of functionality',
+      'Limiting text resize to headers only',
+      'Requiring screen magnification software'
+    ],
+    correctAnswer: 'Supporting zoom up to 200% without loss of functionality',
+    explanation: 'Supporting text resizing and zoom up to at least 200% without loss of content or functionality is crucial for low vision accessibility. This ensures users can adjust text size while maintaining readability and usability of all content.',
+    category: 'Low Vision',
+    difficulty: 'intermediate',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG2/supplemental/#-low-vision-accessibility-guidance',
+    wasBoKSection: 'Low Vision Accessibility Guidance'
+  },
+  {
+    id: '292',
+    question: 'What is the most effective interim repair for missing form labels?',
+    options: [
+      'Removing the form entirely',
+      'Adding visible text labels adjacent to controls',
+      'Using placeholder text only',
+      'Changing input colors'
+    ],
+    correctAnswer: 'Adding visible text labels adjacent to controls',
+    explanation: 'Adding visible text labels adjacent to form controls is an effective interim repair that immediately improves accessibility. This helps all users, especially screen reader users, understand the purpose of form controls while proper programmatic labels are being implemented.',
+    category: 'Repairs',
+    difficulty: 'beginner',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/planning/interim-repairs/',
+    wasBoKSection: 'Form Labels'
+  },
+  {
+    id: '293',
+    question: 'Which pronunciation guidance implementation best supports screen reader users?',
+    options: [
+      'Using phonetic spelling in visible text',
+      'Implementing proper pronunciation markup',
+      'Adding audio files only',
+      'Spelling words differently'
+    ],
+    correctAnswer: 'Implementing proper pronunciation markup',
+    explanation: 'Implementing proper pronunciation markup (such as ruby annotations or the IPA pronunciation) provides screen readers with accurate pronunciation information while maintaining visual presentation, ensuring consistent and accurate pronunciation for all users.',
+    category: 'Pronunciation',
     difficulty: 'advanced',
-    rating: 97
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/pronunciation/',
+    wasBoKSection: 'Pronunciation Overview'
+  },
+  {
+    id: '294',
+    question: 'What is the most effective interim solution for insufficient color contrast?',
+    options: [
+      'Removing all colors',
+      'Using default browser colors',
+      'Increasing contrast of essential content first',
+      'Adding patterns to all elements'
+    ],
+    correctAnswer: 'Increasing contrast of essential content first',
+    explanation: 'Prioritizing contrast improvements for essential content is the most effective interim repair for contrast issues. This ensures critical information is immediately more accessible while a comprehensive color scheme update is being developed.',
+    category: 'Repairs',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/planning/interim-repairs/',
+    wasBoKSection: 'Color Contrast'
+  },
+  {
+    id: '295',
+    question: 'Which low vision consideration is most important for content reflow?',
+    options: [
+      'Maintaining fixed layouts',
+      'Supporting single-column presentation without horizontal scrolling',
+      'Using multiple columns always',
+      'Requiring specific viewport sizes'
+    ],
+    correctAnswer: 'Supporting single-column presentation without horizontal scrolling',
+    explanation: 'Supporting content reflow into a single column without requiring horizontal scrolling is crucial for low vision users. This allows content to be readable at increased zoom levels without forcing users to scroll horizontally to read each line.',
+    category: 'Low Vision',
+    difficulty: 'advanced',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG2/supplemental/#-low-vision-accessibility-guidance',
+    wasBoKSection: 'Content Reflow'
+  },
+  {
+    id: '296',
+    question: 'What is the best interim repair for keyboard accessibility issues?',
+    options: [
+      'Disabling interactive elements',
+      'Adding visible keyboard focus indicators',
+      'Removing all JavaScript',
+      'Requiring mouse interaction'
+    ],
+    correctAnswer: 'Adding visible keyboard focus indicators',
+    explanation: 'Adding visible keyboard focus indicators is an effective immediate improvement for keyboard accessibility. This helps keyboard users track their location while navigating, even before implementing full keyboard interaction support.',
+    category: 'Repairs',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/planning/interim-repairs/',
+    wasBoKSection: 'Keyboard Access'
+  },
+  {
+    id: '297',
+    question: 'Which pronunciation feature is most important for proper names and technical terms?',
+    options: [
+      'Using only capital letters',
+      'Providing pronunciation guidance through markup or glossaries',
+      'Avoiding technical terms entirely',
+      'Using informal alternatives'
+    ],
+    correctAnswer: 'Providing pronunciation guidance through markup or glossaries',
+    explanation: 'Providing pronunciation guidance through markup or glossaries ensures proper names and technical terms are pronounced correctly by screen readers and understood by users. This is particularly important for specialized vocabulary and multilingual content.',
+    category: 'Pronunciation',
+    difficulty: 'intermediate',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/pronunciation/',
+    wasBoKSection: 'Technical Terms'
+  },
+  {
+    id: '298',
+    question: 'What is the most effective approach for low vision users regarding text spacing?',
+    options: [
+      'Using minimal spacing always',
+      'Supporting increased text spacing without loss of content',
+      'Fixed spacing only',
+      'Decreasing line height for efficiency'
+    ],
+    correctAnswer: 'Supporting increased text spacing without loss of content',
+    explanation: 'Supporting increased text spacing (including line height, word spacing, and letter spacing) without loss of content is crucial for low vision users. This allows for better readability and comprehension while maintaining content integrity.',
+    category: 'Low Vision',
+    difficulty: 'intermediate',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/WCAG2/supplemental/#-low-vision-accessibility-guidance',
+    wasBoKSection: 'Text Spacing'
+  },
+  {
+    id: '299',
+    question: 'Which interim repair is most effective for images lacking alternative text?',
+    options: [
+      'Removing all images',
+      'Adding brief descriptive text in adjacent content',
+      'Using generic alt text',
+      'Hiding images from screen readers'
+    ],
+    correctAnswer: 'Adding brief descriptive text in adjacent content',
+    explanation: 'Adding brief descriptive text in content adjacent to images is an effective interim repair when proper alt text is missing. This ensures essential image information is available to all users while proper alternative text is being implemented.',
+    category: 'Repairs',
+    difficulty: 'beginner',
+    rating: 96,
+    wasBoKDomain: 'https://www.w3.org/WAI/planning/interim-repairs/',
+    wasBoKSection: 'Alternative Text'
+  },
+  {
+    id: '300',
+    question: 'What is the most important consideration for pronunciation in navigation landmarks?',
+    options: [
+      'Using uncommon words',
+      'Ensuring consistent pronunciation of repeated elements',
+      'Changing pronunciations regularly',
+      'Using abbreviations only'
+    ],
+    correctAnswer: 'Ensuring consistent pronunciation of repeated elements',
+    explanation: 'Ensuring consistent pronunciation of repeated elements in navigation landmarks helps users build a mental model of the site structure. This consistency in pronunciation aids in navigation and orientation, particularly for screen reader users.',
+    category: 'Pronunciation',
+    difficulty: 'advanced',
+    rating: 97,
+    wasBoKDomain: 'https://www.w3.org/WAI/pronunciation/',
+    wasBoKSection: 'Navigation Elements'
   }
 ];
 
-export const getRandomQuestions = (count: number): QuizQuestion[] => {
-  if (count > quizQuestions.length) {
-    console.warn(`Requested ${count} questions but only ${quizQuestions.length} are available.`);
-    return [...quizQuestions];
-  }
-  const shuffled = [...quizQuestions].sort(() => Math.random() - 0.5);
+export function getRandomQuestions(count: number): QuizQuestion[] {
+  const shuffled = [...quizQuestions].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
-}; 
+} 
