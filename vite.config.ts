@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
     host: true,
     open: true
   },
-  base: mode === 'production' ? '/WCAG-quizzes/' : '/',
+  base: '/WCAG-quizzes/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
