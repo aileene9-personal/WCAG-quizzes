@@ -42,13 +42,11 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
     answers: {} as Record<string, string | string[]>,
     skippedQuestions: new Set<number>(),
     isComplete: false,
-    isPaused: false,
     mode: settings.enableTimer ? 'timed' : 'practice',
     timeRemaining: {
       total: settings.totalTime,
       question: settings.timePerQuestion,
     },
-    pausesRemaining: settings.maxPauses || 0,
     score: 0,
   }));
 
@@ -117,7 +115,7 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
             score: newScore,
             currentQuestion: prev.currentQuestion + 1,
             timeRemaining: {
-              total: prev.timeRemaining.total - prev.timeRemaining.question,
+              total: prev.timeRemaining.total,
               question: prev.timeRemaining.question,
             },
           };
@@ -127,7 +125,7 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
             answers: newAnswers,
             skippedQuestions: prev.skippedQuestions,
             score: newScore,
-            timeTaken: settings.totalTime - prev.timeRemaining.total,
+            timeTaken: settings.enableTimer ? settings.totalTime - prev.timeRemaining.total : 0,
             completedAt: new Date(),
           };
           onComplete(result);
@@ -141,41 +139,8 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
       });
     } catch (error) {
       console.error('Error handling answer:', error);
-      // Optionally show an error message to the user
     }
-  }, [currentQuestion, questions.length, settings.totalTime, onComplete]);
-
-  const handleNext = useCallback(() => {
-    if (state.currentQuestion < questions.length - 1) {
-      setState((prev: QuizState) => ({
-        ...prev,
-        currentQuestion: Math.min(prev.currentQuestion + 1, prev.questions.length - 1),
-        timeRemaining: {
-          total: prev.timeRemaining.total - prev.timeRemaining.question,
-          question: prev.timeRemaining.question,
-        },
-      }));
-    } else {
-      const result: QuizResult = {
-        questions: questions,
-        answers: state.answers,
-        skippedQuestions: state.skippedQuestions,
-        score: state.score,
-        timeTaken: settings.totalTime - state.timeRemaining.total,
-        completedAt: new Date(),
-      };
-      setState((prev: QuizState) => ({ ...prev, isComplete: true }));
-      onComplete(result);
-    }
-  }, [state.currentQuestion, questions.length, state.answers, state.skippedQuestions, state.score, settings.totalTime, onComplete]);
-
-  const handleSkip = useCallback(() => {
-    setState((prev: QuizState) => ({
-      ...prev,
-      skippedQuestions: new Set([...prev.skippedQuestions, prev.currentQuestion]),
-      currentQuestion: Math.min(prev.currentQuestion + 1, prev.questions.length - 1),
-    }));
-  }, []);
+  }, [currentQuestion, questions.length, settings.totalTime, settings.enableTimer, onComplete]);
 
   const handlePrevious = useCallback(() => {
     setState((prev: QuizState) => ({
@@ -184,18 +149,25 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
     }));
   }, []);
 
-  const handlePauseResume = useCallback(() => {
-    setState((prev: QuizState) => {
-      if (!prev.isPaused && prev.pausesRemaining === 0) {
-        return prev;
-      }
-      return {
-        ...prev,
-        isPaused: !prev.isPaused,
-        pausesRemaining: prev.isPaused ? prev.pausesRemaining : prev.pausesRemaining - 1,
+  const handleNext = useCallback(() => {
+    if (state.currentQuestion === questions.length - 1) {
+      const result: QuizResult = {
+        questions: questions,
+        answers: state.answers,
+        skippedQuestions: state.skippedQuestions,
+        score: state.score,
+        timeTaken: settings.enableTimer ? settings.totalTime - state.timeRemaining.total : 0,
+        completedAt: new Date(),
       };
-    });
-  }, []);
+      setState((prev: QuizState) => ({ ...prev, isComplete: true }));
+      onComplete(result);
+    } else {
+      setState((prev: QuizState) => ({
+        ...prev,
+        currentQuestion: Math.min(prev.currentQuestion + 1, questions.length - 1),
+      }));
+    }
+  }, [state.currentQuestion, questions.length, state.answers, state.skippedQuestions, state.score, settings.totalTime, settings.enableTimer, onComplete]);
 
   const handleRetry = useCallback((mode: 'same' | 'new') => {
     if (mode === 'same') {
@@ -209,9 +181,7 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
           total: settings.totalTime,
           question: settings.timePerQuestion,
         },
-        pausesRemaining: settings.maxPauses || 0,
         isComplete: false,
-        isPaused: false,
         mode: settings.enableTimer ? 'timed' : 'practice',
       });
     } else {
@@ -226,8 +196,9 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
         answers={state.answers}
         skippedQuestions={state.skippedQuestions}
         score={state.score}
-        timeTaken={settings.totalTime - state.timeRemaining.total}
+        timeTaken={settings.enableTimer ? settings.totalTime - state.timeRemaining.total : 0}
         onRetry={handleRetry}
+        enableTimer={settings.enableTimer}
       />
     );
   }
@@ -257,7 +228,6 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
       
       <QuizTimer
         timeRemaining={state.timeRemaining}
-        isPaused={state.isPaused}
         onTimeUpdate={(total: number, question: number) =>
           setState((prev: QuizState) => ({
             ...prev,
@@ -280,15 +250,10 @@ const Quiz = ({ settings, questions: initialQuestions, onComplete, onNewQuiz }: 
         <QuizControls
           onPrevious={handlePrevious}
           onNext={handleNext}
-          onSkip={handleSkip}
           onSubmit={handleNext}
-          onPauseResume={handlePauseResume}
-          isPaused={state.isPaused}
-          pausesRemaining={state.pausesRemaining}
           isFirstQuestion={state.currentQuestion === 0}
           isLastQuestion={state.currentQuestion === questions.length - 1}
           hasAnswer={Boolean(state.answers[currentQuestion.id])}
-          enableTimer={settings.enableTimer}
         />
       </Box>
     </VStack>

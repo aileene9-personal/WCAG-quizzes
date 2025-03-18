@@ -27,9 +27,10 @@ interface QuizResultsProps {
   score: number;
   timeTaken: number;
   onRetry?: (mode: 'same' | 'new') => void;
+  enableTimer?: boolean;
 }
 
-const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, onRetry }: QuizResultsProps): ReactElement => {
+const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, onRetry, enableTimer = false }: QuizResultsProps): ReactElement => {
   const percentage = (score / questions.length) * 100;
   const textColor = useColorModeValue('gray.900', 'white');
   const mutedTextColor = useColorModeValue('gray.700', 'gray.200');
@@ -133,9 +134,11 @@ const QuizResults = ({ questions, answers, skippedQuestions, score, timeTaken, o
             <Text color={mutedTextColor}>
               {score} out of {questions.length} questions correct
             </Text>
-            <Text color={mutedTextColor}>
-              Time taken: {formatTime(timeTaken)}
-            </Text>
+            {enableTimer && (
+              <Text color={mutedTextColor}>
+                Time taken: {formatTime(timeTaken)}
+              </Text>
+            )}
           </VStack>
         </Box>
 

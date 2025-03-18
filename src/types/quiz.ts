@@ -33,11 +33,10 @@ export interface QuizSettings {
   totalTime: number;
   enableTimer: boolean;
   enableAudioNotifications: boolean;
-  maxPauses: number;
   filters: {
-    level: WCAGLevel[];
+    level: ('A' | 'AA' | 'AAA')[];
     categories: string[];
-    difficulty: Difficulty[];
+    difficulty: ('beginner' | 'intermediate' | 'advanced')[];
     questionType: 'all' | 'wcag' | 'general';
   };
 }
@@ -52,9 +51,7 @@ export interface QuizState {
     total: number;
     question: number;
   };
-  pausesRemaining: number;
   isComplete: boolean;
-  isPaused: boolean;
   mode: QuizMode;
 }
 

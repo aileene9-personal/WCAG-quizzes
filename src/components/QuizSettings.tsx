@@ -29,7 +29,6 @@ const defaultSettings: QuizSettingsType = {
   totalTime: 600,
   enableTimer: false,
   enableAudioNotifications: true,
-  maxPauses: 3,
   filters: {
     level: ['A', 'AA', 'AAA'],
     categories: [],

@@ -18,29 +18,19 @@ import {
 interface QuizControlsProps {
   onPrevious: () => void;
   onNext: () => void;
-  onSkip: () => void;
   onSubmit: () => void;
-  onPauseResume: () => void;
-  isPaused: boolean;
-  pausesRemaining: number;
   isFirstQuestion: boolean;
   isLastQuestion: boolean;
   hasAnswer: boolean;
-  enableTimer: boolean;
 }
 
 const QuizControls: React.FC<QuizControlsProps> = ({
   onPrevious,
   onNext,
-  onSkip,
   onSubmit,
-  onPauseResume,
-  isPaused,
-  pausesRemaining,
   isFirstQuestion,
   isLastQuestion,
   hasAnswer,
-  enableTimer,
 }) => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -69,41 +59,11 @@ const QuizControls: React.FC<QuizControlsProps> = ({
           {!isMobile && "Next"}
         </Button>
       </Tooltip>
-
-      {enableTimer && (
-        <Tooltip label="Skip this question">
-          <Button
-            onClick={onSkip}
-            variant="ghost"
-            colorScheme="yellow"
-            size={{ base: "sm", md: "md" }}
-          >
-            Skip
-          </Button>
-        </Tooltip>
-      )}
     </HStack>
   );
 
   const ActionButtons = () => (
     <HStack spacing={{ base: 2, md: 4 }} width="100%" justify="center">
-      {enableTimer && (
-        <Tooltip label={`${pausesRemaining} pauses remaining`}>
-          <Button
-            leftIcon={<TimeIcon />}
-            onClick={onPauseResume}
-            isDisabled={pausesRemaining === 0 && !isPaused}
-            colorScheme={isPaused ? 'yellow' : 'gray'}
-            size={{ base: "sm", md: "md" }}
-          >
-            {isPaused ? 'Resume' : 'Pause'}
-            <Badge ml={2} colorScheme={pausesRemaining > 0 ? 'green' : 'red'}>
-              {pausesRemaining}
-            </Badge>
-          </Button>
-        </Tooltip>
-      )}
-
       <Tooltip label={isLastQuestion ? 'Submit quiz' : 'Go to last question to submit'}>
         <Button
           leftIcon={<CheckIcon />}

@@ -1,19 +1,17 @@
 import React, { useEffect, useCallback } from 'react';
-import { Box, Text, Progress, HStack } from '@chakra-ui/react';
+import { Box, Text, Progress } from '@chakra-ui/react';
 
 interface QuizTimerProps {
   timeRemaining: {
     total: number;
     question: number;
   };
-  isPaused: boolean;
   onTimeUpdate: (total: number, question: number) => void;
   mode: 'timed' | 'practice';
 }
 
 const QuizTimer: React.FC<QuizTimerProps> = ({
   timeRemaining,
-  isPaused,
   onTimeUpdate,
   mode,
 }) => {
@@ -24,13 +22,13 @@ const QuizTimer: React.FC<QuizTimerProps> = ({
   };
 
   const updateTime = useCallback(() => {
-    if (!isPaused && mode === 'timed') {
+    if (mode === 'timed') {
       onTimeUpdate(
         Math.max(0, timeRemaining.total - 1),
         Math.max(0, timeRemaining.question - 1)
       );
     }
-  }, [isPaused, mode, timeRemaining, onTimeUpdate]);
+  }, [mode, timeRemaining, onTimeUpdate]);
 
   useEffect(() => {
     const timer = setInterval(updateTime, 1000);
@@ -43,19 +41,13 @@ const QuizTimer: React.FC<QuizTimerProps> = ({
 
   return (
     <Box width="100%">
-      <HStack justify="space-between" mb={2}>
-        <Text fontSize="sm" fontWeight="medium">
-          Time Remaining: {formatTime(timeRemaining.total)}
-        </Text>
-        <Text fontSize="sm" color={isPaused ? 'yellow.500' : 'inherit'}>
-          {isPaused ? 'Paused' : 'Running'}
-        </Text>
-      </HStack>
+      <Text fontSize="sm" fontWeight="medium" mb={2}>
+        Time Remaining: {formatTime(timeRemaining.total)}
+      </Text>
       <Progress
         value={(timeRemaining.total / timeRemaining.question) * 100}
         size="sm"
         colorScheme={timeRemaining.total < 60 ? 'red' : 'blue'}
-        isIndeterminate={isPaused}
       />
     </Box>
   );
