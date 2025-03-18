@@ -20,14 +20,16 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: mode === 'development',
-    modulePreload: false,
+    modulePreload: {
+      polyfill: true
+    },
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html')
       },
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', '@chakra-ui/react', '@emotion/react', '@emotion/styled', 'framer-motion'],
+          vendor: ['react', 'react-dom', '@chakra-ui/react', '@emotion/react', '@emotion/styled', 'framer-motion']
         },
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
@@ -39,19 +41,18 @@ export default defineConfig(({ mode }) => ({
             return `assets/images/[name]-[hash][extname]`;
           }
           return `assets/[name]-[hash][extname]`;
-        },
-        format: 'es',
-        inlineDynamicImports: false
+        }
       }
     },
-    target: 'esnext',
+    target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
     minify: 'esbuild',
     cssMinify: true,
     esbuild: {
       jsxInject: `import React from 'react'`,
       jsxDev: mode === 'development',
       jsxRuntime: 'automatic',
-      jsxImportSource: 'react'
+      jsxImportSource: 'react',
+      target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14']
     }
   },
   resolve: {
