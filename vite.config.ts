@@ -5,47 +5,21 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig({
   plugins: [react()],
-  optimizeDeps: {
-    include: ['@chakra-ui/react', '@chakra-ui/radio', '@emotion/react', '@emotion/styled', 'framer-motion']
-  },
-  server: {
-    port: 3000,
-    host: true,
-    open: true
-  },
   base: '/WCAG-quizzes/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: mode === 'development',
-    modulePreload: {
-      polyfill: true
-    },
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html')
-      },
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', '@chakra-ui/react', '@emotion/react', '@emotion/styled', 'framer-motion']
-        },
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash][extname]'
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash][extname]'
       }
     },
-    target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
-    minify: 'esbuild',
-    cssMinify: true,
-    esbuild: {
-      jsxInject: `import React from 'react'`,
-      jsxDev: mode === 'development',
-      jsxRuntime: 'automatic',
-      jsxImportSource: 'react',
-      target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14']
-    }
+    target: 'es2015',
+    minify: 'esbuild'
   },
   resolve: {
     alias: {
@@ -71,4 +45,4 @@ export default defineConfig(({ mode }) => ({
     },
     include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
   },
-}))
+})
