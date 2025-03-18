@@ -1,0 +1,11 @@
+/*
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/assets/*.js
+  Content-Type: application/javascript
+  X-Content-Type-Options: nosniff
+
+/assets/*.css
+  Content-Type: text/css
+  X-Content-Type-Options: nosniff 
